@@ -1,9 +1,12 @@
 
-import { Check, Clock, Truck, Heart, Star, ArrowRight } from 'lucide-react';
+import { Check, Clock, Truck, Heart, Star, ArrowRight, Users, Zap } from 'lucide-react';
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [cart, setCart] = useState<{[key: number]: number}>({});
 
   const categories = [
     { id: 'all', name: 'All Bowls' },
@@ -88,6 +91,11 @@ const Services = () => {
       description: 'Every bowl you order donates one to a child in need',
     },
     {
+      icon: Users,
+      title: 'Women Empowerment',
+      description: 'All our meals are prepared by women entrepreneurs we support',
+    },
+    {
       icon: Clock,
       title: 'Quick Delivery',
       description: 'Fresh bowls delivered in 30 minutes or less',
@@ -102,11 +110,51 @@ const Services = () => {
       title: 'Fresh Ingredients',
       description: 'Locally sourced, organic ingredients when possible',
     },
+    {
+      icon: Zap,
+      title: 'Community Impact',
+      description: 'Supporting local women-owned businesses and food security',
+    },
   ];
 
   const filteredBowls = selectedCategory === 'all' 
     ? bowls 
     : bowls.filter(bowl => bowl.category === selectedCategory);
+
+  const addToCart = (bowlId: number) => {
+    setCart(prev => ({
+      ...prev,
+      [bowlId]: (prev[bowlId] || 0) + 1
+    }));
+  };
+
+  const removeFromCart = (bowlId: number) => {
+    setCart(prev => {
+      const newCart = { ...prev };
+      if (newCart[bowlId] > 1) {
+        newCart[bowlId]--;
+      } else {
+        delete newCart[bowlId];
+      }
+      return newCart;
+    });
+  };
+
+  const getTotalItems = () => {
+    return Object.values(cart).reduce((sum, count) => sum + count, 0);
+  };
+
+  const getTotalPrice = () => {
+    return Object.entries(cart).reduce((total, [bowlId, count]) => {
+      const bowl = bowls.find(b => b.id === parseInt(bowlId));
+      return total + (bowl ? bowl.price * count : 0);
+    }, 0);
+  };
+
+  const handleCheckout = () => {
+    // This would typically integrate with a payment processor
+    alert(`Checkout - Total: $${getTotalPrice().toFixed(2)} for ${getTotalItems()} items. Payment integration coming soon!`);
+  };
 
   return (
     <div className="min-h-screen pt-16">
@@ -116,13 +164,24 @@ const Services = () => {
           <h1 className="text-5xl font-bold text-gray-800 mb-6">
             Our <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Services</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Delicious, nutritious bowls delivered fresh to your door. Every order makes a difference 
-            in a child's life through our 1:1 donation program.
+            in a child's life through our 1:1 donation program and supports women entrepreneurs.
           </p>
+          <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-6 max-w-2xl mx-auto mb-12 border border-pink-200">
+            <div className="flex items-center justify-center space-x-2 mb-3">
+              <Users className="w-6 h-6 text-pink-600" />
+              <span className="text-lg font-semibold text-pink-800">Women Empowerment Mission</span>
+            </div>
+            <p className="text-pink-700 leading-relaxed">
+              Every meal is lovingly prepared by women entrepreneurs in our community. 
+              By choosing 99 Bowls, you're not just feeding yourself and a child in need – 
+              you're empowering women to build sustainable businesses and support their families.
+            </p>
+          </div>
 
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -138,6 +197,55 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Order Cart Summary */}
+      {getTotalItems() > 0 && (
+        <div className="fixed top-20 right-4 z-40">
+          <Card className="w-64 bg-white/95 backdrop-blur-sm shadow-xl">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg flex items-center justify-between">
+                Cart ({getTotalItems()})
+                <span className="text-orange-500">${getTotalPrice().toFixed(2)}</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-0">
+              {Object.entries(cart).map(([bowlId, count]) => {
+                const bowl = bowls.find(b => b.id === parseInt(bowlId));
+                return bowl ? (
+                  <div key={bowlId} className="flex justify-between items-center mb-2 text-sm">
+                    <span className="truncate">{bowl.name}</span>
+                    <div className="flex items-center space-x-2">
+                      <button 
+                        onClick={() => removeFromCart(parseInt(bowlId))}
+                        className="w-6 h-6 bg-red-100 text-red-600 rounded-full text-xs hover:bg-red-200"
+                      >
+                        -
+                      </button>
+                      <span>{count}</span>
+                      <button 
+                        onClick={() => addToCart(parseInt(bowlId))}
+                        className="w-6 h-6 bg-green-100 text-green-600 rounded-full text-xs hover:bg-green-200"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                ) : null;
+              })}
+              <Button 
+                onClick={handleCheckout}
+                className="w-full mt-3 bg-gradient-to-r from-orange-500 to-red-500 hover:shadow-lg"
+              >
+                Checkout Now
+              </Button>
+              <div className="text-xs text-center text-green-600 mt-2 flex items-center justify-center">
+                <Heart className="w-3 h-3 mr-1" />
+                +{getTotalItems()} meals donated
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
 
       {/* Menu Section */}
       <section className="py-20 bg-white">
@@ -207,15 +315,29 @@ const Services = () => {
                     <span className="text-2xl font-bold text-orange-500">${bowl.price}</span>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-[1.02] flex items-center justify-center group">
-                    Add to Cart
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  <div className="flex space-x-2">
+                    <Button 
+                      onClick={() => addToCart(bowl.id)}
+                      className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+                    >
+                      Add to Cart
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                    {cart[bowl.id] && (
+                      <div className="flex items-center bg-gray-100 rounded-full px-3">
+                        <span className="text-sm font-medium">{cart[bowl.id]}</span>
+                      </div>
+                    )}
+                  </div>
                   
-                  <div className="mt-3 text-center">
+                  <div className="mt-3 flex justify-between text-center">
                     <div className="inline-flex items-center space-x-1 text-sm text-green-600 bg-green-50 px-3 py-1 rounded-full">
                       <Heart className="w-3 h-3" />
                       <span>+1 meal donated</span>
+                    </div>
+                    <div className="inline-flex items-center space-x-1 text-sm text-pink-600 bg-pink-50 px-3 py-1 rounded-full">
+                      <Users className="w-3 h-3" />
+                      <span>Women-made</span>
                     </div>
                   </div>
                 </div>
@@ -232,40 +354,46 @@ const Services = () => {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               How It <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Works</span>
             </h2>
-            <p className="text-xl text-gray-600">Simple steps to make a difference</p>
+            <p className="text-xl text-gray-600">Simple steps to make a triple impact</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               {
                 step: '1',
                 title: 'Choose Your Bowl',
-                description: 'Select from our menu of fresh, healthy bowls crafted with love.',
+                description: 'Select from our menu of fresh, healthy bowls crafted with love by women entrepreneurs.',
                 icon: '🥣',
               },
               {
                 step: '2',
-                title: 'Place Your Order',
-                description: 'Complete your order and we\'ll prepare your meal with fresh ingredients.',
-                icon: '📱',
+                title: 'Support Women',
+                description: 'Your order directly supports women-owned businesses in our community.',
+                icon: '👩‍🍳',
               },
               {
                 step: '3',
-                title: 'Make an Impact',
-                description: 'We deliver to you AND donate an identical meal to a child in need.',
+                title: 'Feed a Child',
+                description: 'We donate an identical meal to a child in need through our 1:1 program.',
                 icon: '❤️',
+              },
+              {
+                step: '4',
+                title: 'Enjoy & Impact',
+                description: 'Receive your fresh meal knowing you\'ve made a triple positive impact.',
+                icon: '🌟',
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="text-center bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
                   {item.step}
                 </div>
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                <h3 className="text-lg font-bold text-gray-800 mb-3">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -276,19 +404,19 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Order?
+            Ready to Make an Impact?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Join thousands of customers who are making a difference with every meal. 
-            Order now and help us feed children in need.
+            Join thousands of customers creating positive change with every meal. 
+            Feed yourself, empower women, and help children – all in one order.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-orange-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <Button className="bg-white text-orange-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
               Start Your Order
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-orange-500 transition-all duration-300">
-              View Full Menu
-            </button>
+            </Button>
+            <Button variant="outline" className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-orange-500 transition-all duration-300">
+              Learn Our Story
+            </Button>
           </div>
         </div>
       </section>
