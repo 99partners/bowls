@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,8 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Building2, TrendingUp, Users, Award, LogIn } from 'lucide-react';
-import LoginForm from '../components/LoginForm';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Building2, TrendingUp, Users, Award } from 'lucide-react';
 
 const Contact = () => {
   const [activeTab, setActiveTab] = useState('contact');
@@ -28,13 +26,13 @@ const Contact = () => {
     message: ''
   });
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = (e) => {
     e.preventDefault();
     console.log('Contact form submitted:', contactForm);
     // Add form submission logic here
   };
 
-  const handleFranchiseSubmit = (e: React.FormEvent) => {
+  const handleFranchiseSubmit = (e) => {
     e.preventDefault();
     console.log('Franchise form submitted:', franchiseForm);
     // Add franchise form submission logic here
@@ -121,16 +119,12 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Forms and Login Section */}
+          {/* Forms Section */}
           <div className="lg:col-span-2">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="contact">General Inquiry</TabsTrigger>
                 <TabsTrigger value="franchise">Franchise</TabsTrigger>
-                <TabsTrigger value="login" className="flex items-center gap-2">
-                  <LogIn className="w-4 h-4" />
-                  Login
-                </TabsTrigger>
               </TabsList>
 
               {/* Contact Form */}
@@ -312,13 +306,6 @@ const Contact = () => {
                       </CardContent>
                     </Card>
                   </div>
-                </div>
-              </TabsContent>
-
-              {/* Login Section */}
-              <TabsContent value="login">
-                <div className="flex justify-center">
-                  <LoginForm />
                 </div>
               </TabsContent>
             </Tabs>

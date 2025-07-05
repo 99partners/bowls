@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart } from 'lucide-react';
+import logo from '../assets/Bowls.png'; // Adjust the path as necessary
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,13 +32,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Heart className="w-5 h-5 text-white" />
-              </div>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-              99 Bowls
+            <img src={logo || "/placeholder.svg"} alt="Bowls Logo" className="h-20 w-auto object-contain" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent  group-hover:from-green-600 group-hover:to-orange-500">
+              Bowls
             </span>
           </Link>
 
