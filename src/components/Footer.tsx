@@ -1,19 +1,27 @@
-
-import { Heart, Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import {
+  Heart,
+  Facebook,
+  Twitter,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import logo from "../assets/Bowls.png"; // Adjust the path as necessary
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
   ];
 
   const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -23,15 +31,18 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
-                <Heart className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                99 Bowls
+              <img
+                src={logo || "/placeholder.svg"}
+                alt="Bowls Logo"
+                className="h-12 w-auto object-contain sm:h-16"
+              />
+              <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
+                Bowls
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Nourishing communities, one bowl at a time. For every order you place, we donate a meal to children in need.
+              Nourishing communities, one bowl at a time. For every order you
+              place, we donate a meal to children in need.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -87,7 +98,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Our Mission</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Creating a world where good food brings people together and no child goes hungry.
+              Creating a world where good food brings people together and no
+              child goes hungry.
             </p>
             <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 p-4 rounded-lg border border-orange-500/30">
               <p className="text-orange-400 text-sm font-medium">
@@ -99,13 +111,20 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 99 Bowls. All rights reserved. Made with ❤️ for a better world.
+            © 2024 99 Bowls. All rights reserved. Made with ❤️ for a better
+            world.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300"
+            >
               Terms of Service
             </a>
           </div>
