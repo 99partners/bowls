@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, TrendingUp, Users, Award } from 'lucide-react';
 
+
 const Franchise = () => {
   const [franchiseForm, setFranchiseForm] = useState({
     name: '',

@@ -1,5 +1,5 @@
-
 import { Heart, Users, Award, Target, Globe, Utensils } from 'lucide-react';
+import { useEffect } from 'react';
 
 const About = () => {
   const values = [

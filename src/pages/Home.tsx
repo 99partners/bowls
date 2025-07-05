@@ -3,6 +3,7 @@ import { ArrowRight, Heart, Users, Utensils, Star, Award, Globe } from 'lucide-r
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+
 const Home = () => {
   const [counters, setCounters] = useState({
     meals: 0,
