@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Check,
   Clock,
@@ -8,7 +9,6 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,9 +23,9 @@ const Services = () => {
   const [cart, setCart] = useState<{ [key: number]: number }>({});
 
   const categories = [
-    { id: "all", name: "All Vegetarian Bowls" },
-    { id: "rice", name: "Vegetarian Rice Bowls" },
-    { id: "salad", name: "Fresh Salad Bowls" },
+    { id: "all", name: "All Bowls" },
+    { id: "rice", name: "Rice Bowls" },
+    { id: "salad", name: "Salad Bowls" },
     { id: "fruit", name: "Fruit Bowls" },
   ];
 
@@ -36,7 +36,7 @@ const Services = () => {
       category: "rice",
       price: 12.99,
       image:
-        "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
       description:
         "Grilled tofu with teriyaki sauce, steamed rice, broccoli, and carrots - 100% vegetarian",
       rating: 4.8,
@@ -49,7 +49,7 @@ const Services = () => {
       category: "rice",
       price: 11.99,
       image:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
       description:
         "Seasoned rice with grilled vegetables, feta cheese, olives, and tzatziki - vegetarian delight",
       rating: 4.7,
@@ -62,7 +62,7 @@ const Services = () => {
       category: "salad",
       price: 9.99,
       image:
-        "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=400&fit=crop",
       description:
         "Fresh romaine lettuce, parmesan cheese, croutons, and vegetarian caesar dressing",
       rating: 4.6,
@@ -75,7 +75,7 @@ const Services = () => {
       category: "fruit",
       price: 8.99,
       image:
-        "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=400&fit=crop",
       description:
         "Mixed seasonal fruits with honey drizzle and granola - naturally vegetarian and refreshing",
       rating: 4.9,
@@ -88,7 +88,7 @@ const Services = () => {
       category: "salad",
       price: 13.99,
       image:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
       description:
         "Quinoa, mixed greens, roasted chickpeas, avocado, and tahini dressing - protein-rich vegetarian",
       rating: 4.8,
@@ -101,7 +101,7 @@ const Services = () => {
       category: "rice",
       price: 14.99,
       image:
-        "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
       description:
         "Jasmine rice, stir-fried vegetables, marinated tofu, and ginger soy sauce - vegetarian fusion",
       rating: 4.7,
@@ -183,7 +183,6 @@ const Services = () => {
   };
 
   const handleCheckout = () => {
-    // This would typically integrate with a payment processor
     alert(
       `Checkout - Total: $${getTotalPrice().toFixed(
         2
@@ -204,25 +203,25 @@ const Services = () => {
           <h1 className="text-5xl font-bold text-gray-800 mb-6">
             Our{" "}
             <span className="bg-gradient-to-r from-green-500 to-orange-500 bg-clip-text text-transparent">
-              Vegetarian Services
+              Services
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Delicious, nutritious vegetarian bowls delivered fresh to your door.
-            Every order makes a difference in a child's life through our 1:1
+            Delicious, nutritious bowls delivered fresh to your door.
+            Every order makes a difference in a needy people's life through our 1:1
             donation program and supports women entrepreneurs.
           </p>
           <div className="bg-gradient-to-r from-green-100 to-orange-100 rounded-2xl p-6 max-w-2xl mx-auto mb-12 border border-green-200">
             <div className="flex items-center justify-center space-x-2 mb-3">
               <Users className="w-6 h-6 text-green-600" />
               <span className="text-lg font-semibold text-green-800">
-                Women Empowerment + Vegetarian Mission
+                Women Empowerment + Donate
               </span>
             </div>
             <p className="text-green-700 leading-relaxed">
-              Every vegetarian meal is lovingly prepared by women entrepreneurs
+              Every meal is lovingly prepared by women entrepreneurs
               in our community. By choosing 99 Bowls, you're not just enjoying
-              healthy vegetarian food and feeding a child in need – you're
+              healthy vegetarian food and feeding a people in need – you're
               empowering women to build sustainable businesses while promoting
               plant-based nutrition.
             </p>
@@ -309,15 +308,15 @@ const Services = () => {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Our{" "}
               <span className="bg-gradient-to-r from-green-500 to-orange-500 bg-clip-text text-transparent">
-                Vegetarian Menu
+                Menu
               </span>
             </h2>
             <p className="text-xl text-gray-600">
-              Choose from our selection of fresh, healthy vegetarian bowls
+              Choose from our selection of fresh, healthy bowls
             </p>
             <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mt-4 text-sm">
               <span>🌿</span>
-              <span>All ingredients are 100% vegetarian</span>
+              <span>All ingredients are 100% Healthy</span>
               <span>🌿</span>
             </div>
           </div>
@@ -344,7 +343,7 @@ const Services = () => {
             {filteredBowls.map((bowl) => (
               <div
                 key={bowl.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group transition-all duration-500 transform hover:-translate-y-2"
               >
                 {bowl.popular && (
                   <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -356,16 +355,16 @@ const Services = () => {
                   🌱 Vegetarian
                 </div>
 
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4">
                   <img
                     src={bowl.image}
                     alt={bowl.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 text-center">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-bold text-gray-800">
                       {bowl.name}
@@ -392,10 +391,10 @@ const Services = () => {
                     </span>
                   </div>
 
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 justify-center">
                     <Button
                       onClick={() => addToCart(bowl.id)}
-                      className="flex-1 bg-gradient-to-r from-green-500 to-orange-500 text-white hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+                      className="flex-1 bg-gradient-to-r from-green-500 to-orange-500 text-white hover:shadow-lg transition-all duration-300 hover:scale-[1.02] max-w-xs"
                     >
                       Add to Cart
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -412,7 +411,7 @@ const Services = () => {
                   <div className="mt-3 flex justify-between text-center">
                     <div className="inline-flex items-center space-x-1 text-sm text-green-600 bg-green-50 px-3 py-1 rounded-full">
                       <Heart className="w-3 h-3" />
-                      <span>+1 vegetarian meal donated</span>
+                      <span>+1 meal donated</span>
                     </div>
                     <div className="inline-flex items-center space-x-1 text-sm text-pink-600 bg-pink-50 px-3 py-1 rounded-full">
                       <Users className="w-3 h-3" />
@@ -459,7 +458,7 @@ const Services = () => {
               },
               {
                 step: "3",
-                title: "Donate to poor",
+                title: "Donate to Needy People",
                 description:
                   "We donate an identical vegetarian meal to a poor in need through our 1:1 program.",
                 icon: "❤️",
@@ -496,16 +495,15 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-r from-green-500 to-orange-500">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Make an Impact with Vegetarian Food?
+            Ready to Make an Impact with Food?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Join thousands of customers creating positive change with every
-            vegetarian meal. Feed yourself, empower women, and help children –
+            Join thousands of customers creating positive change with every meal. Feed yourself, empower women, and help needy people –
             all in one order.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-white text-green-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
-              Start Your Vegetarian Order
+              Start Your Order
             </Button>
           </div>
         </div>
