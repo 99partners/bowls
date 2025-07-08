@@ -1,8 +1,6 @@
-
 import { ArrowRight, Heart, Users, Utensils, Star, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
 
 const Home = () => {
   const [counters, setCounters] = useState({
@@ -40,21 +38,21 @@ const Home = () => {
     {
       name: 'Rice Bowls',
       description: 'Hearty, nutritious rice bowls with fresh ingredients',
-      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop',
       price: 'From $8.99',
       popular: true,
     },
     {
       name: 'Salad Bowls',
       description: 'Fresh, crispy salads packed with vitamins',
-      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop',
       price: 'From $7.99',
       popular: false,
     },
     {
       name: 'Fruit Bowls',
       description: 'Sweet, refreshing fruit combinations',
-      image: 'https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=400&fit=crop',
       price: 'From $6.99',
       popular: false,
     },
@@ -102,7 +100,7 @@ const Home = () => {
             
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               Delicious bowls delivered to your door. For every bowl you order, 
-              we donate one to children in need. Good food, great cause.
+              we donate one to People in need. Good food, great cause.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -162,7 +160,7 @@ const Home = () => {
             {bowlCategories.map((category, index) => (
               <div
                 key={category.name}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative transition-all duration-500 transform hover:-translate-y-2"
               >
                 {category.popular && (
                   <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -170,16 +168,16 @@ const Home = () => {
                   </div>
                 )}
                 
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
                 </div>
                 
-                <div className="p-6">
+                <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{category.name}</h3>
                   <p className="text-gray-600 mb-4">{category.description}</p>
                   <div className="flex justify-between items-center">
