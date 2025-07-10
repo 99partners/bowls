@@ -1,4 +1,6 @@
 
+"use client"
+
 import { useState } from "react";
 import {
   Check,
@@ -14,10 +16,10 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import fruitbowl from '../assets/fruitbowl.png'; // Adjust path as necessary
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -26,88 +28,164 @@ const Services = () => {
   const categories = [
     { id: "all", name: "All Bowls" },
     { id: "rice", name: "Rice Bowls" },
-    { id: "salad", name: "Salad Bowls" },
+    { id: "sprout", name: "Sprout Bowls" },
     { id: "fruit", name: "Fruit Bowls" },
   ];
 
   const bowls = [
     {
       id: 1,
-      name: "Teriyaki Tofu Bowl",
+      name: "Paneer Tikka Rice",
       category: "rice",
-      price: 12.99,
-      image:
-        "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
-      description:
-        "Grilled tofu with teriyaki sauce, steamed rice, broccoli, and carrots - 100% vegetarian",
-      rating: 4.8,
+      price: 249,
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
+      description: "Spicy paneer tikka with fragrant basmati rice, grilled vegetables, and a creamy tomato sauce - 100% vegetarian",
+      rating: 4.9,
       popular: true,
       prep_time: "15-20 min",
     },
     {
       id: 2,
-      name: "Mediterranean Rice Bowl",
+      name: "Mexican Fried Rice",
       category: "rice",
-      price: 11.99,
-      image:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
-      description:
-        "Seasoned rice with grilled vegetables, feta cheese, olives, and tzatziki - vegetarian delight",
+      price: 229,
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
+      description: "Zesty fried rice with bell peppers, sweet corn, black beans, and a tangy salsa - a vegetarian Mexican delight",
       rating: 4.7,
-      popular: false,
+      popular: true,
       prep_time: "12-18 min",
     },
     {
       id: 3,
-      name: "Caesar Salad Bowl",
-      category: "salad",
-      price: 9.99,
-      image:
-        "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=400&fit=crop",
-      description:
-        "Fresh romaine lettuce, parmesan cheese, croutons, and vegetarian caesar dressing",
+      name: "Dal Fry-Jeera Rice",
+      category: "rice",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
+      description: "Comforting dal fry with cumin-spiced jeera rice, served with fresh onions and a hint of ghee - pure vegetarian comfort",
       rating: 4.6,
       popular: false,
-      prep_time: "8-12 min",
+      prep_time: "15-20 min",
     },
     {
       id: 4,
-      name: "Rainbow Fruit Bowl",
+      name: "Rajma-Chawal",
+      category: "rice",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
+      description: "Hearty red kidney beans in a spiced tomato gravy, paired with fluffy basmati rice - a vegetarian North Indian classic",
+      rating: 4.8,
+      popular: false,
+      prep_time: "18-22 min",
+    },
+    {
+      id: 5,
+      name: "Dal Makhani Rice",
+      category: "rice",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
+      description: "Creamy dal makhani with black lentils and spices, served with aromatic basmati rice - rich vegetarian indulgence",
+      rating: 4.7,
+      popular: false,
+      prep_time: "18-22 min",
+    },
+    {
+      id: 6,
+      name: "Punjabi Chole-Rice",
+      category: "rice",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
+      description: "Spicy Punjabi chole with chickpeas in a tangy masala, paired with steamed basmati rice - vegetarian soul food",
+      rating: 4.6,
+      popular: false,
+      prep_time: "15-20 min",
+    },
+    {
+      id: 7,
+      name: "Brussels Sprouts Grain",
+      category: "sprout",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
+      description: "Roasted Brussels sprouts with quinoa, mixed greens, and a lemon-tahini dressing - wholesome vegetarian nutrition",
+      rating: 4.5,
+      popular: false,
+      prep_time: "10-15 min",
+    },
+    {
+      id: 8,
+      name: "Sattvik Buddha Bowl",
+      category: "sprout",
+      price: 249,
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
+      description: "Sprouted moong, brown rice, roasted vegetables, and a sattvik yogurt dressing - pure vegetarian bliss",
+      rating: 4.9,
+      popular: true,
+      prep_time: "12-15 min",
+    },
+    {
+      id: 9,
+      name: "Usal Power Bowl",
+      category: "sprout",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
+      description: "Spicy Maharashtrian usal with sprouted lentils, quinoa, and fresh herbs - a vegetarian protein powerhouse",
+      rating: 4.7,
+      popular: true,
+      prep_time: "10-15 min",
+    },
+    {
+      id: 10,
+      name: "Chana Math Mix",
+      category: "sprout",
+      price: 199,
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
+      description: "Sprouted chana and math beans with cucumber, tomatoes, and a tangy chaat masala - light vegetarian refreshment",
+      rating: 4.6,
+      popular: false,
+      prep_time: "10-12 min",
+    },
+    {
+      id: 11,
+      name: "Tropical Bliss Bowl",
       category: "fruit",
-      price: 8.99,
-      image:
-        "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=400&fit=crop",
-      description:
-        "Mixed seasonal fruits with honey drizzle and granola - naturally vegetarian and refreshing",
+      price: 399,
+      image: fruitbowl,
+      description: "Exotic mango, pineapple, and kiwi with a coconut yogurt drizzle and granola - a tropical vegetarian delight",
       rating: 4.9,
       popular: true,
       prep_time: "5-10 min",
     },
     {
-      id: 5,
-      name: "Quinoa Power Bowl",
-      category: "salad",
-      price: 13.99,
-      image:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",
-      description:
-        "Quinoa, mixed greens, roasted chickpeas, avocado, and tahini dressing - protein-rich vegetarian",
+      id: 12,
+      name: "Rainbow Fruit Medley",
+      category: "fruit",
+      price: 299,
+      image: fruitbowl,
+      description: "Colorful mix of seasonal fruits like strawberries, bananas, and oranges with a honey-lime dressing - vegetarian refreshment",
       rating: 4.8,
       popular: true,
-      prep_time: "15-20 min",
+      prep_time: "5-10 min",
     },
     {
-      id: 6,
-      name: "Asian Fusion Bowl",
-      category: "rice",
-      price: 14.99,
-      image:
-        "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop",
-      description:
-        "Jasmine rice, stir-fried vegetables, marinated tofu, and ginger soy sauce - vegetarian fusion",
+      id: 13,
+      name: "Exotic Fusion",
+      category: "fruit",
+      price: 599,
+      image: fruitbowl,
+      description: "Premium dragon fruit, passion fruit, and lychee with a chia seed topping - a luxurious vegetarian treat",
+      rating: 4.9,
+      popular: false,
+      prep_time: "8-10 min",
+    },
+    {
+      id: 14,
+      name: "Mango Tango",
+      category: "fruit",
+      price: 299,
+      image: fruitbowl,
+      description: "Juicy mango chunks with blueberries and a mint-yogurt drizzle - a vibrant vegetarian fruit bowl",
       rating: 4.7,
       popular: false,
-      prep_time: "18-22 min",
+      prep_time: "5-10 min",
     },
   ];
 
@@ -115,14 +193,12 @@ const Services = () => {
     {
       icon: Heart,
       title: "1:1 Donation Promise",
-      description:
-        "Every vegetarian bowl you order donates one to a child in need",
+      description: "Every vegetarian bowl you order donates one to a person in need",
     },
     {
       icon: Users,
       title: "Women Empowerment",
-      description:
-        "All our vegetarian meals are prepared by women entrepreneurs we support",
+      description: "All our vegetarian meals are prepared by women entrepreneurs we support",
     },
     {
       icon: Clock,
@@ -132,19 +208,17 @@ const Services = () => {
     {
       icon: Truck,
       title: "Free Delivery",
-      description: "No delivery fees on orders over $15",
+      description: "No delivery fees on orders over ₹500",
     },
     {
       icon: Check,
       title: "Fresh Vegetarian Ingredients",
-      description:
-        "Locally sourced, organic vegetarian ingredients when possible",
+      description: "Locally sourced, organic vegetarian ingredients when possible",
     },
     {
       icon: Zap,
       title: "Community Impact",
-      description:
-        "Supporting local women-owned businesses and promoting vegetarian nutrition",
+      description: "Supporting local women-owned businesses and promoting vegetarian nutrition",
     },
   ];
 
@@ -185,7 +259,7 @@ const Services = () => {
 
   const handleCheckout = () => {
     alert(
-      `Checkout - Total: $${getTotalPrice().toFixed(
+      `Checkout - Total: ₹${getTotalPrice().toFixed(
         2
       )} for ${getTotalItems()} items. Payment integration coming soon!`
     );
@@ -209,7 +283,7 @@ const Services = () => {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Delicious, nutritious bowls delivered fresh to your door.
-            Every order makes a difference in a needy people's life through our 1:1
+            Every order makes a difference in a person's life through our 1:1
             donation program and supports women entrepreneurs.
           </p>
           <div className="bg-gradient-to-r from-green-100 to-orange-100 rounded-2xl p-6 max-w-2xl mx-auto mb-12 border border-green-200">
@@ -222,7 +296,7 @@ const Services = () => {
             <p className="text-green-700 leading-relaxed">
               Every meal is lovingly prepared by women entrepreneurs
               in our community. By choosing 99 Bowls, you're not just enjoying
-              healthy vegetarian food and feeding a people in need – you're
+              healthy vegetarian food and feeding a person in need – you're
               empowering women to build sustainable businesses while promoting
               plant-based nutrition.
             </p>
@@ -256,7 +330,7 @@ const Services = () => {
               <CardTitle className="text-lg flex items-center justify-between">
                 Cart ({getTotalItems()})
                 <span className="text-green-500">
-                  ${getTotalPrice().toFixed(2)}
+                  ₹{getTotalPrice().toFixed(2)}
                 </span>
               </CardTitle>
             </CardHeader>
@@ -313,11 +387,11 @@ const Services = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600">
-              Choose from our selection of fresh, healthy bowls
+              Choose from our selection of fresh, healthy vegetarian bowls
             </p>
             <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mt-4 text-sm">
               <span>🌿</span>
-              <span>All ingredients are 100% Healthy</span>
+              <span>All ingredients are 100% Vegetarian</span>
               <span>🌿</span>
             </div>
           </div>
@@ -389,7 +463,7 @@ const Services = () => {
                       <span>{bowl.prep_time}</span>
                     </div>
                     <span className="text-2xl font-bold text-green-500">
-                      ${bowl.price}
+                      ₹{bowl.price}
                     </span>
                   </div>
 
@@ -447,29 +521,25 @@ const Services = () => {
               {
                 step: "1",
                 title: "Choose Your Vegetarian Bowl",
-                description:
-                  "Select from our menu of fresh, healthy vegetarian bowls crafted with love by women entrepreneurs.",
+                description: "Select from our menu of fresh, healthy vegetarian bowls crafted with love by women entrepreneurs.",
                 icon: "🥗",
               },
               {
                 step: "2",
                 title: "Women Empowerment",
-                description:
-                  "Your order directly supports women-owned businesses preparing delicious vegetarian meals.",
+                description: "Your order directly supports women-owned businesses preparing delicious vegetarian meals.",
                 icon: "👩‍🍳",
               },
               {
                 step: "3",
                 title: "Donate to Needy People",
-                description:
-                  "We donate an identical vegetarian meal to a poor in need through our 1:1 program.",
+                description: "We donate an identical vegetarian meal to a person in need through our 1:1 program.",
                 icon: "❤️",
               },
               {
                 step: "4",
                 title: "Enjoy & Impact",
-                description:
-                  "Receive your fresh vegetarian meal knowing you've made a triple positive impact.",
+                description: "Receive your fresh vegetarian meal knowing you've made a triple positive impact.",
                 icon: "🌟",
               },
             ].map((item, index) => (
