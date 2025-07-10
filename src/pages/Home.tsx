@@ -177,7 +177,7 @@ const Index = () => {
           }
 
           .animate-gentle-rotate {
-            animation: gentle-rotate 10s linear infinite;
+            animation: gentle-rotate 20s linear infinite;
           }
         `}</style>
       </section>
