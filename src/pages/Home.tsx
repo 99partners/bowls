@@ -1,3 +1,4 @@
+
 "use client"
 
 import { ArrowRight, Heart, Users, Utensils, Star, Award, Globe } from 'lucide-react';
@@ -87,8 +88,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10" />
         
         {/* Floating Bowl Image */}
-        <div className="absolute top-16 right-4 sm:right-8 md:right-12 lg:right-16 z-10 sm:left-1/2 sm:-translate-x-1/2 lg:left-auto lg:translate-x-0">
-          <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] max-w-full">
+        <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-6 lg:right-8 z-10">
+          <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] max-w-full">
             <img
               src={fruitbowl}
               alt="Fresh fruit bowl"
