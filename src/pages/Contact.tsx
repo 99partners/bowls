@@ -139,7 +139,7 @@ const Contact = () => {
                       value={contactForm.message}
                       onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                       required
-                    />
+                    />n
                   </div>
                   <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
                     Send Message
