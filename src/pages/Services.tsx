@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   Check,
@@ -355,11 +356,12 @@ const Services = () => {
                   🌱 Vegetarian
                 </div>
 
-                <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4">
+                <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4 rounded-full">
                   <img
                     src={bowl.image}
                     alt={bowl.name}
                     className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
                 </div>

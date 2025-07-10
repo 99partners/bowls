@@ -193,40 +193,38 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {bowlCategories.map((category, index) => (
               <div
                 key={category.name}
-                className="group relative transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2"
               >
                 {category.popular && (
-                  <div className="absolute top-3 left-3 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                     Most Popular
                   </div>
                 )}
                 
-                <div className="relative overflow-hidden w-full h-40 sm:h-48 mx-auto mb-4">
+                <div className="relative overflow-hidden h-32 w-32 sm:h-40 sm:w-40 aspect-square mx-auto mb-2 sm:mb-3 rounded-full">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
                 </div>
                 
-                <div className="p-4 sm:p-6 text-center">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{category.name}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{category.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-base sm:text-lg font-semibold text-orange-500">{category.price}</span>
-                    <button 
-                      className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      aria-label={`Order ${category.name}`}
-                    >
-                      Order Now
-                    </button>
-                  </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-1 sm:mb-2">{category.name}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">{category.description}</p>
+                <div className="flex justify-between items-center w-full max-w-xs">
+                  <span className="text-sm sm:text-base font-semibold text-orange-500">{category.price}</span>
+                  <button 
+                    className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                    aria-label={`Order ${category.name}`}
+                  >
+                    Order Now
+                  </button>
                 </div>
               </div>
             ))}
