@@ -1,4 +1,3 @@
-
 "use client"
 
 import { ArrowRight, Heart, Users, Utensils, Star, Award, Globe } from 'lucide-react';
@@ -43,21 +42,21 @@ const Index = () => {
       name: 'Rice Bowls',
       description: 'Hearty, nutritious rice bowls with fresh ingredients',
       image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop',
-      price: 'From $8.99',
+      price: 'From ₹199',
       popular: true,
     },
     {
-      name: 'Salad Bowls',
-      description: 'Fresh, crispy salads packed with vitamins',
+      name: 'Sprout Bowls',
+      description: 'Fresh, protein-rich sprout bowls packed with vitamins',
       image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop',
-      price: 'From $7.99',
+      price: 'From ₹199',
       popular: false,
     },
     {
       name: 'Fruit Bowls',
       description: 'Sweet, refreshing fruit combinations',
-      image: '/lovable-uploads/533266f1-c2af-4a2a-ad1c-a1e5fcd41ddc.png',
-      price: 'From $6.99',
+      image: fruitbowl,
+      price: 'From ₹299',
       popular: false,
     },
   ];
@@ -117,7 +116,7 @@ const Index = () => {
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
                 Delicious bowls delivered to your door. For every bowl you order, 
-                we donate one to People in need. Good food, great cause.
+                we donate one to people in need. Good food, great cause.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -190,7 +189,7 @@ const Index = () => {
               Our <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Bowl Collection</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl sm:max-w-2xl mx-auto">
-              Fresh, healthy, and delicious bowls crafted with love and delivered with purpose
+              Fresh, healthy, and delicious vegetarian bowls crafted with love and delivered with purpose
             </p>
           </div>
 
@@ -220,12 +219,13 @@ const Index = () => {
                 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">{category.description}</p>
                 <div className="flex justify-between items-center w-full max-w-xs">
                   <span className="text-sm sm:text-base font-semibold text-orange-500">{category.price}</span>
-                  <button 
+                  <Link
+                    to="/services"
                     className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
                     aria-label={`Order ${category.name}`}
                   >
                     Order Now
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -243,7 +243,7 @@ const Index = () => {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 At 99 Bowls, we believe that good food should be accessible to everyone. 
-                That's why for every bowl you order, we donate an identical meal to children 
+                That's why for every bowl you order, we donate an identical meal to people 
                 in need through our partnership with local charities.
               </p>
               
@@ -288,7 +288,7 @@ const Index = () => {
                 />
                 <div className="text-center">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">Making a Difference</h3>
-                  <p className="text-sm sm:text-base text-gray-600">Together, we're building a world where no child goes hungry</p>
+                  <p className="text-sm sm:text-base text-gray-600">Together, we're building a world where no one goes hungry</p>
                 </div>
               </div>
             </div>
@@ -334,12 +334,12 @@ const Index = () => {
             Ready to Make a Difference?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8">
-            Order your favorite bowl today and help us feed children in need. 
+            Order your favorite vegetarian bowl today and help us feed people in need. 
             Every order counts, every meal matters.
           </p>
           <Link
             to="/services"
-            className="inline-flex items-center bg-white text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center bg-white text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             aria-label="Start ordering"
           >
             Start Ordering

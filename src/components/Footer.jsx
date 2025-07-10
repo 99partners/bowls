@@ -111,8 +111,8 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 99 Bowls. All rights reserved. Made with <span role="img" aria-label="love">❤️</span> for a better
-            world.
+            © 2025 99 Bowls. All rights reserved. Made with{" "}
+            <Heart className="inline-block w-4 h-4 text-red-500" /> for a better world.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
@@ -133,3 +133,5 @@ const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;
