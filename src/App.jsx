@@ -13,7 +13,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,7 +32,6 @@ const App = () => (
               <Route path="/franchise" element={<Franchise />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
-              
             </Routes>
           </main>
           <Footer />
