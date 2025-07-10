@@ -1,8 +1,11 @@
+"use client"
+
 import { ArrowRight, Heart, Users, Utensils, Star, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import fruitbowl from '../assets/fruitbowl.png'; // Adjust the path as necessary
 
-const Home = () => {
+const Index = () => {
   const [counters, setCounters] = useState({
     meals: 0,
     customers: 0,
@@ -52,7 +55,7 @@ const Home = () => {
     {
       name: 'Fruit Bowls',
       description: 'Sweet, refreshing fruit combinations',
-      image: 'https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=400&h=400&fit=crop',
+      image: '/lovable-uploads/533266f1-c2af-4a2a-ad1c-a1e5fcd41ddc.png',
       price: 'From $6.99',
       popular: false,
     },
@@ -79,110 +82,148 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-red-50" />
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10" />
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-200 mb-8">
-              <Heart className="w-4 h-4 text-red-500" />
-              <span className="text-sm font-medium text-gray-700">Order One, Donate One</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Nourish
-              </span>
-              <br />
-              <span className="text-gray-800">Communities</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Delicious bowls delivered to your door. For every bowl you order, 
-              we donate one to People in need. Good food, great cause.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link
-                to="/services"
-                className="group bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-              >
-                Order Now
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/about"
-                className="group border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300 flex items-center justify-center"
-              >
-                Learn More
-              </Link>
-            </div>
-
-            {/* Impact Counters */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-bold text-orange-500 mb-2">
-                  {counters.meals.toLocaleString()}+
-                </div>
-                <div className="text-gray-600 font-medium">Meals Delivered</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-bold text-red-500 mb-2">
-                  {counters.customers.toLocaleString()}+
-                </div>
-                <div className="text-gray-600 font-medium">Happy Customers</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl font-bold text-green-500 mb-2">
-                  {counters.donations.toLocaleString()}+
-                </div>
-                <div className="text-gray-600 font-medium">Meals Donated</div>
-              </div>
-            </div>
+        {/* Floating Bowl Image */}
+        <div className="absolute top-16 right-4 sm:right-8 md:right-12 lg:right-16 z-10 sm:left-1/2 sm:-translate-x-1/2 lg:left-auto lg:translate-x-0">
+          <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] max-w-full">
+            <img
+              src={fruitbowl}
+              alt="Fresh fruit bowl"
+              className="w-full h-full object-contain gentle-rotate animate-gentle-rotate"
+              loading="lazy"
+            />
           </div>
         </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="animate-fade-in">
+              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-orange-200 mb-6 sm:mb-8">
+                <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
+                <span className="text-xs sm:text-sm font-medium text-gray-700">Order One, Donate One</span>
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  Nourish
+                </span>
+                <br />
+                <span className="text-gray-800">Communities</span>
+              </h1>
+              
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
+                Delicious bowls delivered to your door. For every bowl you order, 
+                we donate one to People in need. Good food, great cause.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
+                <Link
+                  to="/services"
+                  className="group bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                  aria-label="Order now"
+                >
+                  Order Now
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/about"
+                  className="group border-2 border-orange-500 text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300 flex items-center justify-center"
+                  aria-label="Learn more"
+                >
+                  Learn More
+                </Link>
+              </div>
+
+              {/* Impact Counters */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
+                  <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-2">
+                    {counters.meals.toLocaleString()}+
+                  </div>
+                  <div className="text-sm sm:text-base text-gray-600 font-medium">Meals Delivered</div>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
+                  <div className="text-2xl sm:text-3xl font-bold text-red-500 mb-2">
+                    {counters.customers.toLocaleString()}+
+                  </div>
+                  <div className="text-sm sm:text-base text-gray-600 font-medium">Happy Customers</div>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
+                  <div className="text-2xl sm:text-3xl font-bold text-green-500 mb-2">
+                    {counters.donations.toLocaleString()}+
+                  </div>
+                  <div className="text-sm sm:text-base text-gray-600 font-medium">Meals Donated</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right side - space for the floating image */}
+            <div className="hidden lg:block"></div>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes gentle-rotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .animate-gentle-rotate {
+            animation: gentle-rotate 10s linear infinite;
+          }
+        `}</style>
       </section>
 
       {/* Bowl Categories */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
               Our <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Bowl Collection</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl sm:max-w-2xl mx-auto">
               Fresh, healthy, and delicious bowls crafted with love and delivered with purpose
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {bowlCategories.map((category, index) => (
               <div
                 key={category.name}
                 className="group relative transition-all duration-500 transform hover:-translate-y-2"
               >
                 {category.popular && (
-                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-3 left-3 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                     Most Popular
                   </div>
                 )}
                 
-                <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4">
+                <div className="relative overflow-hidden w-full h-40 sm:h-48 mx-auto mb-4">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg" />
                 </div>
                 
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{category.name}</h3>
-                  <p className="text-gray-600 mb-4">{category.description}</p>
+                <div className="p-4 sm:p-6 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{category.name}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{category.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-orange-500">{category.price}</span>
-                    <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <span className="text-base sm:text-lg font-semibold text-orange-500">{category.price}</span>
+                    <button 
+                      className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
+                      aria-label={`Order ${category.name}`}
+                    >
                       Order Now
                     </button>
                   </div>
@@ -194,63 +235,61 @@ const Home = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
                 Our <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Mission</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 At 99 Bowls, we believe that good food should be accessible to everyone. 
                 That's why for every bowl you order, we donate an identical meal to children 
                 in need through our partnership with local charities.
               </p>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <Heart className="w-4 h-4 text-green-500" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500" />
                   </div>
-                  <span className="text-gray-700">1:1 donation ratio for every order</span>
+                  <span className="text-sm sm:text-base text-gray-700">1:1 donation ratio for every order</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Users className="w-4 h-4 text-blue-500" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500" />
                   </div>
-                  <span className="text-gray-700">Supporting local communities</span>
+                  <span className="text-sm sm:text-base text-gray-700">Supporting local communities</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Globe className="w-4 h-4 text-purple-500" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-500" />
                   </div>
-                  <span className="text-gray-700">Sustainable and eco-friendly practices</span>
+                  <span className="text-sm sm:text-base text-gray-700">Sustainable and eco-friendly practices</span>
                 </div>
               </div>
               
               <Link
                 to="/about"
-                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
+                aria-label="Learn more about our impact"
               >
                 Learn More About Our Impact
-                <ArrowRight className="ml-2 w-4 h-4" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-4 sm:h-4" />
               </Link>
             </div>
             
             <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop"
                   alt="Community impact"
-                  className="w-full h-64 object-cover rounded-xl mb-6"
+                  className="w-full h-48 sm:h-64 object-cover rounded-lg mb-4 sm:mb-6"
+                  loading="lazy"
                 />
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    Making a Difference
-                  </h3>
-                  <p className="text-gray-600">
-                    Together, we're building a world where no child goes hungry
-                  </p>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">Making a Difference</h3>
+                  <p className="text-sm sm:text-base text-gray-600">Together, we're building a world where no child goes hungry</p>
                 </div>
               </div>
             </div>
@@ -259,28 +298,30 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
               What Our <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Customers Say</span>
             </h2>
-            <p className="text-xl text-gray-600">Real stories from our amazing community</p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl sm:max-w-2xl mx-auto">
+              Real stories from our amazing community
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex mb-4">
+                <div className="flex mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">"{testimonial.text}"</p>
-                <div className="font-semibold text-gray-800">{testimonial.name}</div>
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">"{testimonial.text}"</p>
+                <div className="text-sm sm:text-base font-semibold text-gray-800">{testimonial.name}</div>
               </div>
             ))}
           </div>
@@ -288,21 +329,22 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
             Ready to Make a Difference?
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8">
             Order your favorite bowl today and help us feed children in need. 
             Every order counts, every meal matters.
           </p>
           <Link
             to="/services"
-            className="inline-flex items-center bg-white text-orange-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center bg-white text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
+            aria-label="Start ordering"
           >
             Start Ordering
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </div>
       </section>
@@ -310,4 +352,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Index;
