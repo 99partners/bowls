@@ -92,10 +92,15 @@ const Index = () => {
             preserveAspectRatio="none"
             className="absolute top-0 right-0 h-full w-[95%]"
           >
-            <path
+            {/* <path
               fill="#FFA500"
               fillOpacity="1"
               d="M200,0 C100,460 240,1480 10,1440 L320,1440 L320,0 Z"
+            ></path> */}
+            <path
+              fill="#FFA500"
+              fillOpacity="1"
+              d="M200,1440 C90,980 240,0 50,0 L320,0 L320,1440 Z"
             ></path>
           </svg>
         </div>
