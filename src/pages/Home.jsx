@@ -13,8 +13,46 @@ const Index = () => {
     donations: 0,
   });
 
+  // useEffect(() => {
+  //   const targetValues = { meals: 12500, customers: 8750, donations: 12500 };
+  //   const duration = 3000;
+  //   const steps = 100;
+  //   const stepTime = duration / steps;
+
+  //   let currentStep = 0;
+  //   const timer = setInterval(() => {
+  //     currentStep++;
+  //     const progress = currentStep / steps;
+
+  //     setCounters({
+  //       meals: Math.floor(targetValues.meals * progress),
+  //       customers: Math.floor(targetValues.customers * progress),
+  //       donations: Math.floor(targetValues.donations * progress),
+  //     });
+
+  //     if (currentStep >= steps) {
+  //       clearInterval(timer);
+  //     }
+  //   }, stepTime);
+
+  //   return () => clearInterval(timer);
+  // }, []);
+
   useEffect(() => {
-    const targetValues = { meals: 12500, customers: 8750, donations: 12500 };
+    // Set a start date (e.g., July 11, 2025)
+    const startDate = new Date("2025-07-11");
+    const currentDate = new Date();
+    const timeDiff = currentDate - startDate;
+    const daysElapsed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    // Base target values with daily increment of 15
+    const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
+    const incrementedValues = {
+      meals: baseValues.meals + daysElapsed * 15,
+      customers: baseValues.customers + daysElapsed * 15,
+      donations: baseValues.donations + daysElapsed * 15,
+    };
+
     const duration = 3000;
     const steps = 100;
     const stepTime = duration / steps;
@@ -25,9 +63,9 @@ const Index = () => {
       const progress = currentStep / steps;
 
       setCounters({
-        meals: Math.floor(targetValues.meals * progress),
-        customers: Math.floor(targetValues.customers * progress),
-        donations: Math.floor(targetValues.donations * progress),
+        meals: Math.floor(incrementedValues.meals * progress),
+        customers: Math.floor(incrementedValues.customers * progress),
+        donations: Math.floor(incrementedValues.donations * progress),
       });
 
       if (currentStep >= steps) {
