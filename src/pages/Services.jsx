@@ -251,7 +251,7 @@ const Services = () => {
       : bowls.filter((bowl) => bowl.category === selectedCategory);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-green-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
