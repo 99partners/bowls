@@ -11,6 +11,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import fruitbowl1 from "../assets/fruitbowl1.png";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -163,7 +164,7 @@ const Services = () => {
       name: "Tropical Bliss Bowl",
       category: "fruit",
       price: 399,
-      image: fallbackImage, // Fallback if fruitbowl.png is missing
+      image: fruitbowl1, // Fallback if fruitbowl.png is missing
       description:
         "Exotic mango, pineapple, and kiwi with a coconut yogurt drizzle and granola - a tropical vegetarian delight",
       rating: 4.9,
@@ -175,7 +176,7 @@ const Services = () => {
       name: "Rainbow Fruit Medley",
       category: "fruit",
       price: 299,
-      image: fallbackImage, // Fallback if fruitbowl.png is missing
+      image: fruitbowl1, // Fallback if fruitbowl.png is missing
       description:
         "Colorful mix of seasonal fruits like strawberries, bananas, and oranges with a honey-lime dressing - vegetarian refreshment",
       rating: 4.8,
@@ -187,7 +188,7 @@ const Services = () => {
       name: "Exotic Fusion",
       category: "fruit",
       price: 599,
-      image: fallbackImage, // Fallback if fruitbowl.png is missing
+      image: fruitbowl1, // Fallback if fruitbowl.png is missing
       description:
         "Premium dragon fruit, passion fruit, and lychee with a chia seed topping - a luxurious vegetarian treat",
       rating: 4.9,
@@ -199,7 +200,7 @@ const Services = () => {
       name: "Mango Tango",
       category: "fruit",
       price: 299,
-      image: fallbackImage, // Fallback if fruitbowl.png is missing
+      image: fruitbowl1, // Fallback if fruitbowl.png is missing
       description:
         "Juicy mango chunks with blueberries and a mint-yogurt drizzle - a vibrant vegetarian fruit bowl",
       rating: 4.7,
@@ -357,9 +358,9 @@ const Services = () => {
                   </div>
                 )}
 
-                <div className="absolute top-4 right-4 z-10 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">
+                {/* <div className="absolute top-4 right-4 z-10 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">
                   🌱 Vegetarian
-                </div>
+                </div> */}
 
                 <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4 rounded-full">
                   <img

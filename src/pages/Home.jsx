@@ -4,6 +4,7 @@ import { ArrowRight, Heart, Users, Star, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.png"; // Adjust path as needed
+import fruitbowl1 from "../assets/fruitbowl1.png";
 
 const Index = () => {
   const [counters, setCounters] = useState({
@@ -57,7 +58,7 @@ const Index = () => {
     {
       name: "Fruit Bowls",
       description: "Sweet, refreshing fruit combinations",
-      image: fruitbowl,
+      image: fruitbowl1,
       price: "From ₹299",
       popular: false,
     },
