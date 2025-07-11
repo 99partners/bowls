@@ -10,7 +10,6 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Franchise from "./pages/Franchise";
 import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -30,8 +29,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/franchise" element={<Franchise />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/contact" element={<Contact />} />              
             </Routes>
           </main>
           <Footer />
