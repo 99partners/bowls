@@ -502,25 +502,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-500 to-orange-500">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Make an Impact with Food?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Join thousands of customers creating positive change with every
-            meal. Feed yourself, empower women, and help people in need – all in
-            one order.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-green-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
-              Start Your Order
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

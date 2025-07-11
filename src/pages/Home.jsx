@@ -371,18 +371,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-orange-50 to-red-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-6">
             Ready to Make a Difference?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-8">
             Order your favorite vegetarian bowl today and help us feed people in
             need. Every order counts, every meal matters.
           </p>
           <Link
             to="/services"
-            className="inline-flex items-center bg-white text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             aria-label="Start ordering"
           >
             Start Ordering

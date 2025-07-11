@@ -185,57 +185,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Meet the <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Team</span>
-            </h2>
-            <p className="text-xl text-gray-600">The passionate people behind 99 Bowls</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Sarah Martinez',
-                role: 'Founder & CEO',
-                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b647?w=300&h=300&fit=crop&crop=face',
-                bio: 'Former nonprofit director passionate about social impact and food security.',
-              },
-              {
-                name: 'David Chen',
-                role: 'Head of Operations',
-                image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-                bio: 'Logistics expert ensuring every meal reaches those who need it most.',
-              },
-              {
-                name: 'Maria Rodriguez',
-                role: 'Community Partnerships',
-                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
-                bio: 'Building bridges between communities and creating lasting partnerships.',
-              },
-            ].map((member, index) => (
-              <div
-                key={index}
-                className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300"
-              >
-                <div className="relative mb-6">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow duration-300"
-                  />
-                  <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-to-r from-orange-500/20 to-red-500/20 group-hover:from-orange-500/30 group-hover:to-red-500/30 transition-all duration-300" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                <div className="text-orange-500 font-medium mb-3">{member.role}</div>
-                <p className="text-gray-600 leading-relaxed">{member.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
