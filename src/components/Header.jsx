@@ -20,7 +20,6 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Franchise', path: '/franchise' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -57,10 +56,10 @@ const Navigation = () => {
               </Link>
             ))}
             <Link
-              to="/order"
+              to="/franchise"
               className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              Order Now
+              Franchise
             </Link>
           </div>
 
@@ -93,11 +92,11 @@ const Navigation = () => {
               </Link>
             ))}
             <Link
-              to="/order"
+              to="/franchise"
               onClick={() => setIsOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full mt-4"
             >
-              Order Now
+              Franchise
             </Link>
           </div>
         </div>
