@@ -140,7 +140,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-500 hover:shadow-lg transition-all duration-300">
                 <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-2">
                   {counters.meals.toLocaleString()}+
                 </div>
@@ -148,7 +148,7 @@ const Index = () => {
                   Meals Delivered
                 </div>
               </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-red-500 hover:shadow-lg transition-all duration-300">
                 <div className="text-2xl sm:text-3xl font-bold text-red-500 mb-2">
                   {counters.customers.toLocaleString()}+
                 </div>
@@ -156,7 +156,7 @@ const Index = () => {
                   Happy Customers
                 </div>
               </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-200 hover:shadow-lg transition-all duration-300">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-green-500 hover:shadow-lg transition-all duration-300">
                 <div className="text-2xl sm:text-3xl font-bold text-green-500 mb-2">
                   {counters.donations.toLocaleString()}+
                 </div>
