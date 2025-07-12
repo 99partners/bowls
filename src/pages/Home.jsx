@@ -432,7 +432,7 @@ const Index = () => {
             Ready to Make a Difference?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-8">
-            Order your favorite vegetarian bowl today and help us feed people in
+            Order your favorite bowl today and help us feed people in
             need. Every order counts, every meal matters.
           </p>
           <Link

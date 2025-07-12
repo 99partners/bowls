@@ -22,6 +22,7 @@ const Footer = () => {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
+    { name: "Franchise", href: "/franchise" },
   ];
 
   return (
@@ -42,7 +43,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Nourishing communities, one bowl at a time. For every order you
-              place, we donate a meal to children in need.
+              place, we donate a meal to people in need.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -99,7 +100,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Our Mission</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Creating a world where good food brings people together and no
-              child goes hungry.
+              one goes hungry.
             </p>
             <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 p-4 rounded-lg border border-orange-500/30">
               <p className="text-orange-400 text-sm font-medium">

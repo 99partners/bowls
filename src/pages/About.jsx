@@ -66,7 +66,7 @@ const About = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We're more than just a food delivery service. We're a movement dedicated to 
-              nourishing communities and ending child hunger, one bowl at a time.
+              nourishing communities and ending people hunger, one bowl at a time.
             </p>
           </div>
 
@@ -75,16 +75,16 @@ const About = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 99 Bowls was born from a simple yet powerful idea: what if every meal we 
-                enjoyed could also feed a child in need? Our founders noticed the stark 
+                enjoyed could also feed a people in need? Our founders noticed the stark 
                 contrast between food abundance and food insecurity in our communities.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Today, we're proud to operate on a 1:1 donation model. For every bowl you 
-                order from us, we donate an identical meal to children through our network 
+                order from us, we donate an identical meal to people through our network 
                 of trusted charity partners.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We believe that good food should bring people together and that no child 
+                We believe that good food should bring people together and that no one 
                 should go to bed hungry. That's why we're committed to making a meaningful 
                 impact with every order.
               </p>

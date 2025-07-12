@@ -268,7 +268,7 @@ const Services = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Delicious, nutritious vegetarian bowls delivered fresh to your door.
+            Delicious, nutritious bowls delivered fresh to your door.
             Every order makes a difference in a person's life through our 1:1
             donation program and supports women entrepreneurs.
           </p>
@@ -282,7 +282,7 @@ const Services = () => {
             <p className="text-green-700 leading-relaxed">
               Every meal is lovingly prepared by women entrepreneurs in our
               community. By choosing 99 Bowls, you're not just enjoying healthy
-              vegetarian food and feeding a person in need – you're empowering
+              food and feeding a people in need – you're empowering
               women to build sustainable businesses while promoting plant-based
               nutrition.
             </p>
@@ -319,7 +319,7 @@ const Services = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600">
-              Choose from our selection of fresh, healthy vegetarian bowls
+              Choose from our selection of fresh, healthy bowls
             </p>
             <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mt-4 text-sm">
               <span>🌿</span>
@@ -449,7 +449,7 @@ const Services = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600">
-              Simple steps to make a triple impact with vegetarian food
+              Simple steps to make a triple impact with quick food
             </p>
           </div>
 
@@ -459,28 +459,28 @@ const Services = () => {
                 step: "1",
                 title: "Choose Your Bowl",
                 description:
-                  "Select from our menu of fresh, healthy vegetarian bowls crafted with love by women entrepreneurs.",
+                  "Select from our menu of fresh, healthy bowls crafted with love by women entrepreneurs.",
                 icon: "🥗",
               },
               {
                 step: "2",
                 title: "Women Empowerment",
                 description:
-                  "Your order directly supports women-owned businesses preparing delicious vegetarian meals.",
+                  "Your order directly supports women-owned businesses preparing delicious healthy & quick meals.",
                 icon: "👩‍🍳",
               },
               {
                 step: "3",
                 title: "Donate to Needy People",
                 description:
-                  "We donate an identical vegetarian meal to a person in need through our 1:1 program.",
+                  "We donate an identical meal to a people in need through our 1:1 program.",
                 icon: "❤️",
               },
               {
                 step: "4",
                 title: "Enjoy & Impact",
                 description:
-                  "Receive your fresh vegetarian meal knowing you've made a triple positive impact.",
+                  "Receive your fresh meal knowing you've made a triple positive impact.",
                 icon: "🌟",
               },
             ].map((item, index) => (
