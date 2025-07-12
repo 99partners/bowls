@@ -45,13 +45,20 @@ const Index = () => {
     const timeDiff = currentDate - startDate;
     const daysElapsed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-    // Base target values with daily increment of 15
+    // Base target values with daily increment
+    const getRandomTotal = (min, max) =>
+      Array.from({ length: daysElapsed }).reduce(
+        (total) => total + Math.floor(Math.random() * (max - min + 1)) + min,
+        0
+      );
+
     const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
     const incrementedValues = {
-      meals: baseValues.meals + daysElapsed * 15,
-      customers: baseValues.customers + daysElapsed * 15,
-      donations: baseValues.donations + daysElapsed * 15,
+      meals: baseValues.meals + getRandomTotal(10, 20),
+      customers: baseValues.customers + getRandomTotal(5, 15),
+      donations: baseValues.donations + getRandomTotal(12, 25),
     };
+
 
     const duration = 3000;
     const steps = 100;
