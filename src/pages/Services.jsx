@@ -212,7 +212,7 @@ const Services = () => {
   const features = [
     {
       icon: Heart,
-      title: "1:1 Donation Promise",
+      title: "1:1 Donate Ratio",
       description:
         "Every vegetarian bowl you order donates one to a person in need",
     },
@@ -227,11 +227,11 @@ const Services = () => {
       title: "Quick Food",
       description: "Fresh vegetarian bowls delivered in 30 minutes or less",
     },
-    {
-      icon: Truck,
-      title: "Free Delivery",
-      description: "No delivery fees on orders over ₹500",
-    },
+    // {
+    //   icon: Truck,
+    //   title: "Free Delivery",
+    //   description: "No delivery fees on orders over ₹500",
+    // },
     {
       icon: Check,
       title: "Fresh Vegetarian Ingredients",
