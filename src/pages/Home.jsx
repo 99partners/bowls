@@ -39,49 +39,53 @@ const Index = () => {
   // }, []);
 
   useEffect(() => {
-    // Set a start date (e.g., July 11, 2025)
-    const startDate = new Date("2025-07-11");
-    const currentDate = new Date();
-    const timeDiff = currentDate - startDate;
-    const daysElapsed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
+  const lastStored = JSON.parse(localStorage.getItem("counterData")) || {
+    meals: baseValues.meals,
+    customers: baseValues.customers,
+    donations: baseValues.donations,
+    lastUpdated: new Date().toISOString(),
+  };
 
-    // Base target values with daily increment
-    const getRandomTotal = (min, max) =>
-      Array.from({ length: daysElapsed }).reduce(
-        (total) => total + Math.floor(Math.random() * (max - min + 1)) + min,
-        0
-      );
+  const now = new Date();
+  const lastUpdateTime = new Date(lastStored.lastUpdated);
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const daysPassed = Math.floor((now - lastUpdateTime) / msPerDay);
 
-    const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
-    const incrementedValues = {
-      meals: baseValues.meals + getRandomTotal(10, 20),
-      customers: baseValues.customers + getRandomTotal(5, 15),
-      donations: baseValues.donations + getRandomTotal(12, 25),
-    };
+  let updatedData = { ...lastStored };
 
+  if (daysPassed >= 1) {
+    for (let i = 0; i < daysPassed; i++) {
+      updatedData.meals += Math.floor(Math.random() * 11) + 10; // 10-20
+      updatedData.customers += Math.floor(Math.random() * 11) + 5; // 5-15
+      updatedData.donations += Math.floor(Math.random() * 11) + 10; // 10-20
+    }
+    updatedData.lastUpdated = now.toISOString();
+    localStorage.setItem("counterData", JSON.stringify(updatedData));
+  }
 
-    const duration = 3000;
-    const steps = 100;
-    const stepTime = duration / steps;
+  const duration = 3000;
+  const steps = 100;
+  const stepTime = duration / steps;
 
-    let currentStep = 0;
-    const timer = setInterval(() => {
-      currentStep++;
-      const progress = currentStep / steps;
+  let currentStep = 0;
+  const timer = setInterval(() => {
+    currentStep++;
+    const progress = currentStep / steps;
 
-      setCounters({
-        meals: Math.floor(incrementedValues.meals * progress),
-        customers: Math.floor(incrementedValues.customers * progress),
-        donations: Math.floor(incrementedValues.donations * progress),
-      });
+    setCounters({
+      meals: Math.floor(updatedData.meals * progress),
+      customers: Math.floor(updatedData.customers * progress),
+      donations: Math.floor(updatedData.donations * progress),
+    });
 
-      if (currentStep >= steps) {
-        clearInterval(timer);
-      }
-    }, stepTime);
+    if (currentStep >= steps) {
+      clearInterval(timer);
+    }
+  }, stepTime);
 
-    return () => clearInterval(timer);
-  }, []);
+  return () => clearInterval(timer);
+}, []);
 
   const bowlCategories = [
     {
