@@ -1124,6 +1124,8 @@ const Index = () => {
   });
 
   const [selectedBowl, setSelectedBowl] = useState(null);
+  const [selectedView, setSelectedView] = useState("image"); // New state to manage view: "image" or "details"
+  const [touchStart, setTouchStart] = useState(0); // For touch swipe detection
 
   useEffect(() => {
     const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
@@ -1134,7 +1136,7 @@ const Index = () => {
       lastUpdated: new Date("2025-07-11").toISOString(),
     };
 
-    const now = new Date("2025-07-12T14:49:00+05:30");
+    const now = new Date("2025-07-15T22:29:00+05:30"); // Updated to 10:29 PM IST
     const lastUpdateTime = new Date(lastStored.lastUpdated);
     const msPerDay = 24 * 60 * 60 * 1000;
     const daysPassed = Math.floor((now - lastUpdateTime) / msPerDay);
@@ -1528,7 +1530,10 @@ const Index = () => {
 
                 <div
                   className="relative overflow-hidden h-32 w-32 sm:h-40 sm:w-40 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
-                  onClick={() => setSelectedBowl(bowl)}
+                  onClick={() => {
+                    setSelectedBowl(bowl);
+                    setSelectedView("image");
+                  }}
                 >
                   <img
                     src={bowl.image}
@@ -1583,44 +1588,102 @@ const Index = () => {
       </section>
 
       {/* Lightbox */}
-     {selectedBowl && (
-  <div
-    className="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center z-50"
-    onClick={(e) => {
-      if (e.target === e.currentTarget) setSelectedBowl(null);
-    }}
-  >
-    <div className="bg-black text-white p-6 rounded-lg w-full h-full overflow-y-auto relative shadow-xl">
-      <button
-        className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center"
-        onClick={() => setSelectedBowl(null)}
-      >
-        ×
-      </button>
-      <img
-        src={selectedBowl.image}
-        alt={selectedBowl.name}
-        className="w-full h-auto max-h-full object-contain mb-4 rounded"
-        onError={(e) => {
-          e.target.src =
-            "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
-        }}
-      />
-      <h3 className="text-xl font-bold mb-2">{selectedBowl.name}</h3>
-      <p className="text-sm text-white-700 mb-4">
-        {selectedBowl.description.split("Ingredients:")[0].trim()}.
-      </p>
-      {selectedBowl.description.includes("Ingredients:") && (
-        <div>
-          <h4 className="text-md font-semibold mb-2">Ingredients:</h4>
-          <p className="text-sm text-white-700">
-            {selectedBowl.description.split("Ingredients:")[1].trim()}
-          </p>
+      {selectedBowl && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedBowl(null);
+              setSelectedView("image");
+            }
+          }}
+          onWheel={(e) => {
+            if (e.deltaX > 0 && selectedView === "image") {
+              setSelectedView("details");
+              e.preventDefault();
+            } else if (e.deltaX < 0 && selectedView === "details") {
+              setSelectedView("image");
+              e.preventDefault();
+            }
+          }}
+          onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+          onTouchMove={(e) => {
+            const touchMove = e.touches[0].clientX;
+            const deltaX = touchStart - touchMove;
+            if (deltaX > 70 && selectedView === "image") {
+              setSelectedView("details");
+            } else if (deltaX < -50 && selectedView === "details") {
+              setSelectedView("image");
+            }
+          }}
+          onTouchEnd={() => setTouchStart(0)}
+        >
+          <div className="bg-black text-white p-6 rounded-lg w-full h-full overflow-y-auto relative shadow-xl">
+            <button
+              className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center"
+              onClick={() => {
+                setSelectedBowl(null);
+                setSelectedView("image");
+              }}
+            >
+              ×
+            </button>
+
+            {/* Image View */}
+            {selectedView === "image" && (
+              <div className="h-full flex flex-col items-center justify-center">
+                <div className="relative overflow-hidden w-[500px] h-[500px] rounded-full">
+                  <img
+                    src={selectedBowl.image}
+                    alt={selectedBowl.name}
+                    className="w-full h-full object-cover rounded-full"
+                    onError={(e) => {
+                      e.target.src =
+                        "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-full" />
+                </div>
+                <p
+                  className="text-sm text-gray-400 mt-4 cursor-pointer"
+                  onClick={() => setSelectedView("details")}
+                >
+                  Swipe right or click here for details
+                </p>
+              </div>
+            )}
+
+            {/* Details View */}
+            {selectedView === "details" && (
+              <div className="h-full flex flex-col items-center justify-center bg-gray-900">
+                <h3 className="text-2xl font-bold mb-4 text-center">
+                  {selectedBowl.name}
+                </h3>
+                <p className="text-base text-white-700 mb-4">
+                  {selectedBowl.description.split("Ingredients:")[0].trim()}.
+                </p>
+                {selectedBowl.description.includes("Ingredients:") && (
+                  <div>
+                    <h4 className="text-xl font-semibold mb-2 text-center">
+                      Ingredients:
+                    </h4>
+                    <p className="text-base text-white-700">
+                      {selectedBowl.description.split("Ingredients:")[1].trim()}
+                    </p>
+                  </div>
+                )}
+                <p
+                  className="text-sm text-gray-400 mt-4 cursor-pointer"
+                  onClick={() => setSelectedView("image")}
+                >
+                  Swipe left or click here to go back
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
-    </div>
-  </div>
-)}
+
       {/* Mission Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
