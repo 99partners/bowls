@@ -73,7 +73,7 @@ const Index = () => {
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1593560708920-61dd98c36a4b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.c2d204ed-7866-448c-872b-db00f5029128.png",
       description:
         "Tasty paneer tikka pieces with flavorful rice. Ingredients: Paneer, Basmati Rice, Tomatoes, Spices.",
       rating: 4.9,
@@ -87,7 +87,7 @@ const Index = () => {
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519671282429-b44660ead0a0?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.d9277489-74d0-4da6-a8db-753595c796c2.png",
       description:
         "Zesty and vibrant blend of Mexican-spiced rice. Ingredients: Rice, Bell Peppers, Corn, Salsa.",
       rating: 4.7,
@@ -101,7 +101,7 @@ const Index = () => {
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1601050690597-c7b7a3986d8d?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.6c87cc69-8f32-4ab0-a48e-b85d2473a32d.png",
       description:
         "Tangy Punjabi chickpea with steamed rice. Ingredients: Chickpeas, Masala, Rice, Tomatoes.",
       rating: 4.6,
@@ -115,7 +115,7 @@ const Index = () => {
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1599971815742-4e7647c7b2df?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.ae38d081-e276-4d47-8b70-60fe5d9e76bd.png",
       description:
         "Kidney beans in a thick gravy with steamed rice. Ingredients: Kidney Beans, Tomatoes, Rice, Spices.",
       rating: 4.8,
@@ -129,7 +129,7 @@ const Index = () => {
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1606491032769-36a5760f3b7b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.1be1138a-c62a-4912-9f03-f5d2bf0baa59.png",
       description:
         "Black lentils in a creamy gravy, served with rice. Ingredients: Black Lentils, Cream, Rice, Spices.",
       rating: 4.7,
@@ -143,7 +143,7 @@ const Index = () => {
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1630409346820-4e5b9f0086c6?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.e8131657-f48e-42ee-86ca-f5e4a5cd9a28.png",
       description:
         "The classic combo features creamy yellow dal fry. Ingredients: Lentils, Cumin, Rice, Onions, Ghee.",
       rating: 4.6,
@@ -158,7 +158,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1589994965851-a8f43a9d9390?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.e7a7e1cf-3d2b-4a88-8f78-3d5ff78c0024.png",
       description:
         "Zucchini noodles, cherry tomatoes, pesto. Ingredients: Zucchini, Cherry Tomatoes, Pesto Sauce.",
       rating: 4.5,
@@ -172,7 +172,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519996529931-28324d484a8e?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.513578f9-3c14-4a05-83e3-c94d4687833d.png",
       description:
         "Boiled lentils, cucumber, lemon dressing. Ingredients: Lentils, Cucumber, Lemon, Olive Oil.",
       rating: 4.6,
@@ -186,7 +186,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519624213695-0a2826b708f1?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.ea08f5dd-0d3d-41b4-8571-a884a92e5016.png",
       description:
         "Sautéed mushrooms, spinach, quinoa. Ingredients: Mushrooms, Spinach, Quinoa.",
       rating: 4.5,
@@ -200,7 +200,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.701ab0fd-e65c-4da7-81b7-0be509f95725.png",
       description:
         "Steamed broccoli, tofu, lemon rice. Ingredients: Broccoli, Tofu, Rice, Lemon.",
       rating: 4.6,
@@ -214,7 +214,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1547592166-23ac45744c94?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.09052638-4766-4a1b-a761-99ff4ff49582.png",
       description:
         "Vegetable broth, seasonal steamed veggies. Ingredients: Carrots, Beans, Broth.",
       rating: 4.5,
@@ -228,7 +228,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1596459003363-3cd4f7d641c9?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.c8cb8838-74fc-433c-8a37-ee140742216b.png",
       description:
         "Kidney beans, black beans, vinaigrette. Ingredients: Kidney Beans, Black Beans, Vinaigrette.",
       rating: 4.6,
@@ -243,7 +243,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1541592106381-6c0ce07a6e61?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.d45f553e-f4f7-437a-8bf1-e5ee72c8e19a.png",
       description:
         "Mango, pineapple, kiwi, coconut flakes. Ingredients: Mango, Pineapple, Kiwi, Coconut.",
       rating: 4.9,
@@ -257,7 +257,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.b1c8eefb-3688-4c6a-982b-94ee6c22c401.png",
       description:
         "Strawberries, blueberries, raspberries, honey drizzle. Ingredients: Strawberries, Blueberries, Raspberries, Honey.",
       rating: 4.8,
@@ -271,7 +271,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.f47a6697-b96b-452c-a573-c2809c06b56c.png",
       description:
         "Apple slices, cinnamon, yogurt, granola. Ingredients: Apples, Cinnamon, Yogurt, Granola.",
       rating: 4.7,
@@ -285,7 +285,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1557800636-25a7a33e4d6e?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.c9bdec69-14b1-4b23-b96c-00bc08a6d65d.png",
       description:
         "Orange segments, grapefruit, pomegranate, mint. Ingredients: Oranges, Grapefruit, Pomegranate, Mint.",
       rating: 4.8,
@@ -299,7 +299,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.42e995bc-bb54-4944-b60e-355256f2c9a3.png",
       description:
         "Banana, walnuts, dates, chia seeds. Ingredients: Banana, Walnuts, Dates, Chia Seeds.",
       rating: 4.7,
@@ -313,7 +313,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1621574024140-b3e4c4c5a6e8?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.d2ae7400-b6c0-4dea-b4f2-912271886240.png",
       description:
         "Watermelon, cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
       rating: 4.7,
@@ -328,7 +328,7 @@ const Index = () => {
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1490645935147-1c72983e162f?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.4f97b985-b333-48c0-bfbe-b6fd9748ae2a.png",
       description:
         "Protein-packed sprouts, roasted peanuts, lime. Ingredients: Chana Sprouts, Peanuts, Lime, Spices.",
       rating: 4.7,
@@ -342,7 +342,7 @@ const Index = () => {
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1511690743698-a16cb3b8a193?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.12aa897b-8699-4dcd-9d8f-d6fee49d7434.png",
       description:
         "Chickpeas, herbed yogurt, quinoa. Ingredients: Chickpeas, Yogurt, Quinoa, Herbs.",
       rating: 4.9,
@@ -356,7 +356,7 @@ const Index = () => {
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.645de432-a22f-4cf2-ad8e-de83ffd7c173.png",
       description:
         "Scrambled tofu, multigrain rice, veggies. Ingredients: Tofu, Rice, Mixed Vegetables.",
       rating: 4.6,
@@ -370,7 +370,7 @@ const Index = () => {
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1593560708920-61dd98c36a4b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.2b333cfa-0869-41dd-94da-2a53fbd77a68.png",
       description:
         "Grilled paneer + tofu, lentil base. Ingredients: Paneer, Tofu, Lentils, Spices.",
       rating: 4.7,
@@ -384,7 +384,7 @@ const Index = () => {
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519624213695-0a2826b708f1?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.cc5df020-be71-444f-88be-97050092c4cd.png",
       description:
         "Red lentils, quinoa, steamed greens. Ingredients: Lentils, Quinoa, Spinach.",
       rating: 4.8,
@@ -398,7 +398,7 @@ const Index = () => {
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1606491032769-36a5760f3b7b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.c02a052b-b04f-4144-aa42-58e1d48cb645.png",
       description:
         "Soya in spicy gravy, brown rice. Ingredients: Soya Chunks, Brown Rice, Spices.",
       rating: 4.6,
@@ -413,7 +413,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1630409346820-4e5b9f0086c6?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.3b1e7a44-b7b2-439f-ab86-da9366a60ebd.png",
       description:
         "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
       rating: 4.7,
@@ -427,7 +427,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519996529931-28324d484a8e?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.b3927527-2e32-40a2-ac97-021cc2800f42.png",
       description:
         "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
       rating: 4.6,
@@ -441,7 +441,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1596459003363-3cd4f7d641c9?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.41b92d9f-83fe-4432-9dc9-24f78a699230.png",
       description:
         "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
       rating: 4.8,
@@ -455,7 +455,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1511690743698-a16cb3b8a193?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.c0b95872-bb86-4a8e-b1ba-ad653b316267.png",
       description:
         "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
       rating: 4.7,
@@ -469,7 +469,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519624213695-0a2826b708f1?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.3e8de57f-ca0c-4ace-a184-c1c70cde74fd.png",
       description:
         "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
       rating: 4.6,
@@ -483,7 +483,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1490645935147-1c72983e162f?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.06cc8a14-68b5-4d73-804d-3734dc048d6a.png",
       description:
         "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
       rating: 4.7,
@@ -498,7 +498,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1630409346820-4e5b9f0086c6?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.48cd81a3-02cb-43e2-83b7-a5980c76d80e.png",
       description:
         "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
       rating: 4.7,
@@ -512,7 +512,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519996529931-28324d484a8e?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.00c95c63-aae7-45c8-a3a6-716ee4ccff38.png",
       description:
         "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
       rating: 4.6,
@@ -526,7 +526,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1596459003363-3cd4f7d641c9?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.76013472-25c3-4e77-801b-3e08c5347539.png",
       description:
         "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
       rating: 4.8,
@@ -540,7 +540,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1511690743698-a16cb3b8a193?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.2501082f-c6ce-4507-b6df-d5bb096a7061.png",
       description:
         "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
       rating: 4.7,
@@ -554,7 +554,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1519624213695-0a2826b708f1?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.0774fb76-de0b-4381-b284-dc545a096a64.png",
       description:
         "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
       rating: 4.6,
@@ -568,7 +568,7 @@ const Index = () => {
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://images.unsplash.com/photo-1490645935147-1c72983e162f?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.efa58b2d-4d1e-4dba-9dc8-013d1fe20992.png",
       description:
         "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
       rating: 4.7,
@@ -583,7 +583,7 @@ const Index = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1519731964299-1c3732a9d7f1?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.7584e3b5-e9b1-46fe-b63a-735e3687e937.png",
       description:
         "Creamy yogurt with a sweet honey twist. Ingredients: Yogurt, Honey.",
       rating: 4.5,
@@ -597,7 +597,7 @@ const Index = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.4029c053-8a65-461b-a0f7-c9eb7e45f253.png",
       description:
         "Extra protein to power up your bowl. Ingredients: Protein Powder, Nuts.",
       rating: 4.6,
@@ -611,7 +611,7 @@ const Index = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1519731964299-1c3732a9d7f1?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.bb9686e3-ff5d-4934-80a1-c3f5e09c7002.png",
       description:
         "Refreshing herbal infusion drink. Ingredients: Mixed Herbs, Water.",
       rating: 4.5,
@@ -625,7 +625,7 @@ const Index = () => {
       price: { one_size: 20 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1553787499-6f913386a997?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.449c377c-8f1a-481b-b517-e874d1472434.png",
       description: "Nutrient-rich chia seeds topping. Ingredients: Chia Seeds.",
       rating: 4.5,
       popular: false,
@@ -638,7 +638,7 @@ const Index = () => {
       price: { one_size: 15 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1594631252845-00614f7e1f16?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.bdc501c9-ec59-4b41-89eb-c68de9034ef1.png",
       description:
         "Fresh herbs to enhance flavor. Ingredients: Cilantro, Parsley.",
       rating: 4.5,
@@ -652,7 +652,7 @@ const Index = () => {
       price: { one_size: 15 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1603048297172-cb320b790777?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.e6ce9ad8-e6f0-47fa-84e4-e6a638d09461.png",
       description:
         "Spicy seasoning for extra zing. Ingredients: Chili Powder, Spices.",
       rating: 4.5,
@@ -666,7 +666,7 @@ const Index = () => {
       price: { one_size: 35 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.656d3668-e705-4daa-962f-17ce360f566b.png",
       description:
         "Boost your immunity with this shot. Ingredients: Ginger, Turmeric, Lemon.",
       rating: 4.6,
