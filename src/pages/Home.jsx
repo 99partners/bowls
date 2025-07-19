@@ -947,7 +947,7 @@ const Index = () => {
                 className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div
-                  className="relative overflow-hidden h-32 w-32 sm:h-48 sm:w-48 md:h-64 md:w-64 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
+                  className="relative overflow-hidden h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
                   onClick={() => {
                     setSelectedBowl(item);
                     setSelectedView("image");
@@ -1033,7 +1033,7 @@ const Index = () => {
             {/* Image View */}
             {selectedView === "image" && (
               <div className="h-full w-full flex flex-col items-center justify-center">
-                <div className="relative overflow-hidden w-[80%] sm:w-[60%] md:w-[50%] max-w-[500px] aspect-square rounded-full">
+                <div className="relative overflow-hidden w-[90%] sm:w-[70%] md:w-[60%] max-w-[600px] aspect-square rounded-full">
                   <img
                     src={selectedBowl.image}
                     alt={selectedBowl.name}
@@ -1209,8 +1209,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 };
