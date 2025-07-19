@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.png";
 import logo from "../assets/99 Bowls New.png";
+import { useScrollContext } from "../ScrollContext";
 
 const Index = () => {
   const [counters, setCounters] = useState({
@@ -16,6 +17,7 @@ const Index = () => {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const [scrollY, setScrollY] = useState(0);
+  const { showHeroLogo, scrollProgress } = useScrollContext();
 
   useEffect(() => {
     const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
@@ -841,14 +843,6 @@ const Index = () => {
     setTouchEnd(null);
   };
 
-  // Calculate logo animation properties
-  const scrollProgress = Math.min(scrollY / 300, 1);
-  const logoScale =
-    scrollProgress < 0.9 ? Math.max(0.3, 1 - scrollY / 300) : 0.5;
-  const logoTranslateY = scrollProgress < 0.9 ? Math.min(0, -scrollY / 2) : -50;
-  const logoTranslateX = scrollProgress < 0.9 ? 0 : -400;
-  const logoOpacity = scrollProgress < 0.9 ? Math.max(0, 1 - scrollY / 300) : 0;
-
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
       <section className="relative z-10 min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
@@ -872,14 +866,12 @@ const Index = () => {
               <img
                 src={logo}
                 alt="99 Bowls Logo"
-                className="w-40 sm:w-48 md:w-56 lg:w-64 object-contain transition-all duration-300"
+                className="w-40 sm:w-48 md:w-56 lg:w-64 object-contain"
                 style={{
-                  transform: `scale(${logoScale}) translateY(${logoTranslateY}px) translateX(${logoTranslateX}px)`,
-                  opacity: logoOpacity,
-                  position: scrollProgress >= 0.9 ? "fixed" : "relative",
-                  top: scrollProgress >= 0.9 ? "16px" : "0",
-                  left: scrollProgress >= 0.9 ? "20px" : "20px",
-                  zIndex: 60,
+                  transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${-60 * scrollProgress}px)` ,
+                  opacity: 1 - scrollProgress,
+                  transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
+                  pointerEvents: scrollProgress === 1 ? 'none' : 'auto',
                 }}
                 loading="lazy"
               />

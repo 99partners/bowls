@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart } from 'lucide-react';
-import logo from '../assets/Bowls.png'; // Adjust the path as necessary
+import logo from '../assets/Bowls.png'; // Old logo
+import { useScrollContext } from '../ScrollContext';
+import bowlsLogo from '../assets/99 Bowls New.png'; // New logo
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { scrollProgress } = useScrollContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +33,32 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <img src={logo || "/placeholder.svg"} alt="Bowls Logo" className="h-20 w-auto object-contain" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent  group-hover:from-green-600 group-hover:to-orange-500">
+          <Link to="/" className="flex items-center space-x-4 group">
+            <span className="relative w-20 h-20 min-w-[80px] flex-shrink-0">
+              {/* Old logo fades out as scrollProgress approaches 1 */}
+              <img
+                src={logo}
+                alt="Bowls Logo Old"
+                className="h-20 w-auto object-contain absolute left-0 top-0"
+                style={{
+                  opacity: 1 - scrollProgress,
+                  transition: 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
+                  zIndex: 2,
+                }}
+              />
+              {/* New logo fades in as scrollProgress approaches 1 */}
+              <img
+                src={bowlsLogo}
+                alt="Bowls Logo New"
+                className="h-20 w-auto object-contain absolute left-0 top-0"
+                style={{
+                  opacity: scrollProgress,
+                  transition: 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
+                  zIndex: 3,
+                }}
+              />
+            </span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent group-hover:from-green-600 group-hover:to-orange-500 relative z-10">
               Bowls
             </span>
           </Link>
