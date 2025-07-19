@@ -680,7 +680,7 @@ const Index = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1594631252845-00614f7e1f16?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
       description:
         "Cool, spiced buttermilk drink. Ingredients: Yogurt, Spices, Water.",
       rating: 4.5,
@@ -694,7 +694,7 @@ const Index = () => {
       price: { one_size: 35 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1623689048103-8c6f1e8674a8?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.b417493b-0a72-4b18-8ed9-f08a70509f47.png",
       description:
         "Refreshing lime soda or jaljeera. Ingredients: Lime, Soda, Spices.",
       rating: 4.5,
@@ -708,7 +708,7 @@ const Index = () => {
       price: { one_size: 40 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1603048297172-cb320f3b7e37?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.bc3d1719-c098-4a84-b774-c59af540970a.png",
       description: "Crunchy roasted fox nuts. Ingredients: Makhana, Spices.",
       rating: 4.6,
       popular: false,
@@ -721,7 +721,7 @@ const Index = () => {
       price: { one_size: 40 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.544f0969-11b3-4818-921f-70cb70711ce7.png",
       description:
         "Soothing aloe vera health shot. Ingredients: Aloe Vera, Lemon.",
       rating: 4.5,
@@ -735,7 +735,7 @@ const Index = () => {
       price: { one_size: 60 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1606491032769-36a5760f3b7b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.a09a791b-5a38-45b8-802b-f0f24af54768.png",
       description:
         "Sweet moong dal halwa dessert. Ingredients: Moong Dal, Sugar, Ghee.",
       rating: 4.7,
@@ -749,7 +749,7 @@ const Index = () => {
       price: { one_size: 40 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1606491032769-36a5760f3b7b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.3b5f1030-1daa-4ac7-a9f3-87c61b6e4f2f.png",
       description:
         "Traditional Gujarati sweet bite. Ingredients: Jaggery, Wheat Flour, Ghee.",
       rating: 4.6,
@@ -763,7 +763,7 @@ const Index = () => {
       price: { one_size: 60 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1606491032769-36a5760f3b7b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.f3a27ed9-7c7c-49b9-8b48-cb6de251e18d.png",
       description:
         "Delicious bottle gourd halwa. Ingredients: Dudhi, Sugar, Ghee.",
       rating: 4.7,
@@ -777,7 +777,7 @@ const Index = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1606491032769-36a5760f3b7b?w=400&h=400&fit=crop",
+        "https://bing.com/th/id/BCO.b33f842a-f7e2-4de2-8373-9dbd0ee7fe80.png",
       description:
         "Soft, sweet gulab jamun. Ingredients: Milk Solids, Sugar Syrup.",
       rating: 4.8,
