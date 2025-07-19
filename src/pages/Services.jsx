@@ -21,12 +21,7 @@ const fallbackImage = "https://via.placeholder.com/400x400.png?text=No+Image";
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const categories = [
-    { id: "all", name: "All Bowls" },
-    { id: "rice", name: "Rice Bowls" },
-    { id: "sprout", name: "Sprout Bowls" },
-    { id: "fruit", name: "Fruit Bowls" },
-  ];
+  
 
   const bowls = [
     {
@@ -210,12 +205,7 @@ const Services = () => {
   ];
 
   const features = [
-    {
-      icon: Heart,
-      title: "1:1 Donate Ratio",
-      description:
-        "Every vegetarian bowl you order donates one to a person in need",
-    },
+    
     {
       icon: Users,
       title: "Women Empowerment",
@@ -227,11 +217,6 @@ const Services = () => {
       title: "Quick Food",
       description: "Fresh vegetarian bowls delivered in 30 minutes or less",
     },
-    // {
-    //   icon: Truck,
-    //   title: "Free Delivery",
-    //   description: "No delivery fees on orders over ₹500",
-    // },
     {
       icon: Check,
       title: "Fresh Vegetarian Ingredients",
@@ -242,7 +227,7 @@ const Services = () => {
       icon: Zap,
       title: "Community Impact",
       description:
-        "Supporting local women-owned businesses and promoting vegetarian nutrition",
+        "Every bowl you order donates one to a people in need",
     },
   ];
 
@@ -282,7 +267,7 @@ const Services = () => {
             <p className="text-green-700 leading-relaxed">
               Every meal is lovingly prepared by women entrepreneurs in our
               community. By choosing 99 Bowls, you're not just enjoying healthy
-              food and feeding a people in need – you're empowering
+              food and feeding a person in need – you're empowering
               women to build sustainable businesses while promoting plant-based
               nutrition.
             </p>
@@ -302,136 +287,6 @@ const Services = () => {
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Menu Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Our{" "}
-              <span className="bg-gradient-to-r from-green-500 to-orange-500 bg-clip-text text-transparent">
-                Menu
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600">
-              Choose from our selection of fresh, healthy bowls
-            </p>
-            <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mt-4 text-sm">
-              <span>🌿</span>
-              <span>All ingredients are 100% Healthy & Fresh</span>
-              <span>🌿</span>
-            </div>
-          </div>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category.id
-                    ? "bg-gradient-to-r from-green-500 to-orange-500 text-white shadow-lg"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Menu Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredBowls.map((bowl) => (
-              <div
-                key={bowl.id}
-                className="group transition-all duration-500 transform hover:-translate-y-2"
-              >
-                {bowl.popular && (
-                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Popular
-                  </div>
-                )}
-
-                {/* <div className="absolute top-4 right-4 z-10 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">
-                  🌱 Vegetarian
-                </div> */}
-
-                <div className="relative overflow-hidden w-48 h-48 mx-auto mb-4 rounded-full">
-                  <img
-                    src={bowl.image}
-                    alt={bowl.name}
-                    className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.target.src = fallbackImage;
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
-                </div>
-
-                <div className="p-6 text-center">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-gray-800">
-                      {bowl.name}
-                    </h3>
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm text-gray-600">
-                        {bowl.rating}
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {bowl.description}
-                  </p>
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <Clock className="w-4 h-4" />
-                      <span>{bowl.prep_time}</span>
-                    </div>
-                    <span className="text-2xl font-bold text-green-500">
-                      ₹{bowl.price}
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-2 justify-center">
-                    <a
-                      href="https://www.swiggy.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-green-500 to-orange-500 text-white px-3 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02] text-center flex items-center justify-center"
-                    >
-                      Order with Swiggy
-                    </a>
-                    <a
-                      href="https://www.zomato.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-green-500 to-orange-500 text-white px-3 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 hover:scale-[1.02] text-center flex items-center justify-center"
-                    >
-                      Order with Zomato
-                    </a>
-                  </div>
-
-                  <div className="mt-3 flex justify-between text-center">
-                    <div className="inline-flex items-center space-x-1 text-sm text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                      <Heart className="w-3 h-3" />
-                      <span>+1 meal donated</span>
-                    </div>
-                    <div className="inline-flex items-center space-x-1 text-sm text-pink-600 bg-pink-50 px-3 py-1 rounded-full">
-                      <Users className="w-3 h-3" />
-                      <span>Women-made</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
@@ -473,7 +328,7 @@ const Services = () => {
                 step: "3",
                 title: "Donate to Needy People",
                 description:
-                  "We donate an identical meal to a people in need through our 1:1 program.",
+                  "We donate an identical meal to a person in need through our 1:1 program.",
                 icon: "❤️",
               },
               {

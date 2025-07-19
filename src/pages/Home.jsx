@@ -866,10 +866,16 @@ const Index = () => {
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Nourish
+                Taste
               </span>
+              <span className="text-black"> bhi, </span>
               <br />
-              <span className="text-gray-800">Communities</span>
+                  
+              {/* Added multiple non-breaking spaces for increased spacing */}
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                Health
+              </span>
+              <span className="text-black"> bhi</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
               Delicious bowls delivered to your door. For every bowl you order,
@@ -1101,8 +1107,7 @@ const Index = () => {
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 At 99 Bowls, we believe that good food should be accessible to
                 everyone. That's why for every bowl you order, we donate an
-                identical meal to people in need through our partnership with
-                local charities.
+                meal to people in need.
               </p>
 
               <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
@@ -1205,26 +1210,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-orange-50 to-red-50">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-6">
-            Ready to Make a Difference?
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-black/90 mb-6 sm:mb-8">
-            Order your favorite bowl today and help us feed people in need.
-            Every order counts, every meal matters.
-          </p>
-          <Link
-            to="/services"
-            className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
-            aria-label="Start ordering"
-          >
-            Start Ordering
-            <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-          </Link>
-        </div>
-      </section>
+      
     </div>
   );
 };
