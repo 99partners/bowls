@@ -862,11 +862,11 @@ const Index = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full max-w-7xl">
           <div className="animate-fade-in relative">
-            <div className="flex justify-start mb-6 sm:mb-8">
+            <div className="flex justify-start mb-6 sm:mb-8 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20">
               <img
                 src={logo}
                 alt="99 Bowls Logo"
-                className="w-40 sm:w-48 md:w-56 lg:w-64 object-contain"
+                className="w-32 sm:w-40 md:w-48 lg:w-56 object-contain"
                 style={{
                   transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${-60 * scrollProgress}px)` ,
                   opacity: 1 - scrollProgress,
@@ -876,22 +876,23 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              <span>
-                <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent">
-                  Taste bhi,
+            <div className="-mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+                <span>
+                  <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent">
+                    Taste bhi,
+                  </span>
+                  <br />
+                  &nbsp;&nbsp;
+                  <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-7">
+                    Health bhi
+                  </span>
                 </span>
-                <br />
-                &nbsp;&nbsp;
-                <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-7">
-                  Health bhi
-                </span>
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
-              Delicious bowls delivered to your door. For every bowl you order,
-              we donate one to people in need. Good food, great cause.
-            </p>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
+                More than a meal — it’s a step toward better health for all.
+              </p>
+            </div>
           </div>
 
           <div className="hidden lg:flex items-center justify-center">
