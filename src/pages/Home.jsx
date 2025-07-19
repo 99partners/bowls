@@ -2,6 +2,7 @@ import { ArrowRight, Heart, Users, Star, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.png";
+import logo from "../assets/99 Bowls New.png";
 
 const Index = () => {
   const [counters, setCounters] = useState({
@@ -14,6 +15,7 @@ const Index = () => {
   const [selectedView, setSelectedView] = useState("image");
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
@@ -61,11 +63,18 @@ const Index = () => {
       }
     }, stepTime);
 
-    return () => clearInterval(timer);
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const bowls = [
-    // Rice Bowls
     {
       id: 1,
       name: "Paneer Tikka Rice Bowl",
@@ -150,7 +159,6 @@ const Index = () => {
       popular: false,
       prep_time: "15-20 min",
     },
-    // Weight Loss Bowls
     {
       id: 7,
       name: "Zucchini Noodle Bowl",
@@ -235,7 +243,6 @@ const Index = () => {
       popular: false,
       prep_time: "10-12 min",
     },
-    // Fruit Bowls
     {
       id: 13,
       name: "Tropical Paradise Bowl",
@@ -315,12 +322,11 @@ const Index = () => {
       image:
         "https://bing.com/th/id/BCO.d2ae7400-b6c0-4dea-b4f2-912271886240.png",
       description:
-        "Watermelon, cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
+        "Watermelon cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
     },
-    // Protein Bowls
     {
       id: 19,
       name: "Sprouted Chana Power Bowl",
@@ -405,7 +411,6 @@ const Index = () => {
       popular: false,
       prep_time: "15-20 min",
     },
-    // Heart Care Bowls
     {
       id: 25,
       name: "Turmeric Lentil Bowl",
@@ -490,7 +495,6 @@ const Index = () => {
       popular: false,
       prep_time: "10-15 min",
     },
-    // Immunity Booster Bowls
     {
       id: 31,
       name: "Turmeric Lentil Bowl",
@@ -575,7 +579,6 @@ const Index = () => {
       popular: false,
       prep_time: "10-15 min",
     },
-    // Add-Ons
     {
       id: 37,
       name: "Honey Yogurt Dip",
@@ -838,9 +841,16 @@ const Index = () => {
     setTouchEnd(null);
   };
 
+  // Calculate logo animation properties
+  const scrollProgress = Math.min(scrollY / 300, 1);
+  const logoScale =
+    scrollProgress < 0.9 ? Math.max(0.3, 1 - scrollY / 300) : 0.5;
+  const logoTranslateY = scrollProgress < 0.9 ? Math.min(0, -scrollY / 2) : -50;
+  const logoTranslateX = scrollProgress < 0.9 ? 0 : -400;
+  const logoOpacity = scrollProgress < 0.9 ? Math.max(0, 1 - scrollY / 300) : 0;
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
-      {/* Hero Section */}
       <section className="relative z-10 min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <svg
@@ -857,25 +867,34 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full max-w-7xl">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-orange-200 mb-6 sm:mb-8">
-              <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
-                Kindness with Every Order
-              </span>
+          <div className="animate-fade-in relative">
+            <div className="flex justify-start mb-6 sm:mb-8">
+              <img
+                src={logo}
+                alt="99 Bowls Logo"
+                className="w-40 sm:w-48 md:w-56 lg:w-64 object-contain transition-all duration-300"
+                style={{
+                  transform: `scale(${logoScale}) translateY(${logoTranslateY}px) translateX(${logoTranslateX}px)`,
+                  opacity: logoOpacity,
+                  position: scrollProgress >= 0.9 ? "fixed" : "relative",
+                  top: scrollProgress >= 0.9 ? "16px" : "0",
+                  left: scrollProgress >= 0.9 ? "20px" : "20px",
+                  zIndex: 60,
+                }}
+                loading="lazy"
+              />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Taste
+              <span>
+                <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent">
+                  Taste bhi,
+                </span>
+                <br />
+                &nbsp;&nbsp;
+                <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-7">
+                  Health bhi
+                </span>
               </span>
-              <span className="text-black"> bhi, </span>
-              <br />
-                  
-              {/* Added multiple non-breaking spaces for increased spacing */}
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Health
-              </span>
-              <span className="text-black"> bhi</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
               Delicious bowls delivered to your door. For every bowl you order,
@@ -891,6 +910,12 @@ const Index = () => {
                 className="w-full h-full object-contain gentle-rotate animate-gentle-rotate"
                 loading="lazy"
               />
+              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-orange-200 mt-6 sm:mt-8 absolute bottom-[-40px] left-1/2 transform -translate-x-1/2">
+                <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
+                <span className="text-xs sm:text-sm font-medium text-gray-700">
+                  Kindness with Every Order
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -909,7 +934,6 @@ const Index = () => {
         `}</style>
       </section>
 
-      {/* Menu Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -996,7 +1020,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Lightbox */}
       {selectedBowl && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center z-50"
@@ -1030,7 +1053,6 @@ const Index = () => {
               ×
             </button>
 
-            {/* Image View */}
             {selectedView === "image" && (
               <div className="h-full w-full flex flex-col items-center justify-center">
                 <div className="relative overflow-hidden w-[90%] sm:w-[70%] md:w-[60%] max-w-[600px] aspect-square rounded-full">
@@ -1054,7 +1076,6 @@ const Index = () => {
               </div>
             )}
 
-            {/* Details View */}
             {selectedView === "details" && (
               <div className="h-full w-full flex flex-col items-center justify-center bg-gray-900 p-4 sm:p-6">
                 <h3 className="text-lg sm:text-2xl md:text-3xl font-bold mb-4 text-center">
@@ -1093,7 +1114,7 @@ const Index = () => {
           </div>
         </div>
       )}
-      {/* Mission Section */}
+
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
@@ -1106,8 +1127,8 @@ const Index = () => {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 At 99 Bowls, we believe that good food should be accessible to
-                everyone. That's why for every bowl you order, we donate an
-                meal to people in need.
+                everyone. That's why for every bowl you order, we donate an meal
+                to people in need.
               </p>
 
               <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
@@ -1169,7 +1190,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
