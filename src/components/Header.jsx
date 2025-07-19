@@ -36,7 +36,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-4 group">
             <span className="relative w-20 h-20 min-w-[80px] flex-shrink-0">
               {/* Old logo fades out as scrollProgress approaches 1 */}
-              <img
+              {/* <img
                 src={logo}
                 alt="Bowls Logo Old"
                 className="h-20 w-auto object-contain absolute left-0 top-0"
@@ -45,7 +45,7 @@ const Navigation = () => {
                   transition: 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
                   zIndex: 2,
                 }}
-              />
+              /> */}
               {/* New logo fades in as scrollProgress approaches 1 */}
               <img
                 src={bowlsLogo}
@@ -58,9 +58,9 @@ const Navigation = () => {
                 }}
               />
             </span>
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent group-hover:from-green-600 group-hover:to-orange-500 relative z-10">
+            {/* <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent group-hover:from-green-600 group-hover:to-orange-500 relative z-10">
               Bowls
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}

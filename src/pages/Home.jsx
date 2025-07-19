@@ -862,7 +862,7 @@ const Index = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full max-w-7xl">
           <div className="animate-fade-in relative">
-            <div className="flex justify-start mb-6 sm:mb-8 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20">
+            <div className="flex justify-start mb-12 sm:mb-16 -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8">
               <img
                 src={logo}
                 alt="99 Bowls Logo"
