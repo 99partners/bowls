@@ -861,7 +861,7 @@ const Index = () => {
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-orange-200 mb-6 sm:mb-8">
               <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
               <span className="text-xs sm:text-sm font-medium text-gray-700">
-                Order One, Donate One
+                Kindness with Every Order
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
