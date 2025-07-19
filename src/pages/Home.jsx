@@ -708,7 +708,7 @@ const Index = () => {
       price: { one_size: 40 },
       sizes: ["One Size"],
       image:
-        "https://images.unsplash.com/photo-1603048297172-cb320b790777?w=400&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1603048297172-cb320f3b7e37?w=400&h=400&fit=crop",
       description: "Crunchy roasted fox nuts. Ingredients: Makhana, Spices.",
       rating: 4.6,
       popular: false,
@@ -940,14 +940,8 @@ const Index = () => {
                 key={item.id}
                 className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2"
               >
-                {item.popular && (
-                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
-                    Popular
-                  </div>
-                )}
-
                 <div
-                  className="relative overflow-hidden h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
+                  className="relative overflow-hidden h-32 w-32 sm:h-48 sm:w-48 md:h-64 md:w-64 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
                   onClick={() => {
                     setSelectedBowl(item);
                     setSelectedView("image");
@@ -972,34 +966,23 @@ const Index = () => {
                 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">
                   {item.description.split(".")[0] + "."}
                 </p>
-                <div className="flex flex-col sm:flex-row justify-between items-center w-full max-w-xs">
-                  <span className="text-xs sm:text-sm md:text-base font-semibold text-orange-500 mb-2 sm:mb-0">
-                    {item.price.one_size
-                      ? `₹${item.price.one_size}`
-                      : `Small: ₹${item.price.small} / Large: ₹${item.price.large}`}
-                  </span>
-                  <div className="flex gap-2">
-                    <Link
-                      to={`https://www.swiggy.com/search?query=${item.name}`}
-                      className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Swiggy
-                    </Link>
-                    <Link
-                      to={`https://www.zomato.com/search?query=${item.name}`}
-                      className="bg-red-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Zomato
-                    </Link>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center w-full max-w-xs mt-2 text-xs sm:text-sm text-gray-600">
-                  <span>Rating: {item.rating}/5</span>
-                  <span>Prep: {item.prep_time}</span>
+                <div className="flex gap-2">
+                  <Link
+                    to={`https://www.swiggy.com/search?query=${item.name}`}
+                    className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Swiggy
+                  </Link>
+                  <Link
+                    to={`https://www.zomato.com/search?query=${item.name}`}
+                    className="bg-red-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Zomato
+                  </Link>
                 </div>
               </div>
             ))}
