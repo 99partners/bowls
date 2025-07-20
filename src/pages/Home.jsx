@@ -1,4 +1,4 @@
-import { ArrowRight, Heart, Users, Star, Globe } from "lucide-react";
+import { ArrowRight, Heart, Users, Star, Globe, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.png";
@@ -83,10 +83,8 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.c2d204ed-7866-448c-872b-db00f5029128.png",
-      description:
-        "Tasty paneer tikka pieces with flavorful rice. Ingredients: Paneer, Basmati Rice, Tomatoes, Spices.",
+      image: "https://bing.com/th/id/BCO.c2d204ed-7866-448c-872b-db00f5029128.png",
+      description: "Tasty paneer tikka pieces with flavorful rice. Ingredients: Paneer, Basmati Rice, Tomatoes, Spices.",
       rating: 4.9,
       popular: true,
       prep_time: "15-20 min",
@@ -97,10 +95,8 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.d9277489-74d0-4da6-a8db-753595c796c2.png",
-      description:
-        "Zesty and vibrant blend of Mexican-spiced rice. Ingredients: Rice, Bell Peppers, Corn, Salsa.",
+      image: "https://bing.com/th/id/BCO.d9277489-74d0-4da6-a8db-753595c796c2.png",
+      description: "Zesty and vibrant blend of Mexican-spiced rice. Ingredients: Rice, Bell Peppers, Corn, Salsa.",
       rating: 4.7,
       popular: true,
       prep_time: "12-18 min",
@@ -111,10 +107,8 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.6c87cc69-8f32-4ab0-a48e-b85d2473a32d.png",
-      description:
-        "Tangy Punjabi chickpea with steamed rice. Ingredients: Chickpeas, Masala, Rice, Tomatoes.",
+      image: "https://bing.com/th/id/BCO.6c87cc69-8f32-4ab0-a48e-b85d2473a32d.png",
+      description: "Tangy Punjabi chickpea with steamed rice. Ingredients: Chickpeas, Masala, Rice, Tomatoes.",
       rating: 4.6,
       popular: false,
       prep_time: "15-20 min",
@@ -125,10 +119,8 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.ae38d081-e276-4d47-8b70-60fe5d9e76bd.png",
-      description:
-        "Kidney beans in a thick gravy with steamed rice. Ingredients: Kidney Beans, Tomatoes, Rice, Spices.",
+      image: "https://bing.com/th/id/BCO.ae38d081-e276-4d47-8b70-60fe5d9e76bd.png",
+      description: "Kidney beans in a thick gravy with steamed rice. Ingredients: Kidney Beans, Tomatoes, Rice, Spices.",
       rating: 4.8,
       popular: false,
       prep_time: "18-22 min",
@@ -139,10 +131,8 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.1be1138a-c62a-4912-9f03-f5d2bf0baa59.png",
-      description:
-        "Black lentils in a creamy gravy, served with rice. Ingredients: Black Lentils, Cream, Rice, Spices.",
+      image: "https://bing.com/th/id/BCO.1be1138a-c62a-4912-9f03-f5d2bf0baa59.png",
+      description: "Black lentils in a creamy gravy, served with rice. Ingredients: Black Lentils, Cream, Rice, Spices.",
       rating: 4.7,
       popular: false,
       prep_time: "18-22 min",
@@ -153,10 +143,8 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.e8131657-f48e-42ee-86ca-f5e4a5cd9a28.png",
-      description:
-        "The classic combo features creamy yellow dal fry. Ingredients: Lentils, Cumin, Rice, Onions, Ghee.",
+      image: "https://bing.com/th/id/BCO.e8131657-f48e-42ee-86ca-f5e4a5cd9a28.png",
+      description: "The classic combo features creamy yellow dal fry. Ingredients: Lentils, Cumin, Rice, Onions, Ghee.",
       rating: 4.6,
       popular: false,
       prep_time: "15-20 min",
@@ -167,10 +155,8 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.e7a7e1cf-3d2b-4a88-8f78-3d5ff78c0024.png",
-      description:
-        "Zucchini noodles, cherry tomatoes, pesto. Ingredients: Zucchini, Cherry Tomatoes, Pesto Sauce.",
+      image: "https://bing.com/th/id/BCO.e7a7e1cf-3d2b-4a88-8f78-3d5ff78c0024.png",
+      description: "Zucchini noodles, cherry tomatoes, pesto. Ingredients: Zucchini, Cherry Tomatoes, Pesto Sauce.",
       rating: 4.5,
       popular: false,
       prep_time: "10-15 min",
@@ -181,10 +167,8 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.513578f9-3c14-4a05-83e3-c94d4687833d.png",
-      description:
-        "Boiled lentils, cucumber, lemon dressing. Ingredients: Lentils, Cucumber, Lemon, Olive Oil.",
+      image: "https://bing.com/th/id/BCO.513578f9-3c14-4a05-83e3-c94d4687833d.png",
+      description: "Boiled lentils, cucumber, lemon dressing. Ingredients: Lentils, Cucumber, Lemon, Olive Oil.",
       rating: 4.6,
       popular: false,
       prep_time: "10-12 min",
@@ -195,10 +179,8 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.ea08f5dd-0d3d-41b4-8571-a884a92e5016.png",
-      description:
-        "Sautéed mushrooms, spinach, quinoa. Ingredients: Mushrooms, Spinach, Quinoa.",
+      image: "https://bing.com/th/id/BCO.ea08f5dd-0d3d-41b4-8571-a884a92e5016.png",
+      description: "Sautéed mushrooms, spinach, quinoa. Ingredients: Mushrooms, Spinach, Quinoa.",
       rating: 4.5,
       popular: false,
       prep_time: "10-15 min",
@@ -209,10 +191,8 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.701ab0fd-e65c-4da7-81b7-0be509f95725.png",
-      description:
-        "Steamed broccoli, tofu, lemon rice. Ingredients: Broccoli, Tofu, Rice, Lemon.",
+      image: "https://bing.com/th/id/BCO.701ab0fd-e65c-4da7-81b7-0be509f95725.png",
+      description: "Steamed broccoli, tofu, lemon rice. Ingredients: Broccoli, Tofu, Rice, Lemon.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -223,10 +203,8 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.09052638-4766-4a1b-a761-99ff4ff49582.png",
-      description:
-        "Vegetable broth, seasonal steamed veggies. Ingredients: Carrots, Beans, Broth.",
+      image: "https://bing.com/th/id/BCO.09052638-4766-4a1b-a761-99ff4ff49582.png",
+      description: "Vegetable broth, seasonal steamed veggies. Ingredients: Carrots, Beans, Broth.",
       rating: 4.5,
       popular: false,
       prep_time: "10-12 min",
@@ -237,10 +215,8 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.c8cb8838-74fc-433c-8a37-ee140742216b.png",
-      description:
-        "Kidney beans, black beans, vinaigrette. Ingredients: Kidney Beans, Black Beans, Vinaigrette.",
+      image: "https://bing.com/th/id/BCO.c8cb8838-74fc-433c-8a37-ee140742216b.png",
+      description: "Kidney beans, black beans, vinaigrette. Ingredients: Kidney Beans, Black Beans, Vinaigrette.",
       rating: 4.6,
       popular: false,
       prep_time: "10-12 min",
@@ -251,10 +227,8 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.d45f553e-f4f7-437a-8bf1-e5ee72c8e19a.png",
-      description:
-        "Mango, pineapple, kiwi, coconut flakes. Ingredients: Mango, Pineapple, Kiwi, Coconut.",
+      image: "https://bing.com/th/id/BCO.d45f553e-f4f7-437a-8bf1-e5ee72c8e19a.png",
+      description: "Mango, pineapple, kiwi, coconut flakes. Ingredients: Mango, Pineapple, Kiwi, Coconut.",
       rating: 4.9,
       popular: true,
       prep_time: "5-10 min",
@@ -265,10 +239,8 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.b1c8eefb-3688-4c6a-982b-94ee6c22c401.png",
-      description:
-        "Strawberries, blueberries, raspberries, honey drizzle. Ingredients: Strawberries, Blueberries, Raspberries, Honey.",
+      image: "https://bing.com/th/id/BCO.b1c8eefb-3688-4c6a-982b-94ee6c22c401.png",
+      description: "Strawberries, blueberries, raspberries, honey drizzle. Ingredients: Strawberries, Blueberries, Raspberries, Honey.",
       rating: 4.8,
       popular: true,
       prep_time: "5-10 min",
@@ -279,10 +251,8 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.f47a6697-b96b-452c-a573-c2809c06b56c.png",
-      description:
-        "Apple slices, cinnamon, yogurt, granola. Ingredients: Apples, Cinnamon, Yogurt, Granola.",
+      image: "https://bing.com/th/id/BCO.f47a6697-b96b-452c-a573-c2809c06b56c.png",
+      description: "Apple slices, cinnamon, yogurt, granola. Ingredients: Apples, Cinnamon, Yogurt, Granola.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
@@ -293,10 +263,8 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.c9bdec69-14b1-4b23-b96c-00bc08a6d65d.png",
-      description:
-        "Orange segments, grapefruit, pomegranate, mint. Ingredients: Oranges, Grapefruit, Pomegranate, Mint.",
+      image: "https://bing.com/th/id/BCO.c9bdec69-14b1-4b23-b96c-00bc08a6d65d.png",
+      description: "Orange segments, grapefruit, pomegranate, mint. Ingredients: Oranges, Grapefruit, Pomegranate, Mint.",
       rating: 4.8,
       popular: false,
       prep_time: "5-10 min",
@@ -307,10 +275,8 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.42e995bc-bb54-4944-b60e-355256f2c9a3.png",
-      description:
-        "Banana, walnuts, dates, chia seeds. Ingredients: Banana, Walnuts, Dates, Chia Seeds.",
+      image: "https://bing.com/th/id/BCO.42e995bc-bb54-4944-b60e-355256f2c9a3.png",
+      description: "Banana, walnuts, dates, chia seeds. Ingredients: Banana, Walnuts, Dates, Chia Seeds.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
@@ -321,10 +287,8 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.d2ae7400-b6c0-4dea-b4f2-912271886240.png",
-      description:
-        "Watermelon cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
+      image: "https://bing.com/th/id/BCO.d2ae7400-b6c0-4dea-b4f2-912271886240.png",
+      description: "Watermelon cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
@@ -335,10 +299,8 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.4f97b985-b333-48c0-bfbe-b6fd9748ae2a.png",
-      description:
-        "Protein-packed sprouts, roasted peanuts, lime. Ingredients: Chana Sprouts, Peanuts, Lime, Spices.",
+      image: "https://bing.com/th/id/BCO.4f97b985-b333-48c0-bfbe-b6fd9748ae2a.png",
+      description: "Protein-packed sprouts, roasted peanuts, lime. Ingredients: Chana Sprouts, Peanuts, Lime, Spices.",
       rating: 4.7,
       popular: true,
       prep_time: "10-15 min",
@@ -349,10 +311,8 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.12aa897b-8699-4dcd-9d8f-d6fee49d7434.png",
-      description:
-        "Chickpeas, herbed yogurt, quinoa. Ingredients: Chickpeas, Yogurt, Quinoa, Herbs.",
+      image: "https://bing.com/th/id/BCO.12aa897b-8699-4dcd-9d8f-d6fee49d7434.png",
+      description: "Chickpeas, herbed yogurt, quinoa. Ingredients: Chickpeas, Yogurt, Quinoa, Herbs.",
       rating: 4.9,
       popular: true,
       prep_time: "12-15 min",
@@ -363,10 +323,8 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.645de432-a22f-4cf2-ad8e-de83ffd7c173.png",
-      description:
-        "Scrambled tofu, multigrain rice, veggies. Ingredients: Tofu, Rice, Mixed Vegetables.",
+      image: "https://bing.com/th/id/BCO.645de432-a22f-4cf2-ad8e-de83ffd7c173.png",
+      description: "Scrambled tofu, multigrain rice, veggies. Ingredients: Tofu, Rice, Mixed Vegetables.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -377,10 +335,8 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.2b333cfa-0869-41dd-94da-2a53fbd77a68.png",
-      description:
-        "Grilled paneer + tofu, lentil base. Ingredients: Paneer, Tofu, Lentils, Spices.",
+      image: "https://bing.com/th/id/BCO.2b333cfa-0869-41dd-94da-2a53fbd77a68.png",
+      description: "Grilled paneer + tofu, lentil base. Ingredients: Paneer, Tofu, Lentils, Spices.",
       rating: 4.7,
       popular: false,
       prep_time: "12-15 min",
@@ -391,10 +347,8 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.cc5df020-be71-444f-88be-97050092c4cd.png",
-      description:
-        "Red lentils, quinoa, steamed greens. Ingredients: Lentils, Quinoa, Spinach.",
+      image: "https://bing.com/th/id/BCO.cc5df020-be71-444f-88be-97050092c4cd.png",
+      description: "Red lentils, quinoa, steamed greens. Ingredients: Lentils, Quinoa, Spinach.",
       rating: 4.8,
       popular: false,
       prep_time: "10-15 min",
@@ -405,10 +359,8 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.c02a052b-b04f-4144-aa42-58e1d48cb645.png",
-      description:
-        "Soya in spicy gravy, brown rice. Ingredients: Soya Chunks, Brown Rice, Spices.",
+      image: "https://bing.com/th/id/BCO.c02a052b-b04f-4144-aa42-58e1d48cb645.png",
+      description: "Soya in spicy gravy, brown rice. Ingredients: Soya Chunks, Brown Rice, Spices.",
       rating: 4.6,
       popular: false,
       prep_time: "15-20 min",
@@ -419,10 +371,8 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.3b1e7a44-b7b2-439f-ab86-da9366a60ebd.png",
-      description:
-        "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
+      image: "https://bing.com/th/id/BCO.3b1e7a44-b7b2-439f-ab86-da9366a60ebd.png",
+      description: "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -433,10 +383,8 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.b3927527-2e32-40a2-ac97-021cc2800f42.png",
-      description:
-        "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
+      image: "https://bing.com/th/id/BCO.b3927527-2e32-40a2-ac97-021cc2800f42.png",
+      description: "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -447,10 +395,8 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.41b92d9f-83fe-4432-9dc9-24f78a699230.png",
-      description:
-        "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
+      image: "https://bing.com/th/id/BCO.41b92d9f-83fe-4432-9dc9-24f78a699230.png",
+      description: "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
       rating: 4.8,
       popular: false,
       prep_time: "10-12 min",
@@ -461,10 +407,8 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.c0b95872-bb86-4a8e-b1ba-ad653b316267.png",
-      description:
-        "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
+      image: "https://bing.com/th/id/BCO.c0b95872-bb86-4a8e-b1ba-ad653b316267.png",
+      description: "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -475,10 +419,8 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.3e8de57f-ca0c-4ace-a184-c1c70cde74fd.png",
-      description:
-        "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
+      image: "https://bing.com/th/id/BCO.3e8de57f-ca0c-4ace-a184-c1c70cde74fd.png",
+      description: "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -489,10 +431,8 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.06cc8a14-68b5-4d73-804d-3734dc048d6a.png",
-      description:
-        "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
+      image: "https://bing.com/th/id/BCO.06cc8a14-68b5-4d73-804d-3734dc048d6a.png",
+      description: "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -503,10 +443,8 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.48cd81a3-02cb-43e2-83b7-a5980c76d80e.png",
-      description:
-        "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
+      image: "https://bing.com/th/id/BCO.48cd81a3-02cb-43e2-83b7-a5980c76d80e.png",
+      description: "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -517,10 +455,8 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.00c95c63-aae7-45c8-a3a6-716ee4ccff38.png",
-      description:
-        "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
+      image: "https://bing.com/th/id/BCO.00c95c63-aae7-45c8-a3a6-716ee4ccff38.png",
+      description: "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -531,10 +467,8 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.76013472-25c3-4e77-801b-3e08c5347539.png",
-      description:
-        "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
+      image: "https://bing.com/th/id/BCO.76013472-25c3-4e77-801b-3e08c5347539.png",
+      description: "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
       rating: 4.8,
       popular: false,
       prep_time: "10-12 min",
@@ -545,10 +479,8 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.2501082f-c6ce-4507-b6df-d5bb096a7061.png",
-      description:
-        "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
+      image: "https://bing.com/th/id/BCO.2501082f-c6ce-4507-b6df-d5bb096a7061.png",
+      description: "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -559,10 +491,8 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.0774fb76-de0b-4381-b284-dc545a096a64.png",
-      description:
-        "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
+      image: "https://bing.com/th/id/BCO.0774fb76-de0b-4381-b284-dc545a096a64.png",
+      description: "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -573,10 +503,8 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.efa58b2d-4d1e-4dba-9dc8-013d1fe20992.png",
-      description:
-        "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
+      image: "https://bing.com/th/id/BCO.efa58b2d-4d1e-4dba-9dc8-013d1fe20992.png",
+      description: "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -587,10 +515,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.7584e3b5-e9b1-46fe-b63a-735e3687e937.png",
-      description:
-        "Creamy yogurt with a sweet honey twist. Ingredients: Yogurt, Honey.",
+      image: "https://bing.com/th/id/BCO.7584e3b5-e9b1-46fe-b63a-735e3687e937.png",
+      description: "Creamy yogurt with a sweet honey twist. Ingredients: Yogurt, Honey.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -601,10 +527,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.4029c053-8a65-461b-a0f7-c9eb7e45f253.png",
-      description:
-        "Extra protein to power up your bowl. Ingredients: Protein Powder, Nuts.",
+      image: "https://bing.com/th/id/BCO.4029c053-8a65-461b-a0f7-c9eb7e45f253.png",
+      description: "Extra protein to power up your bowl. Ingredients: Protein Powder, Nuts.",
       rating: 4.6,
       popular: false,
       prep_time: "5 min",
@@ -615,10 +539,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.bb9686e3-ff5d-4934-80a1-c3f5e09c7002.png",
-      description:
-        "Refreshing herbal infusion drink. Ingredients: Mixed Herbs, Water.",
+      image: "https://bing.com/th/id/BCO.bb9686e3-ff5d-4934-80a1-c3f5e09c7002.png",
+      description: "Refreshing herbal infusion drink. Ingredients: Mixed Herbs, Water.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -629,8 +551,7 @@ const Index = () => {
       category: "addons",
       price: { one_size: 20 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.449c377c-8f1a-481b-b517-e874d1472434.png",
+      image: "https://bing.com/th/id/BCO.449c377c-8f1a-481b-b517-e874d1472434.png",
       description: "Nutrient-rich chia seeds topping. Ingredients: Chia Seeds.",
       rating: 4.5,
       popular: false,
@@ -642,10 +563,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 15 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.bdc501c9-ec59-4b41-89eb-c68de9034ef1.png",
-      description:
-        "Fresh herbs to enhance flavor. Ingredients: Cilantro, Parsley.",
+      image: "https://bing.com/th/id/BCO.bdc501c9-ec59-4b41-89eb-c68de9034ef1.png",
+      description: "Fresh herbs to enhance flavor. Ingredients: Cilantro, Parsley.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -656,10 +575,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 15 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.e6ce9ad8-e6f0-47fa-84e4-e6a638d09461.png",
-      description:
-        "Spicy seasoning for extra zing. Ingredients: Chili Powder, Spices.",
+      image: "https://bing.com/th/id/BCO.e6ce9ad8-e6f0-47fa-84e4-e6a638d09461.png",
+      description: "Spicy seasoning for extra zing. Ingredients: Chili Powder, Spices.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -670,10 +587,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 35 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.656d3668-e705-4daa-962f-17ce360f566b.png",
-      description:
-        "Boost your immunity with this shot. Ingredients: Ginger, Turmeric, Lemon.",
+      image: "https://bing.com/th/id/BCO.656d3668-e705-4daa-962f-17ce360f566b.png",
+      description: "Boost your immunity with this shot. Ingredients: Ginger, Turmeric, Lemon.",
       rating: 4.6,
       popular: false,
       prep_time: "5 min",
@@ -684,10 +599,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
-      description:
-        "Cool, spiced buttermilk drink. Ingredients: Yogurt, Spices, Water.",
+      image: "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
+      description: "Cool, spiced buttermilk drink. Ingredients: Yogurt, Spices, Water.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -698,10 +611,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 35 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.b417493b-0a72-4b18-8ed9-f08a70509f47.png",
-      description:
-        "Refreshing lime soda or jaljeera. Ingredients: Lime, Soda, Spices.",
+      image: "https://bing.com/th/id/BCO.b417493b-0a72-4b18-8ed9-f08a70509f47.png",
+      description: "Refreshing lime soda or jaljeera. Ingredients: Lime, Soda, Spices.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -712,8 +623,7 @@ const Index = () => {
       category: "addons",
       price: { one_size: 40 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.bc3d1719-c098-4a84-b774-c59af540970a.png",
+      image: "https://bing.com/th/id/BCO.bc3d1719-c098-4a84-b774-c59af540970a.png",
       description: "Crunchy roasted fox nuts. Ingredients: Makhana, Spices.",
       rating: 4.6,
       popular: false,
@@ -725,10 +635,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 40 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.544f0969-11b3-4818-921f-70cb70711ce7.png",
-      description:
-        "Soothing aloe vera health shot. Ingredients: Aloe Vera, Lemon.",
+      image: "https://bing.com/th/id/BCO.544f0969-11b3-4818-921f-70cb70711ce7.png",
+      description: "Soothing aloe vera health shot. Ingredients: Aloe Vera, Lemon.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -739,10 +647,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 60 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.a09a791b-5a38-45b8-802b-f0f24af54768.png",
-      description:
-        "Sweet moong dal halwa dessert. Ingredients: Moong Dal, Sugar, Ghee.",
+      image: "https://bing.com/th/id/BCO.a09a791b-5a38-45b8-802b-f0f24af54768.png",
+      description: "Sweet moong dal halwa dessert. Ingredients: Moong Dal, Sugar, Ghee.",
       rating: 4.7,
       popular: false,
       prep_time: "10 min",
@@ -753,10 +659,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 40 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.3b5f1030-1daa-4ac7-a9f3-87c61b6e4f2f.png",
-      description:
-        "Traditional Gujarati sweet bite. Ingredients: Jaggery, Wheat Flour, Ghee.",
+      image: "https://bing.com/th/id/BCO.3b5f1030-1daa-4ac7-a9f3-87c61b6e4f2f.png",
+      description: "Traditional Gujarati sweet bite. Ingredients: Jaggery, Wheat Flour, Ghee.",
       rating: 4.6,
       popular: false,
       prep_time: "10 min",
@@ -767,10 +671,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 60 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.f3a27ed9-7c7c-49b9-8b48-cb6de251e18d.png",
-      description:
-        "Delicious bottle gourd halwa. Ingredients: Dudhi, Sugar, Ghee.",
+      image: "https://bing.com/th/id/BCO.f3a27ed9-7c7c-49b9-8b48-cb6de251e18d.png",
+      description: "Delicious bottle gourd halwa. Ingredients: Dudhi, Sugar, Ghee.",
       rating: 4.7,
       popular: false,
       prep_time: "10 min",
@@ -781,10 +683,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image:
-        "https://bing.com/th/id/BCO.b33f842a-f7e2-4de2-8373-9dbd0ee7fe80.png",
-      description:
-        "Soft, sweet gulab jamun. Ingredients: Milk Solids, Sugar Syrup.",
+      image: "https://bing.com/th/id/BCO.b33f842a-f7e2-4de2-8373-9dbd0ee7fe80.png",
+      description: "Soft, sweet gulab jamun. Ingredients: Milk Solids, Sugar Syrup.",
       rating: 4.8,
       popular: false,
       prep_time: "5 min",
@@ -843,6 +743,62 @@ const Index = () => {
     setTouchEnd(null);
   };
 
+  const handleShare = async (item, event) => {
+    const shareData = {
+      title: item.name,
+      text: `${item.description.split(".")[0]}. Check it out at 99 Bowls!`,
+      url: `https://99bowls.com/menu/${item.id}`,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback for browsers that don't support Web Share API
+        const shareText = encodeURIComponent(`${shareData.title}: ${shareData.text} ${shareData.url}`);
+        const shareOptions = [
+          { name: "WhatsApp", url: `https://wa.me/?text=${shareText}` },
+          { name: "Twitter", url: `https://twitter.com/intent/tweet?text=${shareText}` },
+          { name: "Facebook", url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}` },
+          {
+            name: "Copy Link",
+            action: () => {
+              navigator.clipboard.writeText(`${shareData.title}: ${shareData.text} ${shareData.url}`);
+              alert("Link copied to clipboard!");
+            },
+          },
+        ];
+
+        const shareMenu = shareOptions.map((option) => (
+          <button
+            key={option.name}
+            onClick={() => (option.action ? option.action() : window.open(option.url, "_blank"))}
+            className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+          >
+            {option.name}
+          </button>
+        ));
+
+        const shareMenuContainer = document.createElement("div");
+        shareMenuContainer.className = "absolute z-50 bg-white border border-gray-200 rounded-lg shadow-lg";
+        shareMenuContainer.style.top = "100%";
+        shareMenuContainer.style.left = "0";
+        ReactDOM.render(shareMenu, shareMenuContainer);
+        event.currentTarget.appendChild(shareMenuContainer);
+
+        const handleOutsideClick = (e) => {
+          if (!shareMenuContainer.contains(e.target)) {
+            shareMenuContainer.remove();
+            document.removeEventListener("click", handleOutsideClick);
+          }
+        };
+        document.addEventListener("click", handleOutsideClick);
+      }
+    } catch (error) {
+      console.error("Error sharing:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
       <section className="relative z-10 min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
@@ -868,10 +824,10 @@ const Index = () => {
                 alt="99 Bowls Logo"
                 className="w-32 sm:w-40 md:w-48 lg:w-56 object-contain"
                 style={{
-                  transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${-60 * scrollProgress}px)` ,
+                  transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${-60 * scrollProgress}px)`,
                   opacity: 1 - scrollProgress,
-                  transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
-                  pointerEvents: scrollProgress === 1 ? 'none' : 'auto',
+                  transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1)",
+                  pointerEvents: scrollProgress === 1 ? "none" : "auto",
                 }}
                 loading="lazy"
               />
@@ -883,7 +839,7 @@ const Index = () => {
                     Taste bhi,
                   </span>
                   <br />
-                  &nbsp;&nbsp;
+                    
                   <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-7">
                     Health bhi
                   </span>
@@ -976,8 +932,7 @@ const Index = () => {
                     className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                     onError={(e) => {
-                      e.target.src =
-                        "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                      e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
@@ -1006,6 +961,13 @@ const Index = () => {
                   >
                     Zomato
                   </Link>
+                  <button
+                    onClick={(e) => handleShare(item, e)}
+                    className="bg-blue-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 relative"
+                  >
+                    <Share2 className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-1" />
+                    
+                  </button>
                 </div>
               </div>
             ))}
@@ -1054,8 +1016,7 @@ const Index = () => {
                     alt={selectedBowl.name}
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
-                      e.target.src =
-                        "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                      e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-full" />
@@ -1119,9 +1080,7 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                At 99 Bowls, we believe that good food should be accessible to
-                everyone. That's why for every bowl you order, we donate an meal
-                to people in need.
+                At 99 Bowls, we believe that good food should be accessible to everyone. That's why for every bowl you order, we donate a meal to people in need.
               </p>
 
               <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
