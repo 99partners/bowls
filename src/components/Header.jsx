@@ -98,17 +98,22 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 ${
-          isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden`}>
-          <div className="py-4 space-y-2">
+        {/* Overlay for mobile menu */}
+        {isOpen && (
+          <div className="fixed inset-0 z-40 bg-black bg-opacity-30 md:hidden" onClick={() => setIsOpen(false)}></div>
+        )}
+        <div className={`md:hidden fixed top-16 left-0 w-full z-50 transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        } overflow-hidden`}
+          style={{boxShadow: isOpen ? '0 8px 32px rgba(0,0,0,0.12)' : undefined}}
+        >
+          <div className="bg-white shadow-lg rounded-b-2xl py-4 px-4 space-y-2 border-t border-orange-100">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-300 ${
+                className={`block px-3 py-3 text-base font-medium rounded-lg transition-colors duration-300 ${
                   location.pathname === item.path
                     ? 'text-orange-500 bg-orange-50'
                     : 'text-gray-700 hover:text-orange-500 hover:bg-gray-50'
@@ -120,7 +125,7 @@ const Navigation = () => {
             <Link
               to="/franchise"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full mt-4"
+              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full mt-4 text-base shadow-md"
             >
               Franchise
             </Link>

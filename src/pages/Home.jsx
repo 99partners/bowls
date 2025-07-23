@@ -801,12 +801,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
-      <section className="relative z-10 min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+      <section className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <svg
             viewBox="0 0 320 1440"
             preserveAspectRatio="none"
-            className="absolute top-0 right-0 h-full w-[95%]"
+            className="absolute top-0 right-0 h-full w-full lg:w-[95%]"
           >
             <path
               fill="#FFFFFF"
@@ -816,13 +816,13 @@ const Index = () => {
           </svg>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center w-full max-w-7xl">
           <div className="animate-fade-in relative">
-            <div className="flex justify-start mb-12 sm:mb-16 -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8">
+            <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16 -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8">
               <img
                 src={logo}
                 alt="99 Bowls Logo"
-                className="w-32 sm:w-40 md:w-48 lg:w-56 object-contain"
+                className="w-24 sm:w-32 md:w-40 lg:w-56 object-contain"
                 style={{
                   transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${-60 * scrollProgress}px)`,
                   opacity: 1 - scrollProgress,
@@ -832,35 +832,35 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <div className="-mt-8 sm:-mt-10 md:-mt-12 lg:-mt-16">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <div className="-mt-6 sm:-mt-8 md:-mt-10 lg:-mt-16">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 leading-tight text-center lg:text-left">
                 <span>
                   <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent">
                     Taste bhi,
                   </span>
                   <br />
                     
-                  <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-7">
+                  <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-2 sm:pl-7">
                     Health bhi
                   </span>
                 </span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl lg:max-w-3xl leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-600 mb-4 sm:mb-8 max-w-full sm:max-w-2xl lg:max-w-3xl leading-relaxed text-center lg:text-left">
                 More than a meal — it’s a step toward better health for all.
               </p>
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] max-w-full">
+          <div className="flex items-center justify-center mt-6 lg:mt-0">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-[22rem] md:h-[22rem] lg:w-[36rem] lg:h-[36rem] max-w-full">
               <img
                 src={fruitbowl}
                 alt="Fresh fruit bowl"
                 className="w-full h-full object-contain gentle-rotate animate-gentle-rotate"
                 loading="lazy"
               />
-              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-orange-200 mt-6 sm:mt-8 absolute bottom-[-40px] left-1/2 transform -translate-x-1/2">
-                <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
+              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-2 py-1.5 sm:px-3 sm:py-2 rounded-full border border-orange-200 mt-4 sm:mt-6 absolute bottom-[-30px] left-1/2 transform -translate-x-1/2">
+                <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">
                   Kindness with Every Order
                 </span>
@@ -883,26 +883,26 @@ const Index = () => {
         `}</style>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
               Explore Our{" "}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Menu
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600">
+            <p className="text-sm sm:text-base md:text-xl text-gray-600">
               Browse our selection of fresh, healthy bowls and add-ons
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 mb-8 sm:mb-12">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
                   selectedCategory === category.id
                     ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -913,14 +913,14 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2 bg-white rounded-xl p-3 sm:p-4 shadow border border-gray-100"
               >
                 <div
-                  className="relative overflow-hidden h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
+                  className="relative overflow-hidden h-36 w-36 sm:h-48 sm:w-48 md:h-64 md:w-64 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
                   onClick={() => {
                     setSelectedBowl(item);
                     setSelectedView("image");
@@ -938,13 +938,13 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
                 </div>
 
-                <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mb-1 sm:mb-2 text-center">
+                <h3 className="text-xs sm:text-base md:text-lg font-bold text-gray-800 mb-1 sm:mb-2 text-center">
                   {item.name}
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">
                   {item.description.split(".")[0] + "."}
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-1 sm:gap-2">
                   <Link
                     to={`https://www.swiggy.com/search?query=${item.name}`}
                     className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
@@ -966,7 +966,6 @@ const Index = () => {
                     className="bg-blue-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 relative"
                   >
                     <Share2 className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-1" />
-                    
                   </button>
                 </div>
               </div>
@@ -976,53 +975,54 @@ const Index = () => {
       </section>
 
       {selectedBowl && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center z-50"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) {
-              setSelectedBowl(null);
-              setSelectedView("image");
-            }
-          }}
-          onWheel={(e) => {
-            if (e.deltaX > 0 && selectedView === "image") {
-              setSelectedView("details");
-              e.preventDefault();
-            } else if (e.deltaX < 0 && selectedView === "details") {
-              setSelectedView("image");
-              e.preventDefault();
-            }
-          }}
-          onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div className="bg-black text-white p-4 sm:p-6 rounded-lg w-full h-full flex flex-col items-center justify-center relative shadow-xl">
+        <>
+          {/* Prevent background scroll when modal is open */}
+          <style>{`body { overflow: hidden !important; }`}</style>
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-100"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                setSelectedBowl(null);
+                setSelectedView("image");
+                document.body.style.overflow = '';
+              }
+            }}
+            onWheel={(e) => {
+              if (e.deltaX > 0 && selectedView === "image") {
+                setSelectedView("details");
+                e.preventDefault();
+              } else if (e.deltaX < 0 && selectedView === "details") {
+                setSelectedView("image");
+                e.preventDefault();
+              }
+            }}
+            onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <button
-              className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center text-lg"
+              className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-2xl z-10"
               onClick={() => {
                 setSelectedBowl(null);
                 setSelectedView("image");
+                document.body.style.overflow = '';
               }}
             >
               ×
             </button>
 
             {selectedView === "image" && (
-              <div className="h-full w-full flex flex-col items-center justify-center">
-                <div className="relative overflow-hidden w-[90%] sm:w-[70%] md:w-[60%] max-w-[600px] aspect-square rounded-full">
-                  <img
-                    src={selectedBowl.image}
-                    alt={selectedBowl.name}
-                    className="w-full h-full object-cover rounded-full"
-                    onError={(e) => {
-                      e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-full" />
-                </div>
+              <div className="flex flex-col items-center justify-center w-full h-full">
+                <img
+                  src={selectedBowl.image}
+                  alt={selectedBowl.name}
+                  className="object-contain max-w-[90vw] max-h-[90vh] rounded-full shadow-2xl"
+                  onError={(e) => {
+                    e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                  }}
+                />
                 <p
-                  className="text-xs sm:text-sm text-gray-400 mt-4 cursor-pointer"
+                  className="text-xs sm:text-sm text-gray-300 mt-6 cursor-pointer text-center"
                   onClick={() => setSelectedView("details")}
                 >
                   Swipe right or click for details
@@ -1031,34 +1031,34 @@ const Index = () => {
             )}
 
             {selectedView === "details" && (
-              <div className="h-full w-full flex flex-col items-center justify-center bg-gray-900 p-4 sm:p-6">
-                <h3 className="text-lg sm:text-2xl md:text-3xl font-bold mb-4 text-center">
+              <div className="flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-90 p-4">
+                <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4 text-center text-white">
                   {selectedBowl.name}
                 </h3>
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 text-center">
+                <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-2 sm:mb-4 text-center">
                   {selectedBowl.description.split("Ingredients:")[0].trim()}.
                 </p>
                 {selectedBowl.description.includes("Ingredients:") && (
                   <div className="text-center">
-                    <h4 className="text-base sm:text-xl md:text-2xl font-semibold mb-2">
+                    <h4 className="text-sm sm:text-base md:text-xl font-semibold mb-1 sm:mb-2 text-white">
                       Ingredients:
                     </h4>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-300">
+                    <p className="text-xs sm:text-base md:text-lg text-gray-300">
                       {selectedBowl.description.split("Ingredients:")[1].trim()}
                     </p>
                   </div>
                 )}
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-2 text-center">
+                <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-1 sm:mb-2 text-center">
                   Sizes: {selectedBowl.sizes.join(" / ")}
                 </p>
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 text-center">
+                <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-2 sm:mb-4 text-center">
                   Price:{" "}
                   {selectedBowl.price.one_size
                     ? `₹${selectedBowl.price.one_size}`
                     : `Small: ₹${selectedBowl.price.small} / Large: ₹${selectedBowl.price.large}`}
                 </p>
                 <p
-                  className="text-xs sm:text-sm text-gray-400 mt-4 cursor-pointer"
+                  className="text-xs sm:text-sm text-gray-300 mt-4 cursor-pointer text-center"
                   onClick={() => setSelectedView("image")}
                 >
                   Swipe left or click to go back
@@ -1066,45 +1066,45 @@ const Index = () => {
               </div>
             )}
           </div>
-        </div>
+        </>
       )}
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-6">
                 Our{" "}
                 <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                   Mission
                 </span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-2 sm:mb-6 leading-relaxed">
                 At 99 Bowls, we believe that good food should be accessible to everyone. That's why for every bowl you order, we donate a meal to people in need.
               </p>
 
-              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                <div className="flex items-center space-x-3">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500" />
+              <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-8">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-green-100 rounded-full flex items-center justify-center">
+                    <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-700">
+                  <span className="text-xs sm:text-sm md:text-base text-gray-700">
                     1:1 donation ratio for every order
                   </span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-700">
+                  <span className="text-xs sm:text-sm md:text-base text-gray-700">
                     Supporting local communities
                   </span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-500" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-purple-500" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-700">
+                  <span className="text-xs sm:text-sm md:text-base text-gray-700">
                     Sustainable and eco-friendly practices
                   </span>
                 </div>
@@ -1112,7 +1112,7 @@ const Index = () => {
 
               <Link
                 to="/about"
-                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
                 aria-label="Learn more about our impact"
               >
                 Learn More About Our Impact
@@ -1120,19 +1120,19 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="relative">
-              <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+            <div className="relative mt-6 lg:mt-0">
+              <div className="bg-white rounded-xl p-2 sm:p-4 md:p-8 shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop"
                   alt="Community impact"
-                  className="w-full h-48 sm:h-64 object-cover rounded-lg mb-4 sm:mb-6"
+                  className="w-full h-32 sm:h-48 md:h-64 object-cover rounded-lg mb-2 sm:mb-4 md:mb-6"
                   loading="lazy"
                 />
                 <div className="text-center">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-base sm:text-lg md:text-2xl font-bold text-gray-800 mb-1 sm:mb-2">
                     Making a Difference
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600">
+                  <p className="text-xs sm:text-base text-gray-600">
                     Together, we're building a world where no one goes hungry
                   </p>
                 </div>
@@ -1142,27 +1142,27 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
               What Our{" "}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Customers Say
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl sm:max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-full sm:max-w-2xl mx-auto">
               Real stories from our amazing community
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl p-3 sm:p-4 md:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex mb-3 sm:mb-4">
+                <div className="flex mb-2 sm:mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -1170,10 +1170,10 @@ const Index = () => {
                     />
                   ))}
                 </div>
-                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
+                <p className="text-xs sm:text-base text-gray-600 mb-2 sm:mb-3 md:mb-4 leading-relaxed">
                   "{testimonial.text}"
                 </p>
-                <div className="text-sm sm:text-base font-semibold text-gray-800">
+                <div className="text-xs sm:text-base font-semibold text-gray-800">
                   {testimonial.name}
                 </div>
               </div>
