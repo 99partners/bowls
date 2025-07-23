@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.png";
 import logo from "../assets/99 Bowls New.png";
 import { useScrollContext } from "../ScrollContext";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const Index = () => {
   const [counters, setCounters] = useState({
@@ -18,6 +19,8 @@ const Index = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   const [scrollY, setScrollY] = useState(0);
   const { showHeroLogo, scrollProgress } = useScrollContext();
+  const isMobile = useIsMobile();
+  const [showMenuSection, setShowMenuSection] = useState(true);
 
   useEffect(() => {
     const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
@@ -75,6 +78,22 @@ const Index = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Show only hero section on mobile until user scrolls
+  useEffect(() => {
+    if (!isMobile) {
+      setShowMenuSection(true);
+      return;
+    }
+    setShowMenuSection(false);
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setShowMenuSection(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
 
   const bowls = [
     {
@@ -859,11 +878,18 @@ const Index = () => {
                 className="w-full h-full object-contain gentle-rotate animate-gentle-rotate"
                 loading="lazy"
               />
-              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-2 py-1.5 sm:px-3 sm:py-2 rounded-full border border-orange-200 mt-4 sm:mt-6 absolute bottom-[-30px] left-1/2 transform -translate-x-1/2">
+              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-2 py-1.5 sm:px-3 sm:py-2 rounded-full border border-orange-200 mt-4 sm:mt-6 absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-700"
+                style={{
+                  whiteSpace: 'nowrap',
+                  fontSize: isMobile ? '0.85rem' : undefined,
+                  paddingLeft: isMobile ? '0.75rem' : undefined,
+                  paddingRight: isMobile ? '0.75rem' : undefined,
+                  paddingTop: isMobile ? '0.35rem' : undefined,
+                  paddingBottom: isMobile ? '0.35rem' : undefined,
+                }}
+              >
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
-                <span className="text-xs sm:text-sm font-medium text-gray-700">
-                  Kindness with Every Order
-                </span>
+                <span>Kindness with Every Order</span>
               </div>
             </div>
           </div>
@@ -883,96 +909,99 @@ const Index = () => {
         `}</style>
       </section>
 
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
-              Explore Our{" "}
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Menu
-              </span>
-            </h2>
-            <p className="text-sm sm:text-base md:text-xl text-gray-600">
-              Browse our selection of fresh, healthy bowls and add-ons
-            </p>
-          </div>
+      {/* Only show menu section if allowed (mobile: after scroll, desktop: always) */}
+      {showMenuSection && (
+        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
+                Explore Our{" "}
+                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  Menu
+                </span>
+              </h2>
+              <p className="text-sm sm:text-base md:text-xl text-gray-600">
+                Browse our selection of fresh, healthy bowls and add-ons
+              </p>
+            </div>
 
-          <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 mb-8 sm:mb-12">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
-                  selectedCategory === category.id
-                    ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {filteredItems.map((item) => (
-              <div
-                key={item.id}
-                className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2 bg-white rounded-xl p-3 sm:p-4 shadow border border-gray-100"
-              >
-                <div
-                  className="relative overflow-hidden h-36 w-36 sm:h-48 sm:w-48 md:h-64 md:w-64 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
-                  onClick={() => {
-                    setSelectedBowl(item);
-                    setSelectedView("image");
-                  }}
+            <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 mb-8 sm:mb-12">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
+                    selectedCategory === category.id
+                      ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
                 >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
-                </div>
+                  {category.name}
+                </button>
+              ))}
+            </div>
 
-                <h3 className="text-xs sm:text-base md:text-lg font-bold text-gray-800 mb-1 sm:mb-2 text-center">
-                  {item.name}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">
-                  {item.description.split(".")[0] + "."}
-                </p>
-                <div className="flex gap-1 sm:gap-2">
-                  <Link
-                    to={`https://www.swiggy.com/search?query=${item.name}`}
-                    className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                    target="_blank"
-                    rel="noopener noreferrer"
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              {filteredItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2 bg-white rounded-xl p-3 sm:p-4 shadow border border-gray-100"
+                >
+                  <div
+                    className="relative overflow-hidden h-36 w-36 sm:h-48 sm:w-48 md:h-64 md:w-64 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
+                    onClick={() => {
+                      setSelectedBowl(item);
+                      setSelectedView("image");
+                    }}
                   >
-                    Swiggy
-                  </Link>
-                  <Link
-                    to={`https://www.zomato.com/search?query=${item.name}`}
-                    className="bg-red-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Zomato
-                  </Link>
-                  <button
-                    onClick={(e) => handleShare(item, e)}
-                    className="bg-blue-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 relative"
-                  >
-                    <Share2 className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-1" />
-                  </button>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
+                  </div>
+
+                  <h3 className="text-xs sm:text-base md:text-lg font-bold text-gray-800 mb-1 sm:mb-2 text-center">
+                    {item.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">
+                    {item.description.split(".")[0] + "."}
+                  </p>
+                  <div className="flex gap-1 sm:gap-2">
+                    <Link
+                      to={`https://www.swiggy.com/search?query=${item.name}`}
+                      className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Swiggy
+                    </Link>
+                    <Link
+                      to={`https://www.zomato.com/search?query=${item.name}`}
+                      className="bg-red-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Zomato
+                    </Link>
+                    <button
+                      onClick={(e) => handleShare(item, e)}
+                      className="bg-blue-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 relative"
+                    >
+                      <Share2 className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-1" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {selectedBowl && (
         <>
