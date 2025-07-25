@@ -852,7 +852,6 @@ const Index = () => {
     { id: "protein", name: "Protein Bowls" },
     { id: "heart_care", name: "Heart Care Bowls" },
     { id: "immunity", name: "Immunity Booster Bowls" },
-  
   ];
 
   const filteredItems =
