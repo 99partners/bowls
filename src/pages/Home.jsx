@@ -27,11 +27,11 @@ const Index = () => {
   // Smooth scroll to anchor on hash change
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace('#', '');
+      const id = location.hash.replace("#", "");
       const el = document.getElementById(id);
       if (el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100);
       }
     }
@@ -117,8 +117,10 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.c2d204ed-7866-448c-872b-db00f5029128.png",
-      description: "Tasty paneer tikka pieces with flavorful rice. Ingredients: Paneer, Basmati Rice, Tomatoes, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.c2d204ed-7866-448c-872b-db00f5029128.png",
+      description:
+        "Tasty paneer tikka pieces with flavorful rice. Ingredients: Paneer, Basmati Rice, Tomatoes, Spices.",
       rating: 4.9,
       popular: true,
       prep_time: "15-20 min",
@@ -129,8 +131,10 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.d9277489-74d0-4da6-a8db-753595c796c2.png",
-      description: "Zesty and vibrant blend of Mexican-spiced rice. Ingredients: Rice, Bell Peppers, Corn, Salsa.",
+      image:
+        "https://bing.com/th/id/BCO.d9277489-74d0-4da6-a8db-753595c796c2.png",
+      description:
+        "Zesty and vibrant blend of Mexican-spiced rice. Ingredients: Rice, Bell Peppers, Corn, Salsa.",
       rating: 4.7,
       popular: true,
       prep_time: "12-18 min",
@@ -141,8 +145,10 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.6c87cc69-8f32-4ab0-a48e-b85d2473a32d.png",
-      description: "Tangy Punjabi chickpea with steamed rice. Ingredients: Chickpeas, Masala, Rice, Tomatoes.",
+      image:
+        "https://bing.com/th/id/BCO.6c87cc69-8f32-4ab0-a48e-b85d2473a32d.png",
+      description:
+        "Tangy Punjabi chickpea with steamed rice. Ingredients: Chickpeas, Masala, Rice, Tomatoes.",
       rating: 4.6,
       popular: false,
       prep_time: "15-20 min",
@@ -153,8 +159,10 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.ae38d081-e276-4d47-8b70-60fe5d9e76bd.png",
-      description: "Kidney beans in a thick gravy with steamed rice. Ingredients: Kidney Beans, Tomatoes, Rice, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.ae38d081-e276-4d47-8b70-60fe5d9e76bd.png",
+      description:
+        "Kidney beans in a thick gravy with steamed rice. Ingredients: Kidney Beans, Tomatoes, Rice, Spices.",
       rating: 4.8,
       popular: false,
       prep_time: "18-22 min",
@@ -165,8 +173,10 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.1be1138a-c62a-4912-9f03-f5d2bf0baa59.png",
-      description: "Black lentils in a creamy gravy, served with rice. Ingredients: Black Lentils, Cream, Rice, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.1be1138a-c62a-4912-9f03-f5d2bf0baa59.png",
+      description:
+        "Black lentils in a creamy gravy, served with rice. Ingredients: Black Lentils, Cream, Rice, Spices.",
       rating: 4.7,
       popular: false,
       prep_time: "18-22 min",
@@ -177,8 +187,10 @@ const Index = () => {
       category: "rice",
       price: { small: 99, large: 299 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.e8131657-f48e-42ee-86ca-f5e4a5cd9a28.png",
-      description: "The classic combo features creamy yellow dal fry. Ingredients: Lentils, Cumin, Rice, Onions, Ghee.",
+      image:
+        "https://bing.com/th/id/BCO.e8131657-f48e-42ee-86ca-f5e4a5cd9a28.png",
+      description:
+        "The classic combo features creamy yellow dal fry. Ingredients: Lentils, Cumin, Rice, Onions, Ghee.",
       rating: 4.6,
       popular: false,
       prep_time: "15-20 min",
@@ -189,8 +201,10 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.e7a7e1cf-3d2b-4a88-8f78-3d5ff78c0024.png",
-      description: "Zucchini noodles, cherry tomatoes, pesto. Ingredients: Zucchini, Cherry Tomatoes, Pesto Sauce.",
+      image:
+        "https://bing.com/th/id/BCO.e7a7e1cf-3d2b-4a88-8f78-3d5ff78c0024.png",
+      description:
+        "Zucchini noodles, cherry tomatoes, pesto. Ingredients: Zucchini, Cherry Tomatoes, Pesto Sauce.",
       rating: 4.5,
       popular: false,
       prep_time: "10-15 min",
@@ -201,8 +215,10 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.513578f9-3c14-4a05-83e3-c94d4687833d.png",
-      description: "Boiled lentils, cucumber, lemon dressing. Ingredients: Lentils, Cucumber, Lemon, Olive Oil.",
+      image:
+        "https://bing.com/th/id/BCO.513578f9-3c14-4a05-83e3-c94d4687833d.png",
+      description:
+        "Boiled lentils, cucumber, lemon dressing. Ingredients: Lentils, Cucumber, Lemon, Olive Oil.",
       rating: 4.6,
       popular: false,
       prep_time: "10-12 min",
@@ -213,8 +229,10 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.ea08f5dd-0d3d-41b4-8571-a884a92e5016.png",
-      description: "Sautéed mushrooms, spinach, quinoa. Ingredients: Mushrooms, Spinach, Quinoa.",
+      image:
+        "https://bing.com/th/id/BCO.ea08f5dd-0d3d-41b4-8571-a884a92e5016.png",
+      description:
+        "Sautéed mushrooms, spinach, quinoa. Ingredients: Mushrooms, Spinach, Quinoa.",
       rating: 4.5,
       popular: false,
       prep_time: "10-15 min",
@@ -225,8 +243,10 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.701ab0fd-e65c-4da7-81b7-0be509f95725.png",
-      description: "Steamed broccoli, tofu, lemon rice. Ingredients: Broccoli, Tofu, Rice, Lemon.",
+      image:
+        "https://bing.com/th/id/BCO.701ab0fd-e65c-4da7-81b7-0be509f95725.png",
+      description:
+        "Steamed broccoli, tofu, lemon rice. Ingredients: Broccoli, Tofu, Rice, Lemon.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -237,8 +257,10 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.09052638-4766-4a1b-a761-99ff4ff49582.png",
-      description: "Vegetable broth, seasonal steamed veggies. Ingredients: Carrots, Beans, Broth.",
+      image:
+        "https://bing.com/th/id/BCO.09052638-4766-4a1b-a761-99ff4ff49582.png",
+      description:
+        "Vegetable broth, seasonal steamed veggies. Ingredients: Carrots, Beans, Broth.",
       rating: 4.5,
       popular: false,
       prep_time: "10-12 min",
@@ -249,8 +271,10 @@ const Index = () => {
       category: "weight_loss",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.c8cb8838-74fc-433c-8a37-ee140742216b.png",
-      description: "Kidney beans, black beans, vinaigrette. Ingredients: Kidney Beans, Black Beans, Vinaigrette.",
+      image:
+        "https://bing.com/th/id/BCO.c8cb8838-74fc-433c-8a37-ee140742216b.png",
+      description:
+        "Kidney beans, black beans, vinaigrette. Ingredients: Kidney Beans, Black Beans, Vinaigrette.",
       rating: 4.6,
       popular: false,
       prep_time: "10-12 min",
@@ -261,8 +285,10 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.d45f553e-f4f7-437a-8bf1-e5ee72c8e19a.png",
-      description: "Mango, pineapple, kiwi, coconut flakes. Ingredients: Mango, Pineapple, Kiwi, Coconut.",
+      image:
+        "https://bing.com/th/id/BCO.d45f553e-f4f7-437a-8bf1-e5ee72c8e19a.png",
+      description:
+        "Mango, pineapple, kiwi, coconut flakes. Ingredients: Mango, Pineapple, Kiwi, Coconut.",
       rating: 4.9,
       popular: true,
       prep_time: "5-10 min",
@@ -273,8 +299,10 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.b1c8eefb-3688-4c6a-982b-94ee6c22c401.png",
-      description: "Strawberries, blueberries, raspberries, honey drizzle. Ingredients: Strawberries, Blueberries, Raspberries, Honey.",
+      image:
+        "https://bing.com/th/id/BCO.b1c8eefb-3688-4c6a-982b-94ee6c22c401.png",
+      description:
+        "Strawberries, blueberries, raspberries, honey drizzle. Ingredients: Strawberries, Blueberries, Raspberries, Honey.",
       rating: 4.8,
       popular: true,
       prep_time: "5-10 min",
@@ -285,8 +313,10 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.f47a6697-b96b-452c-a573-c2809c06b56c.png",
-      description: "Apple slices, cinnamon, yogurt, granola. Ingredients: Apples, Cinnamon, Yogurt, Granola.",
+      image:
+        "https://bing.com/th/id/BCO.f47a6697-b96b-452c-a573-c2809c06b56c.png",
+      description:
+        "Apple slices, cinnamon, yogurt, granola. Ingredients: Apples, Cinnamon, Yogurt, Granola.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
@@ -297,8 +327,10 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.c9bdec69-14b1-4b23-b96c-00bc08a6d65d.png",
-      description: "Orange segments, grapefruit, pomegranate, mint. Ingredients: Oranges, Grapefruit, Pomegranate, Mint.",
+      image:
+        "https://bing.com/th/id/BCO.c9bdec69-14b1-4b23-b96c-00bc08a6d65d.png",
+      description:
+        "Orange segments, grapefruit, pomegranate, mint. Ingredients: Oranges, Grapefruit, Pomegranate, Mint.",
       rating: 4.8,
       popular: false,
       prep_time: "5-10 min",
@@ -309,8 +341,10 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.42e995bc-bb54-4944-b60e-355256f2c9a3.png",
-      description: "Banana, walnuts, dates, chia seeds. Ingredients: Banana, Walnuts, Dates, Chia Seeds.",
+      image:
+        "https://bing.com/th/id/BCO.42e995bc-bb54-4944-b60e-355256f2c9a3.png",
+      description:
+        "Banana, walnuts, dates, chia seeds. Ingredients: Banana, Walnuts, Dates, Chia Seeds.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
@@ -321,8 +355,10 @@ const Index = () => {
       category: "fruit",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.d2ae7400-b6c0-4dea-b4f2-912271886240.png",
-      description: "Watermelon cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
+      image:
+        "https://bing.com/th/id/BCO.d2ae7400-b6c0-4dea-b4f2-912271886240.png",
+      description:
+        "Watermelon cantaloupe, honeydew, lime zest. Ingredients: Watermelon, Cantaloupe, Honeydew, Lime.",
       rating: 4.7,
       popular: false,
       prep_time: "5-10 min",
@@ -333,8 +369,10 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.4f97b985-b333-48c0-bfbe-b6fd9748ae2a.png",
-      description: "Protein-packed sprouts, roasted peanuts, lime. Ingredients: Chana Sprouts, Peanuts, Lime, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.4f97b985-b333-48c0-bfbe-b6fd9748ae2a.png",
+      description:
+        "Protein-packed sprouts, roasted peanuts, lime. Ingredients: Chana Sprouts, Peanuts, Lime, Spices.",
       rating: 4.7,
       popular: true,
       prep_time: "10-15 min",
@@ -345,8 +383,10 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.12aa897b-8699-4dcd-9d8f-d6fee49d7434.png",
-      description: "Chickpeas, herbed yogurt, quinoa. Ingredients: Chickpeas, Yogurt, Quinoa, Herbs.",
+      image:
+        "https://bing.com/th/id/BCO.12aa897b-8699-4dcd-9d8f-d6fee49d7434.png",
+      description:
+        "Chickpeas, herbed yogurt, quinoa. Ingredients: Chickpeas, Yogurt, Quinoa, Herbs.",
       rating: 4.9,
       popular: true,
       prep_time: "12-15 min",
@@ -357,8 +397,10 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.645de432-a22f-4cf2-ad8e-de83ffd7c173.png",
-      description: "Scrambled tofu, multigrain rice, veggies. Ingredients: Tofu, Rice, Mixed Vegetables.",
+      image:
+        "https://bing.com/th/id/BCO.645de432-a22f-4cf2-ad8e-de83ffd7c173.png",
+      description:
+        "Scrambled tofu, multigrain rice, veggies. Ingredients: Tofu, Rice, Mixed Vegetables.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -369,8 +411,10 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.2b333cfa-0869-41dd-94da-2a53fbd77a68.png",
-      description: "Grilled paneer + tofu, lentil base. Ingredients: Paneer, Tofu, Lentils, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.2b333cfa-0869-41dd-94da-2a53fbd77a68.png",
+      description:
+        "Grilled paneer + tofu, lentil base. Ingredients: Paneer, Tofu, Lentils, Spices.",
       rating: 4.7,
       popular: false,
       prep_time: "12-15 min",
@@ -381,8 +425,10 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.cc5df020-be71-444f-88be-97050092c4cd.png",
-      description: "Red lentils, quinoa, steamed greens. Ingredients: Lentils, Quinoa, Spinach.",
+      image:
+        "https://bing.com/th/id/BCO.cc5df020-be71-444f-88be-97050092c4cd.png",
+      description:
+        "Red lentils, quinoa, steamed greens. Ingredients: Lentils, Quinoa, Spinach.",
       rating: 4.8,
       popular: false,
       prep_time: "10-15 min",
@@ -393,8 +439,10 @@ const Index = () => {
       category: "protein",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.c02a052b-b04f-4144-aa42-58e1d48cb645.png",
-      description: "Soya in spicy gravy, brown rice. Ingredients: Soya Chunks, Brown Rice, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.c02a052b-b04f-4144-aa42-58e1d48cb645.png",
+      description:
+        "Soya in spicy gravy, brown rice. Ingredients: Soya Chunks, Brown Rice, Spices.",
       rating: 4.6,
       popular: false,
       prep_time: "15-20 min",
@@ -405,8 +453,10 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.3b1e7a44-b7b2-439f-ab86-da9366a60ebd.png",
-      description: "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
+      image:
+        "https://bing.com/th/id/BCO.3b1e7a44-b7b2-439f-ab86-da9366a60ebd.png",
+      description:
+        "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -417,8 +467,10 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.b3927527-2e32-40a2-ac97-021cc2800f42.png",
-      description: "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
+      image:
+        "https://bing.com/th/id/BCO.b3927527-2e32-40a2-ac97-021cc2800f42.png",
+      description:
+        "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -429,8 +481,10 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.41b92d9f-83fe-4432-9dc9-24f78a699230.png",
-      description: "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
+      image:
+        "https://bing.com/th/id/BCO.41b92d9f-83fe-4432-9dc9-24f78a699230.png",
+      description:
+        "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
       rating: 4.8,
       popular: false,
       prep_time: "10-12 min",
@@ -441,8 +495,10 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.c0b95872-bb86-4a8e-b1ba-ad653b316267.png",
-      description: "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
+      image:
+        "https://bing.com/th/id/BCO.c0b95872-bb86-4a8e-b1ba-ad653b316267.png",
+      description:
+        "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -453,8 +509,10 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.3e8de57f-ca0c-4ace-a184-c1c70cde74fd.png",
-      description: "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
+      image:
+        "https://bing.com/th/id/BCO.3e8de57f-ca0c-4ace-a184-c1c70cde74fd.png",
+      description:
+        "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -465,8 +523,10 @@ const Index = () => {
       category: "heart_care",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.06cc8a14-68b5-4d73-804d-3734dc048d6a.png",
-      description: "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
+      image:
+        "https://bing.com/th/id/BCO.06cc8a14-68b5-4d73-804d-3734dc048d6a.png",
+      description:
+        "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -477,8 +537,10 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.48cd81a3-02cb-43e2-83b7-a5980c76d80e.png",
-      description: "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
+      image:
+        "https://bing.com/th/id/BCO.48cd81a3-02cb-43e2-83b7-a5980c76d80e.png",
+      description:
+        "Golden dal, steamed greens (zero cream). Ingredients: Lentils, Turmeric, Spinach.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -489,8 +551,10 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.00c95c63-aae7-45c8-a3a6-716ee4ccff38.png",
-      description: "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
+      image:
+        "https://bing.com/th/id/BCO.00c95c63-aae7-45c8-a3a6-716ee4ccff38.png",
+      description:
+        "Steel-cut oats, flax seeds, herbs. Ingredients: Oats, Flax Seeds, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -501,8 +565,10 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.76013472-25c3-4e77-801b-3e08c5347539.png",
-      description: "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
+      image:
+        "https://bing.com/th/id/BCO.76013472-25c3-4e77-801b-3e08c5347539.png",
+      description:
+        "Avocado, black beans, lime, no oil. Ingredients: Avocado, Black Beans, Lime.",
       rating: 4.8,
       popular: false,
       prep_time: "10-12 min",
@@ -513,8 +579,10 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.2501082f-c6ce-4507-b6df-d5bb096a7061.png",
-      description: "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
+      image:
+        "https://bing.com/th/id/BCO.2501082f-c6ce-4507-b6df-d5bb096a7061.png",
+      description:
+        "Olives, feta, olive oil, brown rice. Ingredients: Chickpeas, Olives, Feta, Brown Rice.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -525,8 +593,10 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.0774fb76-de0b-4381-b284-dc545a096a64.png",
-      description: "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
+      image:
+        "https://bing.com/th/id/BCO.0774fb76-de0b-4381-b284-dc545a096a64.png",
+      description:
+        "Barley, assorted veggies, light herbs. Ingredients: Barley, Mixed Vegetables, Herbs.",
       rating: 4.6,
       popular: false,
       prep_time: "10-15 min",
@@ -537,8 +607,10 @@ const Index = () => {
       category: "immunity",
       price: { small: 199, large: 499 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image: "https://bing.com/th/id/BCO.efa58b2d-4d1e-4dba-9dc8-013d1fe20992.png",
-      description: "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
+      image:
+        "https://bing.com/th/id/BCO.efa58b2d-4d1e-4dba-9dc8-013d1fe20992.png",
+      description:
+        "Quinoa, sautéed spinach, walnuts. Ingredients: Quinoa, Spinach, Walnuts.",
       rating: 4.7,
       popular: false,
       prep_time: "10-15 min",
@@ -549,8 +621,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.7584e3b5-e9b1-46fe-b63a-735e3687e937.png",
-      description: "Creamy yogurt with a sweet honey twist. Ingredients: Yogurt, Honey.",
+      image:
+        "https://bing.com/th/id/BCO.7584e3b5-e9b1-46fe-b63a-735e3687e937.png",
+      description:
+        "Creamy yogurt with a sweet honey twist. Ingredients: Yogurt, Honey.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -561,8 +635,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.4029c053-8a65-461b-a0f7-c9eb7e45f253.png",
-      description: "Extra protein to power up your bowl. Ingredients: Protein Powder, Nuts.",
+      image:
+        "https://bing.com/th/id/BCO.4029c053-8a65-461b-a0f7-c9eb7e45f253.png",
+      description:
+        "Extra protein to power up your bowl. Ingredients: Protein Powder, Nuts.",
       rating: 4.6,
       popular: false,
       prep_time: "5 min",
@@ -573,8 +649,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.bb9686e3-ff5d-4934-80a1-c3f5e09c7002.png",
-      description: "Refreshing herbal infusion drink. Ingredients: Mixed Herbs, Water.",
+      image:
+        "https://bing.com/th/id/BCO.bb9686e3-ff5d-4934-80a1-c3f5e09c7002.png",
+      description:
+        "Refreshing herbal infusion drink. Ingredients: Mixed Herbs, Water.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -585,7 +663,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 20 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.449c377c-8f1a-481b-b517-e874d1472434.png",
+      image:
+        "https://bing.com/th/id/BCO.449c377c-8f1a-481b-b517-e874d1472434.png",
       description: "Nutrient-rich chia seeds topping. Ingredients: Chia Seeds.",
       rating: 4.5,
       popular: false,
@@ -597,8 +676,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 15 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.bdc501c9-ec59-4b41-89eb-c68de9034ef1.png",
-      description: "Fresh herbs to enhance flavor. Ingredients: Cilantro, Parsley.",
+      image:
+        "https://bing.com/th/id/BCO.bdc501c9-ec59-4b41-89eb-c68de9034ef1.png",
+      description:
+        "Fresh herbs to enhance flavor. Ingredients: Cilantro, Parsley.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -609,8 +690,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 15 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.e6ce9ad8-e6f0-47fa-84e4-e6a638d09461.png",
-      description: "Spicy seasoning for extra zing. Ingredients: Chili Powder, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.e6ce9ad8-e6f0-47fa-84e4-e6a638d09461.png",
+      description:
+        "Spicy seasoning for extra zing. Ingredients: Chili Powder, Spices.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -621,8 +704,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 35 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.656d3668-e705-4daa-962f-17ce360f566b.png",
-      description: "Boost your immunity with this shot. Ingredients: Ginger, Turmeric, Lemon.",
+      image:
+        "https://bing.com/th/id/BCO.656d3668-e705-4daa-962f-17ce360f566b.png",
+      description:
+        "Boost your immunity with this shot. Ingredients: Ginger, Turmeric, Lemon.",
       rating: 4.6,
       popular: false,
       prep_time: "5 min",
@@ -633,8 +718,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
-      description: "Cool, spiced buttermilk drink. Ingredients: Yogurt, Spices, Water.",
+      image:
+        "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
+      description:
+        "Cool, spiced buttermilk drink. Ingredients: Yogurt, Spices, Water.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -645,8 +732,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 35 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.b417493b-0a72-4b18-8ed9-f08a70509f47.png",
-      description: "Refreshing lime soda or jaljeera. Ingredients: Lime, Soda, Spices.",
+      image:
+        "https://bing.com/th/id/BCO.b417493b-0a72-4b18-8ed9-f08a70509f47.png",
+      description:
+        "Refreshing lime soda or jaljeera. Ingredients: Lime, Soda, Spices.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -657,7 +746,8 @@ const Index = () => {
       category: "addons",
       price: { one_size: 40 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.bc3d1719-c098-4a84-b774-c59af540970a.png",
+      image:
+        "https://bing.com/th/id/BCO.bc3d1719-c098-4a84-b774-c59af540970a.png",
       description: "Crunchy roasted fox nuts. Ingredients: Makhana, Spices.",
       rating: 4.6,
       popular: false,
@@ -669,8 +759,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 40 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.544f0969-11b3-4818-921f-70cb70711ce7.png",
-      description: "Soothing aloe vera health shot. Ingredients: Aloe Vera, Lemon.",
+      image:
+        "https://bing.com/th/id/BCO.544f0969-11b3-4818-921f-70cb70711ce7.png",
+      description:
+        "Soothing aloe vera health shot. Ingredients: Aloe Vera, Lemon.",
       rating: 4.5,
       popular: false,
       prep_time: "5 min",
@@ -681,8 +773,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 60 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.a09a791b-5a38-45b8-802b-f0f24af54768.png",
-      description: "Sweet moong dal halwa dessert. Ingredients: Moong Dal, Sugar, Ghee.",
+      image:
+        "https://bing.com/th/id/BCO.a09a791b-5a38-45b8-802b-f0f24af54768.png",
+      description:
+        "Sweet moong dal halwa dessert. Ingredients: Moong Dal, Sugar, Ghee.",
       rating: 4.7,
       popular: false,
       prep_time: "10 min",
@@ -693,8 +787,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 40 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.3b5f1030-1daa-4ac7-a9f3-87c61b6e4f2f.png",
-      description: "Traditional Gujarati sweet bite. Ingredients: Jaggery, Wheat Flour, Ghee.",
+      image:
+        "https://bing.com/th/id/BCO.3b5f1030-1daa-4ac7-a9f3-87c61b6e4f2f.png",
+      description:
+        "Traditional Gujarati sweet bite. Ingredients: Jaggery, Wheat Flour, Ghee.",
       rating: 4.6,
       popular: false,
       prep_time: "10 min",
@@ -705,8 +801,10 @@ const Index = () => {
       category: "addons",
       price: { one_size: 60 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.f3a27ed9-7c7c-49b9-8b48-cb6de251e18d.png",
-      description: "Delicious bottle gourd halwa. Ingredients: Dudhi, Sugar, Ghee.",
+      image:
+        "https://bing.com/th/id/BCO.f3a27ed9-7c7c-49b9-8b48-cb6de251e18d.png",
+      description:
+        "Delicious bottle gourd halwa. Ingredients: Dudhi, Sugar, Ghee.",
       rating: 4.7,
       popular: false,
       prep_time: "10 min",
@@ -717,15 +815,15 @@ const Index = () => {
       category: "addons",
       price: { one_size: 30 },
       sizes: ["One Size"],
-      image: "https://bing.com/th/id/BCO.b33f842a-f7e2-4de2-8373-9dbd0ee7fe80.png",
-      description: "Soft, sweet gulab jamun. Ingredients: Milk Solids, Sugar Syrup.",
+      image:
+        "https://bing.com/th/id/BCO.b33f842a-f7e2-4de2-8373-9dbd0ee7fe80.png",
+      description:
+        "Soft, sweet gulab jamun. Ingredients: Milk Solids, Sugar Syrup.",
       rating: 4.8,
       popular: false,
       prep_time: "5 min",
     },
   ];
-
-
 
   const testimonials = [
     {
@@ -754,7 +852,7 @@ const Index = () => {
     { id: "protein", name: "Protein Bowls" },
     { id: "heart_care", name: "Heart Care Bowls" },
     { id: "immunity", name: "Immunity Booster Bowls" },
-    { id: "addons", name: "Add-Ons" },
+  
   ];
 
   const filteredItems =
@@ -791,15 +889,27 @@ const Index = () => {
         await navigator.share(shareData);
       } else {
         // Fallback for browsers that don't support Web Share API
-        const shareText = encodeURIComponent(`${shareData.title}: ${shareData.text} ${shareData.url}`);
+        const shareText = encodeURIComponent(
+          `${shareData.title}: ${shareData.text} ${shareData.url}`
+        );
         const shareOptions = [
           { name: "WhatsApp", url: `https://wa.me/?text=${shareText}` },
-          { name: "Twitter", url: `https://twitter.com/intent/tweet?text=${shareText}` },
-          { name: "Facebook", url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}` },
+          {
+            name: "Twitter",
+            url: `https://twitter.com/intent/tweet?text=${shareText}`,
+          },
+          {
+            name: "Facebook",
+            url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+              shareData.url
+            )}`,
+          },
           {
             name: "Copy Link",
             action: () => {
-              navigator.clipboard.writeText(`${shareData.title}: ${shareData.text} ${shareData.url}`);
+              navigator.clipboard.writeText(
+                `${shareData.title}: ${shareData.text} ${shareData.url}`
+              );
               alert("Link copied to clipboard!");
             },
           },
@@ -808,7 +918,11 @@ const Index = () => {
         const shareMenu = shareOptions.map((option) => (
           <button
             key={option.name}
-            onClick={() => (option.action ? option.action() : window.open(option.url, "_blank"))}
+            onClick={() =>
+              option.action
+                ? option.action()
+                : window.open(option.url, "_blank")
+            }
             className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
           >
             {option.name}
@@ -816,7 +930,8 @@ const Index = () => {
         ));
 
         const shareMenuContainer = document.createElement("div");
-        shareMenuContainer.className = "absolute z-50 bg-white border border-gray-200 rounded-lg shadow-lg";
+        shareMenuContainer.className =
+          "absolute z-50 bg-white border border-gray-200 rounded-lg shadow-lg";
         shareMenuContainer.style.top = "100%";
         shareMenuContainer.style.left = "0";
         ReactDOM.render(shareMenu, shareMenuContainer);
@@ -837,7 +952,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
-      <section id="hero" className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+      <section
+        id="hero"
+        className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24"
+      >
         <div className="absolute inset-0 z-0 overflow-hidden">
           <svg
             viewBox="0 0 320 1440"
@@ -860,9 +978,12 @@ const Index = () => {
                 alt="99 Bowls Logo"
                 className="w-24 sm:w-32 md:w-40 lg:w-56 object-contain"
                 style={{
-                  transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${-60 * scrollProgress}px)`,
+                  transform: `scale(${1 - 0.5 * scrollProgress}) translateY(${
+                    -60 * scrollProgress
+                  }px)`,
                   opacity: 1 - scrollProgress,
-                  transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1)",
+                  transition:
+                    "transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1)",
                   pointerEvents: scrollProgress === 1 ? "none" : "auto",
                 }}
                 loading="lazy"
@@ -877,7 +998,7 @@ const Index = () => {
                   <br />
 
                   <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-2 sm:pl-7">
-                    Health bhi
+                    &nbsp; Health bhi
                   </span>
                 </span>
               </h1>
@@ -895,14 +1016,15 @@ const Index = () => {
                 className="w-full h-full object-contain gentle-rotate animate-gentle-rotate"
                 loading="lazy"
               />
-              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-2 py-1.5 sm:px-3 sm:py-2 rounded-full border border-orange-200 mt-4 sm:mt-6 absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-700"
+              <div
+                className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-2 py-1.5 sm:px-3 sm:py-2 rounded-full border border-orange-200 mt-4 sm:mt-6 absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-700"
                 style={{
-                  whiteSpace: 'nowrap',
-                  fontSize: isMobile ? '0.85rem' : undefined,
-                  paddingLeft: isMobile ? '0.75rem' : undefined,
-                  paddingRight: isMobile ? '0.75rem' : undefined,
-                  paddingTop: isMobile ? '0.35rem' : undefined,
-                  paddingBottom: isMobile ? '0.35rem' : undefined,
+                  whiteSpace: "nowrap",
+                  fontSize: isMobile ? "0.85rem" : undefined,
+                  paddingLeft: isMobile ? "0.75rem" : undefined,
+                  paddingRight: isMobile ? "0.75rem" : undefined,
+                  paddingTop: isMobile ? "0.35rem" : undefined,
+                  paddingBottom: isMobile ? "0.35rem" : undefined,
                 }}
               >
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
@@ -928,7 +1050,10 @@ const Index = () => {
 
       {/* Only show menu section if allowed (mobile: after scroll, desktop: always) */}
       {showMenuSection && (
-        <section id="menu" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+        <section
+          id="menu"
+          className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50"
+        >
           <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
@@ -947,10 +1072,11 @@ const Index = () => {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${selectedCategory === category.id
+                  className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
+                    selectedCategory === category.id
                       ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}
+                  }`}
                 >
                   {category.name}
                 </button>
@@ -976,7 +1102,8 @@ const Index = () => {
                       className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                       onError={(e) => {
-                        e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                        e.target.src =
+                          "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full" />
@@ -1031,34 +1158,47 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-full sm:max-w-2xl mx-auto">
-                Discover the vision, mission, and values that drive 99 Bowls to nourish both bodies and communities.
+                Discover the vision, mission, and values that drive 99 Bowls to
+                nourish both bodies and communities.
               </p>
             </div>
 
             <div className="space-y-8 sm:space-y-12">
               {/* Vision */}
               <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 sm:mb-4">
                   Vision
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                  To be the leading choice for healthy, nourishing, and convenient food that empowers individuals to live their best lives—one bowl at a time. We envision a world where nutritious meals are accessible to everyone, fostering vibrant communities, healthier lifestyles, and sustainable choices.
+                  To be the leading choice for healthy, nourishing, and
+                  convenient food that empowers individuals to live their best
+                  lives—one bowl at a time. We envision a world where nutritious
+                  meals are accessible to everyone, fostering vibrant
+                  communities, healthier lifestyles, and sustainable choices.
                 </p>
               </div>
 
               {/* Mission */}
               <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 sm:mb-4">
                   Mission
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                  At 99 Bowls, we’re dedicated to providing healthy, fresh, and delicious food delivered right to your doorstep. Our carefully crafted menu—from Rice Bowls to Immunity Boosters—is designed to fuel your body and mind with energy, supporting wellness goals across the spectrum. We promise no compromise on quality, ensuring every bowl is packed with goodness. By prioritizing sustainability and empowering women in business, we aim to build a more inclusive and healthier society—while nourishing both bodies and communities.
+                  At 99 Bowls, we’re dedicated to providing healthy, fresh, and
+                  delicious food delivered right to your doorstep. Our carefully
+                  crafted menu—from Rice Bowls to Immunity Boosters—is designed
+                  to fuel your body and mind with energy, supporting wellness
+                  goals across the spectrum. We promise no compromise on
+                  quality, ensuring every bowl is packed with goodness. By
+                  prioritizing sustainability and empowering women in business,
+                  we aim to build a more inclusive and healthier society—while
+                  nourishing both bodies and communities.
                 </p>
               </div>
 
               {/* Core Values */}
               <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 sm:mb-4">
                   Core Values
                 </h3>
                 <div className="space-y-4 sm:space-y-6">
@@ -1071,7 +1211,10 @@ const Index = () => {
                         Freshness & Quality First
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        We’re committed to providing only the freshest, highest-quality ingredients in every bowl. No shortcuts, no compromises—just food that’s as nourishing as it is delicious.
+                        We’re committed to providing only the freshest,
+                        highest-quality ingredients in every bowl. No shortcuts,
+                        no compromises—just food that’s as nourishing as it is
+                        delicious.
                       </p>
                     </div>
                   </div>
@@ -1084,7 +1227,11 @@ const Index = () => {
                         Health-Centric Innovation
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        We create bowls that cater to diverse wellness needs—whether it’s weight loss, immunity boosting, heart health, or muscle-building. Every recipe is thoughtfully designed to support your journey toward a healthier lifestyle.
+                        We create bowls that cater to diverse wellness
+                        needs—whether it’s weight loss, immunity boosting, heart
+                        health, or muscle-building. Every recipe is thoughtfully
+                        designed to support your journey toward a healthier
+                        lifestyle.
                       </p>
                     </div>
                   </div>
@@ -1097,7 +1244,11 @@ const Index = () => {
                         Community-Driven Impact
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        At 99 Bowls, food is more than just fuel—it’s a way to bring people together. We’re proud to support local communities, offering free meals to thousands and creating spaces where health and well-being are the focal point.
+                        At 99 Bowls, food is more than just fuel—it’s a way to
+                        bring people together. We’re proud to support local
+                        communities, offering free meals to thousands and
+                        creating spaces where health and well-being are the
+                        focal point.
                       </p>
                     </div>
                   </div>
@@ -1110,7 +1261,11 @@ const Index = () => {
                         Empowerment Through Choice
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        We believe in the power of choice, whether it’s through our customizable bowls or our commitment to women’s empowerment. By partnering with female franchisee owners, we create opportunities for women to lead and thrive in business.
+                        We believe in the power of choice, whether it’s through
+                        our customizable bowls or our commitment to women’s
+                        empowerment. By partnering with female franchisee
+                        owners, we create opportunities for women to lead and
+                        thrive in business.
                       </p>
                     </div>
                   </div>
@@ -1123,7 +1278,10 @@ const Index = () => {
                         Sustainability & Responsibility
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        Our food choices are rooted in sustainability—ensuring we make responsible sourcing decisions, and our packaging is eco-friendly. We’re dedicated to nurturing both personal health and the health of our planet.
+                        Our food choices are rooted in sustainability—ensuring
+                        we make responsible sourcing decisions, and our
+                        packaging is eco-friendly. We’re dedicated to nurturing
+                        both personal health and the health of our planet.
                       </p>
                     </div>
                   </div>
@@ -1136,7 +1294,9 @@ const Index = () => {
                         Integrity in Every Bite
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        We stand behind every bowl, delivering on our promise of taste, energy, and health benefits. What you see is what you get—pure, wholesome, and honest food.
+                        We stand behind every bowl, delivering on our promise of
+                        taste, energy, and health benefits. What you see is what
+                        you get—pure, wholesome, and honest food.
                       </p>
                     </div>
                   </div>
@@ -1145,37 +1305,66 @@ const Index = () => {
 
               {/* Expert Reviews Section */}
               <div className="mb-12">
-                <h3 className="text-xl font-bold text-orange-600 mb-4">Expert Reviews</h3>
+                <h3 className="text-xl font-bold text-orange-600 mb-4">
+                  Expert Reviews
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div className="bg-white rounded-lg shadow p-4">
-                    <div className="font-semibold text-gray-800 mb-1">Dr. Anjali Mehta, Nutritionist</div>
+                    <div className="font-semibold text-gray-800 mb-1">
+                      Dr. Anjali Mehta, Nutritionist
+                    </div>
                     <div className="text-yellow-400 mb-2">★★★★★</div>
-                    <p className="text-gray-600 text-sm">“99Bowls offers a perfect balance of taste and nutrition. Their focus on fresh ingredients and healthy recipes is commendable!”</p>
+                    <p className="text-gray-600 text-sm">
+                      “99Bowls offers a perfect balance of taste and nutrition.
+                      Their focus on fresh ingredients and healthy recipes is
+                      commendable!”
+                    </p>
                   </div>
                   <div className="bg-white rounded-lg shadow p-4">
-                    <div className="font-semibold text-gray-800 mb-1">Chef Rahul Singh, Culinary Expert</div>
+                    <div className="font-semibold text-gray-800 mb-1">
+                      Chef Rahul Singh, Culinary Expert
+                    </div>
                     <div className="text-yellow-400 mb-2">★★★★☆</div>
-                    <p className="text-gray-600 text-sm">“The variety and creativity in their bowls make healthy eating exciting. Highly recommended for anyone looking for nutritious options.”</p>
+                    <p className="text-gray-600 text-sm">
+                      “The variety and creativity in their bowls make healthy
+                      eating exciting. Highly recommended for anyone looking for
+                      nutritious options.”
+                    </p>
                   </div>
                   <div className="bg-white rounded-lg shadow p-4">
-                    <div className="font-semibold text-gray-800 mb-1">Dr. Priya Sharma, Dietician</div>
+                    <div className="font-semibold text-gray-800 mb-1">
+                      Dr. Priya Sharma, Dietician
+                    </div>
                     <div className="text-yellow-400 mb-2">★★★★★</div>
-                    <p className="text-gray-600 text-sm">“I appreciate their commitment to sustainability and community health. 99Bowls is setting a new standard in the food industry.”</p>
+                    <p className="text-gray-600 text-sm">
+                      “I appreciate their commitment to sustainability and
+                      community health. 99Bowls is setting a new standard in the
+                      food industry.”
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Video Reels Section */}
               <div className="mb-12">
-                <h3 className="text-xl font-bold text-red-600 mb-4">Video Reels (6-8)</h3>
+                <h3 className="text-xl font-bold text-red-600 mb-4">
+                  Video Reels (6-8)
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                    <div key={num} className="bg-black rounded-lg overflow-hidden shadow relative group">
+                    <div
+                      key={num}
+                      className="bg-black rounded-lg overflow-hidden shadow relative group"
+                    >
                       <div className="aspect-w-16 aspect-h-9 w-full h-32 bg-gray-200 flex items-center justify-center">
-                        <span className="text-white text-2xl font-bold">Reel {num}</span>
+                        <span className="text-white text-2xl font-bold">
+                          Reel {num}
+                        </span>
                       </div>
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
-                        <button className="bg-white text-black px-3 py-1 rounded-full font-semibold">Play</button>
+                        <button className="bg-white text-black px-3 py-1 rounded-full font-semibold">
+                          Play
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -1196,7 +1385,7 @@ const Index = () => {
               if (e.target === e.currentTarget) {
                 setSelectedBowl(null);
                 setSelectedView("image");
-                document.body.style.overflow = '';
+                document.body.style.overflow = "";
               }
             }}
             onWheel={(e) => {
@@ -1217,7 +1406,7 @@ const Index = () => {
               onClick={() => {
                 setSelectedBowl(null);
                 setSelectedView("image");
-                document.body.style.overflow = '';
+                document.body.style.overflow = "";
               }}
             >
               ×
@@ -1230,7 +1419,8 @@ const Index = () => {
                   alt={selectedBowl.name}
                   className="object-contain max-w-[90vw] max-h-[90vh] rounded-full shadow-2xl"
                   onError={(e) => {
-                    e.target.src = "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
+                    e.target.src =
+                      "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
                   }}
                 />
                 <p
@@ -1281,7 +1471,6 @@ const Index = () => {
         </>
       )}
 
-
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
@@ -1323,32 +1512,76 @@ const Index = () => {
       </section>
 
       {/* Blogs Section */}
-      <section id="blogs" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+      <section
+        id="blogs"
+        className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50"
+      >
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
-              Latest <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Blogs</span>
+              Latest{" "}
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                Blogs
+              </span>
             </h2>
-            <p className="text-sm sm:text-base md:text-xl text-gray-600">Insights, tips, and stories from the 99 Bowls community</p>
+            <p className="text-sm sm:text-base md:text-xl text-gray-600">
+              Insights, tips, and stories from the 99 Bowls community
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg shadow p-4 flex flex-col">
-              <div className="font-semibold text-gray-800 mb-1">5 Reasons to Choose Healthy Bowls</div>
-              <div className="text-gray-400 text-xs mb-2">by Team 99Bowls | July 2024</div>
-              <p className="text-gray-600 text-sm flex-grow">Discover why healthy bowls are the best choice for your daily nutrition and how they can transform your lifestyle.</p>
-              <a href="#" className="text-blue-500 mt-2 text-sm font-semibold hover:underline">Read More</a>
+              <div className="font-semibold text-gray-800 mb-1">
+                5 Reasons to Choose Healthy Bowls
+              </div>
+              <div className="text-gray-400 text-xs mb-2">
+                by Team 99Bowls | July 2024
+              </div>
+              <p className="text-gray-600 text-sm flex-grow">
+                Discover why healthy bowls are the best choice for your daily
+                nutrition and how they can transform your lifestyle.
+              </p>
+              <a
+                href="#"
+                className="text-blue-500 mt-2 text-sm font-semibold hover:underline"
+              >
+                Read More
+              </a>
             </div>
             <div className="bg-white rounded-lg shadow p-4 flex flex-col">
-              <div className="font-semibold text-gray-800 mb-1">How We Source Our Ingredients Sustainably</div>
-              <div className="text-gray-400 text-xs mb-2">by Priya S. | June 2024</div>
-              <p className="text-gray-600 text-sm flex-grow">A behind-the-scenes look at our sustainable sourcing practices and our commitment to the environment.</p>
-              <a href="#" className="text-blue-500 mt-2 text-sm font-semibold hover:underline">Read More</a>
+              <div className="font-semibold text-gray-800 mb-1">
+                How We Source Our Ingredients Sustainably
+              </div>
+              <div className="text-gray-400 text-xs mb-2">
+                by Priya S. | June 2024
+              </div>
+              <p className="text-gray-600 text-sm flex-grow">
+                A behind-the-scenes look at our sustainable sourcing practices
+                and our commitment to the environment.
+              </p>
+              <a
+                href="#"
+                className="text-blue-500 mt-2 text-sm font-semibold hover:underline"
+              >
+                Read More
+              </a>
             </div>
             <div className="bg-white rounded-lg shadow p-4 flex flex-col">
-              <div className="font-semibold text-gray-800 mb-1">Empowering Women Through Food</div>
-              <div className="text-gray-400 text-xs mb-2">by Anjali M. | May 2024</div>
-              <p className="text-gray-600 text-sm flex-grow">Learn how 99Bowls is creating opportunities for women entrepreneurs and making a difference in the community.</p>
-              <a href="#" className="text-blue-500 mt-2 text-sm font-semibold hover:underline">Read More</a>
+              <div className="font-semibold text-gray-800 mb-1">
+                Empowering Women Through Food
+              </div>
+              <div className="text-gray-400 text-xs mb-2">
+                by Anjali M. | May 2024
+              </div>
+              <p className="text-gray-600 text-sm flex-grow">
+                Learn how 99Bowls is creating opportunities for women
+                entrepreneurs and making a difference in the community.
+              </p>
+              <a
+                href="#"
+                className="text-blue-500 mt-2 text-sm font-semibold hover:underline"
+              >
+                Read More
+              </a>
             </div>
           </div>
         </div>
