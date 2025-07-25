@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, TrendingUp, Users, Award } from 'lucide-react';
 
-const Franchise = () => {
-  const [franchiseForm, setFranchiseForm] = useState({
+const Corporate = () => {
+  const [corporateForm, setCorporateForm] = useState({
     name: '',
     email: '',
     phone: '',
@@ -17,19 +17,19 @@ const Franchise = () => {
     message: ''
   });
 
-  const handleFranchiseSubmit = (e) => {
+  const handleCorporateSubmit = (e) => {
     e.preventDefault();
-    console.log('Franchise form submitted:', franchiseForm);
-    // Add franchise form submission logic here
+    console.log('Corporate inquiry form submitted:', corporateForm);
+    // Add corporate inquiry form submission logic here
   };
 
-  const franchiseStats = [
+  const corporateStats = [
     { icon: TrendingUp, label: "Growth Rate", value: "150%", description: "Year over year" },
     { icon: Users, label: "Happy Customers", value: "50K+", description: "Monthly orders" },
     { icon: Award, label: "Success Rate", value: "95%", description: "Franchise success" }
   ];
 
-  const franchiseBenefits = [
+  const corporateBenefits = [
     "Proven business model with strong ROI",
     "Comprehensive training and ongoing support",
     "Marketing and brand development assistance",
@@ -49,7 +49,7 @@ const Franchise = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Franchise <span className="text-orange-500">Opportunities</span>
+            Corporate <span className="text-orange-500">Opportunities</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Join our growing family of successful franchise partners with 99 Bowls.
@@ -60,7 +60,7 @@ const Franchise = () => {
         <div className="space-y-6">
           {/* Franchise Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            {franchiseStats.map((stat, index) => (
+            {corporateStats.map((stat, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-6">
                   <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-2" />
@@ -83,7 +83,7 @@ const Franchise = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  {franchiseBenefits.map((benefit, index) => (
+                  {corporateBenefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{benefit}</span>
@@ -96,52 +96,52 @@ const Franchise = () => {
             {/* Franchise Form */}
             <Card>
               <CardHeader>
-                <CardTitle>Franchise Inquiry</CardTitle>
+                <CardTitle>Corporate Inquiry</CardTitle>
                 <p className="text-sm text-gray-600">
-                  Submit your details to explore franchise opportunities with us.
+                  Submit your details to explore corporate partnership opportunities with us.
                 </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleFranchiseSubmit} className="space-y-4">
+                <form onSubmit={handleCorporateSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="franchise-name">Full Name *</Label>
+                    <Label htmlFor="corporate-name">Full Name *</Label>
                     <Input
-                      id="franchise-name"
+                      id="corporate-name"
                       placeholder="Your full name"
-                      value={franchiseForm.name}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, name: e.target.value })}
+                      value={corporateForm.name}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, name: e.target.value })}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="franchise-email">Email *</Label>
+                    <Label htmlFor="corporate-email">Email *</Label>
                     <Input
-                      id="franchise-email"
+                      id="corporate-email"
                       type="email"
                       placeholder="your@email.com"
-                      value={franchiseForm.email}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, email: e.target.value })}
+                      value={corporateForm.email}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, email: e.target.value })}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="franchise-phone">Phone *</Label>
+                    <Label htmlFor="corporate-phone">Phone *</Label>
                     <Input
-                      id="franchise-phone"
+                      id="corporate-phone"
                       type="tel"
                       placeholder="Your phone number"
-                      value={franchiseForm.phone}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, phone: e.target.value })}
+                      value={corporateForm.phone}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, phone: e.target.value })}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="franchise-location">Preferred Location *</Label>
+                    <Label htmlFor="corporate-location">Preferred Location *</Label>
                     <Input
-                      id="franchise-location"
+                      id="corporate-location"
                       placeholder="City, State"
-                      value={franchiseForm.location}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, location: e.target.value })}
+                      value={corporateForm.location}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, location: e.target.value })}
                       required
                     />
                   </div>
@@ -150,8 +150,8 @@ const Franchise = () => {
                     <Input
                       id="investment"
                       placeholder="Investment amount"
-                      value={franchiseForm.investment}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, investment: e.target.value })}
+                      value={corporateForm.investment}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, investment: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -160,8 +160,8 @@ const Franchise = () => {
                       id="experience"
                       placeholder="Tell us about your business experience..."
                       rows={3}
-                      value={franchiseForm.experience}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, experience: e.target.value })}
+                      value={corporateForm.experience}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, experience: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -170,12 +170,12 @@ const Franchise = () => {
                       id="message"
                       placeholder="Any additional details..."
                       rows={3}
-                      value={franchiseForm.message}
-                      onChange={(e) => setFranchiseForm({ ...franchiseForm, message: e.target.value })}
+                      value={corporateForm.message}
+                      onChange={(e) => setCorporateForm({ ...corporateForm, message: e.target.value })}
                     />
                   </div>
                   <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                    Submit Franchise Inquiry
+                    Submit Corporate Inquiry
                   </Button>
                 </form>
               </CardContent>
@@ -187,4 +187,4 @@ const Franchise = () => {
   );
 };
 
-export default Franchise;
+export default Corporate;

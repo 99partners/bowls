@@ -20,9 +20,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { name: 'Home', path: '/#hero' },
+    { name: 'Our Menu', path: '/#menu' },
+    { name: 'Subscribe', path: '/subscribe' },
+    { name: 'Locations', path: '/locations' },
+    { name: 'Blogs', path: '/#blogs' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -82,10 +84,10 @@ const Navigation = () => {
               </Link>
             ))}
             <Link
-              to="/franchise"
+              to="/corporate"
               className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              Franchise
+              Corporate Inquiry
             </Link>
           </div>
 
@@ -123,11 +125,11 @@ const Navigation = () => {
               </Link>
             ))}
             <Link
-              to="/franchise"
+              to="/corporate"
               onClick={() => setIsOpen(false)}
               className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full mt-4 text-base shadow-md"
             >
-              Franchise
+              Corporate Inquiry
             </Link>
           </div>
         </div>

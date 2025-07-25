@@ -5,6 +5,7 @@ import fruitbowl from "../assets/fruitbowl.png";
 import logo from "../assets/99 Bowls New.png";
 import { useScrollContext } from "../ScrollContext";
 import { useIsMobile } from "../hooks/use-mobile";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   const [counters, setCounters] = useState({
@@ -21,6 +22,20 @@ const Index = () => {
   const { showHeroLogo, scrollProgress } = useScrollContext();
   const isMobile = useIsMobile();
   const [showMenuSection, setShowMenuSection] = useState(true);
+  const location = useLocation();
+
+  // Smooth scroll to anchor on hash change
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
@@ -710,6 +725,8 @@ const Index = () => {
     },
   ];
 
+
+
   const testimonials = [
     {
       name: "Sarah Johnson",
@@ -820,7 +837,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
-      <section className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+      <section id="hero" className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <svg
             viewBox="0 0 320 1440"
@@ -836,8 +853,8 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center w-full max-w-7xl">
-          <div className="animate-fade-in relative">
-            <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16 -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8">
+          <div className="animate-fade-in relative mt-0 sm:-mt-8 md:-mt-16 lg:-mt-24 flex flex-col items-center lg:items-start">
+            <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16">
               <img
                 src={logo}
                 alt="99 Bowls Logo"
@@ -851,14 +868,14 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <div className="-mt-6 sm:-mt-8 md:-mt-10 lg:-mt-16">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 leading-tight text-center lg:text-left">
+            <div>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-3 sm:mb-6 leading-tight text-center lg:text-left -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10">
                 <span>
                   <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent">
                     Taste bhi,
                   </span>
                   <br />
-                    
+
                   <span className="bg-gradient-to-r from-red-500 via-orange-500 to-green-600 bg-clip-text text-transparent pl-2 sm:pl-7">
                     Health bhi
                   </span>
@@ -911,7 +928,7 @@ const Index = () => {
 
       {/* Only show menu section if allowed (mobile: after scroll, desktop: always) */}
       {showMenuSection && (
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+        <section id="menu" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
@@ -930,11 +947,10 @@ const Index = () => {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
-                    selectedCategory === category.id
+                  className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${selectedCategory === category.id
                       ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
+                    }`}
                 >
                   {category.name}
                 </button>
@@ -998,6 +1014,173 @@ const Index = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Vision, Mission, and Core Values Section */}
+      {showMenuSection && (
+        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+            <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
+                Our{" "}
+                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  Purpose
+                </span>
+              </h2>
+              <p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-full sm:max-w-2xl mx-auto">
+                Discover the vision, mission, and values that drive 99 Bowls to nourish both bodies and communities.
+              </p>
+            </div>
+
+            <div className="space-y-8 sm:space-y-12">
+              {/* Vision */}
+              <div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-4">
+                  Vision
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                  To be the leading choice for healthy, nourishing, and convenient food that empowers individuals to live their best lives—one bowl at a time. We envision a world where nutritious meals are accessible to everyone, fostering vibrant communities, healthier lifestyles, and sustainable choices.
+                </p>
+              </div>
+
+              {/* Mission */}
+              <div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-4">
+                  Mission
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                  At 99 Bowls, we’re dedicated to providing healthy, fresh, and delicious food delivered right to your doorstep. Our carefully crafted menu—from Rice Bowls to Immunity Boosters—is designed to fuel your body and mind with energy, supporting wellness goals across the spectrum. We promise no compromise on quality, ensuring every bowl is packed with goodness. By prioritizing sustainability and empowering women in business, we aim to build a more inclusive and healthier society—while nourishing both bodies and communities.
+                </p>
+              </div>
+
+              {/* Core Values */}
+              <div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-4">
+                  Core Values
+                </h3>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-orange-100 rounded-full flex items-center justify-center">
+                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-orange-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                        Freshness & Quality First
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        We’re committed to providing only the freshest, highest-quality ingredients in every bowl. No shortcuts, no compromises—just food that’s as nourishing as it is delicious.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-green-100 rounded-full flex items-center justify-center">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                        Health-Centric Innovation
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        We create bowls that cater to diverse wellness needs—whether it’s weight loss, immunity boosting, heart health, or muscle-building. Every recipe is thoughtfully designed to support your journey toward a healthier lifestyle.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-blue-100 rounded-full flex items-center justify-center">
+                      <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                        Community-Driven Impact
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        At 99 Bowls, food is more than just fuel—it’s a way to bring people together. We’re proud to support local communities, offering free meals to thousands and creating spaces where health and well-being are the focal point.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-purple-100 rounded-full flex items-center justify-center">
+                      <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-purple-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                        Empowerment Through Choice
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        We believe in the power of choice, whether it’s through our customizable bowls or our commitment to women’s empowerment. By partnering with female franchisee owners, we create opportunities for women to lead and thrive in business.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-red-100 rounded-full flex items-center justify-center">
+                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                        Sustainability & Responsibility
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        Our food choices are rooted in sustainability—ensuring we make responsible sourcing decisions, and our packaging is eco-friendly. We’re dedicated to nurturing both personal health and the health of our planet.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-yellow-100 rounded-full flex items-center justify-center">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">
+                        Integrity in Every Bite
+                      </h4>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        We stand behind every bowl, delivering on our promise of taste, energy, and health benefits. What you see is what you get—pure, wholesome, and honest food.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expert Reviews Section */}
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-orange-600 mb-4">Expert Reviews</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-white rounded-lg shadow p-4">
+                    <div className="font-semibold text-gray-800 mb-1">Dr. Anjali Mehta, Nutritionist</div>
+                    <div className="text-yellow-400 mb-2">★★★★★</div>
+                    <p className="text-gray-600 text-sm">“99Bowls offers a perfect balance of taste and nutrition. Their focus on fresh ingredients and healthy recipes is commendable!”</p>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-4">
+                    <div className="font-semibold text-gray-800 mb-1">Chef Rahul Singh, Culinary Expert</div>
+                    <div className="text-yellow-400 mb-2">★★★★☆</div>
+                    <p className="text-gray-600 text-sm">“The variety and creativity in their bowls make healthy eating exciting. Highly recommended for anyone looking for nutritious options.”</p>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-4">
+                    <div className="font-semibold text-gray-800 mb-1">Dr. Priya Sharma, Dietician</div>
+                    <div className="text-yellow-400 mb-2">★★★★★</div>
+                    <p className="text-gray-600 text-sm">“I appreciate their commitment to sustainability and community health. 99Bowls is setting a new standard in the food industry.”</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Video Reels Section */}
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-red-600 mb-4">Video Reels (6-8)</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                    <div key={num} className="bg-black rounded-lg overflow-hidden shadow relative group">
+                      <div className="aspect-w-16 aspect-h-9 w-full h-32 bg-gray-200 flex items-center justify-center">
+                        <span className="text-white text-2xl font-bold">Reel {num}</span>
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
+                        <button className="bg-white text-black px-3 py-1 rounded-full font-semibold">Play</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1098,78 +1281,6 @@ const Index = () => {
         </>
       )}
 
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
-            <div>
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-6">
-                Our{" "}
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                  Mission
-                </span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-2 sm:mb-6 leading-relaxed">
-                At 99 Bowls, we believe that good food should be accessible to everyone. That's why for every bowl you order, we donate a meal to people in need.
-              </p>
-
-              <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-8">
-                <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-green-100 rounded-full flex items-center justify-center">
-                    <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
-                  </div>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-700">
-                    1:1 donation ratio for every order
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
-                  </div>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-700">
-                    Supporting local communities
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-purple-500" />
-                  </div>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-700">
-                    Sustainable and eco-friendly practices
-                  </span>
-                </div>
-              </div>
-
-              <Link
-                to="/about"
-                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-base hover:shadow-lg transition-all duration-300 hover:scale-105"
-                aria-label="Learn more about our impact"
-              >
-                Learn More About Our Impact
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-4 sm:h-4" />
-              </Link>
-            </div>
-
-            <div className="relative mt-6 lg:mt-0">
-              <div className="bg-white rounded-xl p-2 sm:p-4 md:p-8 shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop"
-                  alt="Community impact"
-                  className="w-full h-32 sm:h-48 md:h-64 object-cover rounded-lg mb-2 sm:mb-4 md:mb-6"
-                  loading="lazy"
-                />
-                <div className="text-center">
-                  <h3 className="text-base sm:text-lg md:text-2xl font-bold text-gray-800 mb-1 sm:mb-2">
-                    Making a Difference
-                  </h3>
-                  <p className="text-xs sm:text-base text-gray-600">
-                    Together, we're building a world where no one goes hungry
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
@@ -1207,6 +1318,38 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      <section id="blogs" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
+              Latest <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">Blogs</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-xl text-gray-600">Insights, tips, and stories from the 99 Bowls community</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col">
+              <div className="font-semibold text-gray-800 mb-1">5 Reasons to Choose Healthy Bowls</div>
+              <div className="text-gray-400 text-xs mb-2">by Team 99Bowls | July 2024</div>
+              <p className="text-gray-600 text-sm flex-grow">Discover why healthy bowls are the best choice for your daily nutrition and how they can transform your lifestyle.</p>
+              <a href="#" className="text-blue-500 mt-2 text-sm font-semibold hover:underline">Read More</a>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col">
+              <div className="font-semibold text-gray-800 mb-1">How We Source Our Ingredients Sustainably</div>
+              <div className="text-gray-400 text-xs mb-2">by Priya S. | June 2024</div>
+              <p className="text-gray-600 text-sm flex-grow">A behind-the-scenes look at our sustainable sourcing practices and our commitment to the environment.</p>
+              <a href="#" className="text-blue-500 mt-2 text-sm font-semibold hover:underline">Read More</a>
+            </div>
+            <div className="bg-white rounded-lg shadow p-4 flex flex-col">
+              <div className="font-semibold text-gray-800 mb-1">Empowering Women Through Food</div>
+              <div className="text-gray-400 text-xs mb-2">by Anjali M. | May 2024</div>
+              <p className="text-gray-600 text-sm flex-grow">Learn how 99Bowls is creating opportunities for women entrepreneurs and making a difference in the community.</p>
+              <a href="#" className="text-blue-500 mt-2 text-sm font-semibold hover:underline">Read More</a>
+            </div>
           </div>
         </div>
       </section>
