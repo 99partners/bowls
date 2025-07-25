@@ -16,11 +16,51 @@ const Corporate = () => {
     experience: '',
     message: ''
   });
+  const [errors, setErrors] = useState({
+    email: '',
+    phone: ''
+  });
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const handlePhoneInput = (e) => {
+    const value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+    setCorporateForm({ ...corporateForm, phone: value });
+    setErrors({
+      ...errors,
+      phone: value.length === 10 ? '' : 'Phone number must be exactly 10 digits'
+    });
+  };
+
+  const handleEmailInput = (e) => {
+    const value = e.target.value;
+    setCorporateForm({ ...corporateForm, email: value });
+    setErrors({
+      ...errors,
+      email: validateEmail(value) ? '' : 'Please enter a valid email address'
+    });
+  };
 
   const handleCorporateSubmit = (e) => {
     e.preventDefault();
-    console.log('Corporate inquiry form submitted:', corporateForm);
-    // Add corporate inquiry form submission logic here
+    
+    const emailError = validateEmail(corporateForm.email) ? '' : 'Please enter a valid email address';
+    const phoneError = validatePhone(corporateForm.phone) ? '' : 'Phone number must be exactly 10 digits';
+    
+    setErrors({ email: emailError, phone: phoneError });
+
+    if (!emailError && !phoneError) {
+      console.log('Corporate inquiry form submitted:', corporateForm);
+      // Add corporate inquiry form submission logic here
+    }
   };
 
   const corporateStats = [
@@ -120,20 +160,28 @@ const Corporate = () => {
                       type="email"
                       placeholder="your@email.com"
                       value={corporateForm.email}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, email: e.target.value })}
+                      onChange={handleEmailInput}
                       required
                     />
+                    {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="corporate-phone">Phone *</Label>
                     <Input
                       id="corporate-phone"
                       type="tel"
-                      placeholder="Your phone number"
+                      placeholder="1234567890"
                       value={corporateForm.phone}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, phone: e.target.value })}
+                      onChange={handlePhoneInput}
+                      onKeyPress={(e) => {
+                        if (!/[0-9]/.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
+                      maxLength={10}
                       required
                     />
+                    {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="corporate-location">Preferred Location *</Label>
