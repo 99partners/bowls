@@ -38,7 +38,6 @@ const Index = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => {
-      clearInterval(timer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
