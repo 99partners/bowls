@@ -8,12 +8,6 @@ import { useIsMobile } from "../hooks/use-mobile";
 import { useLocation } from "react-router-dom";
 
 const Index = () => {
-  const [counters, setCounters] = useState({
-    meals: 0,
-    customers: 0,
-    donations: 0,
-  });
-
   const [selectedBowl, setSelectedBowl] = useState(null);
   const [selectedView, setSelectedView] = useState("image");
   const [touchStart, setTouchStart] = useState(null);
@@ -38,51 +32,6 @@ const Index = () => {
   }, [location.hash]);
 
   useEffect(() => {
-    const baseValues = { meals: 12500, customers: 8750, donations: 12500 };
-    const lastStored = JSON.parse(localStorage.getItem("counterData")) || {
-      meals: baseValues.meals,
-      customers: baseValues.customers,
-      donations: baseValues.donations,
-      lastUpdated: new Date("2025-07-11").toISOString(),
-    };
-
-    const now = new Date("2025-07-15T22:29:00+05:30");
-    const lastUpdateTime = new Date(lastStored.lastUpdated);
-    const msPerDay = 24 * 60 * 60 * 1000;
-    const daysPassed = Math.floor((now - lastUpdateTime) / msPerDay);
-
-    let updatedData = { ...lastStored };
-
-    if (daysPassed >= 1) {
-      for (let i = 0; i < daysPassed; i++) {
-        updatedData.meals += Math.floor(Math.random() * 11) + 10;
-        updatedData.customers += Math.floor(Math.random() * 11) + 5;
-        updatedData.donations += Math.floor(Math.random() * 11) + 10;
-      }
-      updatedData.lastUpdated = now.toISOString();
-      localStorage.setItem("counterData", JSON.stringify(updatedData));
-    }
-
-    const duration = 3000;
-    const steps = 100;
-    const stepTime = duration / steps;
-
-    let currentStep = 0;
-    const timer = setInterval(() => {
-      currentStep++;
-      const progress = currentStep / steps;
-
-      setCounters({
-        meals: Math.floor(updatedData.meals * progress),
-        customers: Math.floor(updatedData.customers * progress),
-        donations: Math.floor(updatedData.donations * progress),
-      });
-
-      if (currentStep >= steps) {
-        clearInterval(timer);
-      }
-    }, stepTime);
-
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
