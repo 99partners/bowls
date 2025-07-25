@@ -1,20 +1,20 @@
 import {
   Heart,
-  Facebook,
-  Twitter,
+  Youtube,
   Instagram,
   Mail,
   Phone,
   MapPin,
 } from "lucide-react";
+import { FaPinterest } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/Bowls.png"; // Adjust the path as necessary
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Youtube, href: "https://www.youtube.com/@99Bowls", label: "YouTube" },
+    { icon: FaPinterest, href: "http://www.pinterest.com/99bowlin", label: "Pinterest" },
+    { icon: Instagram, href: "https://www.instagram.com/99bowl.in", label: "Instagram" },
   ];
 
   const quickLinks = [
@@ -33,9 +33,12 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                src={logo || "/placeholder.svg"}
+                src={logo || "https://via.placeholder.com/150"}
                 alt="Bowls Logo"
                 className="h-12 w-auto object-contain sm:h-16"
+                onError={(e) => {
+                  e.target.src = "https://via.placeholder.com/150";
+                }}
               />
               <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
                 Bowls
@@ -113,7 +116,6 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             © 2025 99 Bowls. All rights reserved.
-            
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
