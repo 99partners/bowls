@@ -6,7 +6,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-import { FaPinterest } from "react-icons/fa";
+import { FaPinterest, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/Bowls.png"; // Adjust the path as necessary
 
@@ -15,6 +15,7 @@ const Footer = () => {
     { icon: Youtube, href: "https://www.youtube.com/@99Bowls", label: "YouTube" },
     { icon: FaPinterest, href: "http://www.pinterest.com/99bowlin", label: "Pinterest" },
     { icon: Instagram, href: "https://www.instagram.com/99bowl.in", label: "Instagram" },
+    { icon: FaWhatsapp, href: "https://wa.me/number", label: "WhatsApp" },
   ];
 
   const quickLinks = [
