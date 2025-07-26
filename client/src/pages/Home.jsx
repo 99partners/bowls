@@ -1442,6 +1442,10 @@ const Home = () => {
                       "https://via.placeholder.com/400x400.png?text=Image+Not+Found";
                   }}
                 />
+                <div className="flex gap-2 mt-4">
+                  <span className={`w-3 h-3 rounded-full ${selectedView === 'image' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
+                  <span className={`w-3 h-3 rounded-full ${selectedView === 'details' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
+                </div>
                 <p
                   className="text-xs sm:text-sm text-gray-300 mt-6 cursor-pointer text-center"
                   onClick={() => setSelectedView("details")}
@@ -1452,45 +1456,46 @@ const Home = () => {
             )}
 
             {selectedView === "details" && (
-              <div className="flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-90 p-4">
-                <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4 text-center text-white">
-                  {selectedBowl.name}
-                </h3>
-                <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-2 sm:mb-4 text-center">
-                  {selectedBowl.description.split("Ingredients:")[0].trim()}.
-                </p>
-                {selectedBowl.description.includes("Ingredients:") && (
-                  <div className="text-center">
-                    <h4 className="text-sm sm:text-base md:text-xl font-semibold mb-1 sm:mb-2 text-white">
-                      Ingredients:
-                    </h4>
-                    <p className="text-xs sm:text-base md:text-lg text-gray-300">
-                      {selectedBowl.description.split("Ingredients:")[1].trim()}
-                    </p>
-                  </div>
-                )}
-                <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-1 sm:mb-2 text-center">
-                  Sizes: {selectedBowl.sizes.join(" / ")}
-                </p>
-                <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-2 sm:mb-4 text-center">
-                  Price:{" "}
-                  {selectedBowl.price.one_size
-                    ? `₹${selectedBowl.price.one_size}`
-                    : `Small: ₹${selectedBowl.price.small} / Large: ₹${selectedBowl.price.large}`}
-                </p>
-                <p
-                  className="text-xs sm:text-sm text-gray-300 mt-4 cursor-pointer text-center"
-                  onClick={() => setSelectedView("image")}
-                >
-                  Swipe left or click to go back
-                </p>
+              <div className="flex flex-col items-center w-full">
+                <div className="flex gap-2 mt-4">
+                  <span className={`w-3 h-3 rounded-full ${selectedView === 'image' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
+                  <span className={`w-3 h-3 rounded-full ${selectedView === 'details' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
+                </div>
+                <div className="flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-90 p-4">
+                  <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4 text-center text-white">
+                    {selectedBowl.name}
+                  </h3>
+                  <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-2 sm:mb-4 text-center">
+                    {selectedBowl.description.split("Ingredients:")[0].trim()}.
+                  </p>
+                  {selectedBowl.description.includes("Ingredients:") && (
+                    <div className="text-center">
+                      <h4 className="text-sm sm:text-base md:text-xl font-semibold mb-1 sm:mb-2 text-white">
+                        Ingredients:
+                      </h4>
+                      <p className="text-xs sm:text-base md:text-lg text-gray-300">
+                        {selectedBowl.description.split("Ingredients:")[1].trim()}
+                      </p>
+                    </div>
+                  )}
+                  <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-1 sm:mb-2 text-center">
+                    Sizes: {selectedBowl.sizes.join(" / ")}
+                  </p>
+                  <p className="text-xs sm:text-base md:text-lg text-gray-300 mb-2 sm:mb-4 text-center">
+                    Price:{" "}
+                    {selectedBowl.price.one_size
+                      ? `₹${selectedBowl.price.one_size}`
+                      : `Small: ₹${selectedBowl.price.small} / Large: ₹${selectedBowl.price.large}`}
+                  </p>
+                  <p
+                    className="text-xs sm:text-sm text-gray-300 mt-4 cursor-pointer text-center"
+                    onClick={() => setSelectedView("image")}
+                  >
+                    Swipe left or click to go back
+                  </p>
+                </div>
               </div>
             )}
-            {/* Dot navigation below both pages */}
-            <div className="flex gap-2 mt-4 justify-center">
-              <span className={`w-3 h-3 rounded-full ${selectedView === 'image' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
-              <span className={`w-3 h-3 rounded-full ${selectedView === 'details' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
-            </div>
           </div>
         </>
       )}
