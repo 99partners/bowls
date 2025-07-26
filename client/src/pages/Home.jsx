@@ -1294,70 +1294,80 @@ const Index = () => {
 
               {/* Video Reels Section */}
               <div className="mb-12 overflow-hidden">
-  <h3 className="text-xl font-bold text-orange-500 mb-4">
-    Video Reels
-  </h3>
-  <div className="relative">
-    <div className="animate-scroll-horizontal hover:pause-scroll flex">
-      {[
-        "https://www.youtube.com/embed/7ghhRHRP6t4",
-        "https://www.youtube.com/embed/oAVJ9mQUZd8",
-        "https://www.youtube.com/embed/I1_vgJjvlu4",
-        "https://www.youtube.com/embed/XwdqEC2jOnk",
-        "https://www.youtube.com/embed/6p8kSjNg464",
-        "https://www.youtube.com/embed/1aBcD3eF5gH",
-        "https://www.youtube.com/embed/8hIjK9lL2mN",
-        "https://www.youtube.com/embed/4pQrS7tUvWw",
-       
-      ].map((embedUrl, index) => (
-        <div
-          key={`${index}-${embedUrl}`}
-          className="flex-shrink-0 w-48 h-80 rounded-lg overflow-hidden shadow relative group mx-2"
-        >
-          <iframe
-            src={`${embedUrl}?autoplay=1&mute=1&loop=1&controls=0&playsinline=1&playlist=${embedUrl.split("/embed/")[1]}`}
-            className="w-full h-full object-cover"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
-            <button
-              className="bg-white text-black px-3 py-1 rounded-full font-semibold"
-              onClick={() =>
-                window.open(
-                  `https://youtube.com/shorts/${embedUrl.split("/embed/")[1]}`,
-                  "_blank"
-                )
-              }
-            >
-              Watch
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-
-<style jsx>{`
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-100% + 100vw));
-    }
-  }
-  .animate-scroll-horizontal {
-    animation: scroll 15s linear infinite;
-    width: max-content;
-  }
-  .animate-scroll-horizontal:hover {
-    animation-play-state: paused;
-  }
-`}</style>
+                <h3 className="text-xl font-bold text-orange-500 mb-4">
+                  Video Reels
+                </h3>
+                <div className="relative overflow-hidden">
+                  <div className="animate-scroll-horizontal hover:pause-scroll flex">
+                    {[
+                      "https://www.youtube.com/embed/7ghhRHRP6t4",
+                      "https://www.youtube.com/embed/oAVJ9mQUZd8",
+                      "https://www.youtube.com/embed/I1_vgJjvlu4",
+                      "https://www.youtube.com/embed/XwdqEC2jOnk",
+                      "https://www.youtube.com/embed/6p8kSjNg464",
+                      "https://www.youtube.com/embed/1aBcD3eF5gH",
+                      "https://www.youtube.com/embed/8hIjK9lL2mN",
+                      "https://www.youtube.com/embed/4pQrS7tUvWw",
+                      // Duplicate for seamless loop
+                      "https://www.youtube.com/embed/7ghhRHRP6t4",
+                      "https://www.youtube.com/embed/oAVJ9mQUZd8",
+                      "https://www.youtube.com/embed/I1_vgJjvlu4",
+                      "https://www.youtube.com/embed/XwdqEC2jOnk",
+                      "https://www.youtube.com/embed/6p8kSjNg464",
+                      "https://www.youtube.com/embed/1aBcD3eF5gH",
+                      "https://www.youtube.com/embed/8hIjK9lL2mN",
+                      "https://www.youtube.com/embed/4pQrS7tUvWw",
+                    ].map((embedUrl, index) => (
+                      <div
+                        key={`${index}-${embedUrl}`}
+                        className="flex-shrink-0 w-48 h-80 rounded-lg overflow-hidden shadow relative group mx-2"
+                      >
+                        <iframe
+                          src={`${embedUrl}?autoplay=1&mute=1&loop=1&playlist=${
+                            embedUrl.split("/embed/")[1]
+                          }&controls=0&playsinline=1`}
+                          className="w-full h-full object-cover"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        ></iframe>
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
+                          <button
+                            className="bg-white text-black px-3 py-1 rounded-full font-semibold"
+                            onClick={() =>
+                              window.open(
+                                `https://youtube.com/shorts/${
+                                  embedUrl.split("/embed/")[1]
+                                }`,
+                                "_blank"
+                              )
+                            }
+                          >
+                            Watch
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <style jsx>{`
+                @keyframes scroll {
+                  0% {
+                    transform: translateX(0);
+                  }
+                  100% {
+                    transform: translateX(-50%);
+                  }
+                }
+                .animate-scroll-horizontal {
+                  animation: scroll 40s linear infinite;
+                  width: max-content;
+                }
+                .animate-scroll-horizontal:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
             </div>
           </div>
         </section>
