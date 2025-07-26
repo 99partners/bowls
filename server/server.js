@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import jobRoutes from './routes/jobRoutes.js';
 import inquiryRoutes from './routes/inquiryRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 
@@ -26,7 +25,6 @@ const connectDB = async () => {
 };
 
 // Routes
-app.use('/api/jobs', jobRoutes);
 app.use('/api/inquiries', inquiryRoutes);
 app.use('/api/contacts', contactRoutes);
 
@@ -45,4 +43,4 @@ connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
-}); 
+});

@@ -49,7 +49,10 @@ const Corporate = () => {
     });
   };
 
-  const handleCorporateSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  const handleCorporateSubmit = async (e) => {
     e.preventDefault();
     
     const emailError = validateEmail(corporateForm.email) ? '' : 'Please enter a valid email address';
@@ -58,8 +61,54 @@ const Corporate = () => {
     setErrors({ email: emailError, phone: phoneError });
 
     if (!emailError && !phoneError) {
-      console.log('Corporate inquiry form submitted:', corporateForm);
-      // Add corporate inquiry form submission logic here
+      setIsSubmitting(true);
+      setSubmitStatus({ type: '', message: '' });
+
+      try {
+        const response = await fetch('http://localhost:5001/api/inquiries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            inquiryType: 'corporate',
+            name: corporateForm.name,
+            email: corporateForm.email,
+            phone: corporateForm.phone,
+            location: corporateForm.location,
+            investment: corporateForm.investment,
+            experience: corporateForm.experience,
+            message: corporateForm.message
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          setSubmitStatus({
+            type: 'success',
+            message: 'Thank you for your inquiry. We will contact you soon!',
+          });
+          setCorporateForm({
+            name: '',
+            email: '',
+            phone: '',
+            location: '',
+            investment: '',
+            experience: '',
+            message: ''
+          });
+        } else {
+          throw new Error(data.message || 'Failed to submit inquiry');
+        }
+      } catch (error) {
+        setSubmitStatus({
+          type: 'error',
+          message: error.message || 'An error occurred while submitting the form. Please try again.',
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -222,8 +271,17 @@ const Corporate = () => {
                       onChange={(e) => setCorporateForm({ ...corporateForm, message: e.target.value })}
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                    Submit Corporate Inquiry
+                  {submitStatus.message && (
+                    <div className={`p-3 rounded-md mb-4 ${submitStatus.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                      {submitStatus.message}
+                    </div>
+                  )}
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Corporate Inquiry'}
                   </Button>
                 </form>
               </CardContent>

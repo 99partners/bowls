@@ -980,7 +980,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <style jsx>{`
+        <style>{`
           @keyframes gentle-rotate {
             from {
               transform: rotate(0deg);
@@ -1337,7 +1337,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <style jsx>{`
+              <style>{`
                 @keyframes scroll {
                   0% {
                     transform: translateX(0);

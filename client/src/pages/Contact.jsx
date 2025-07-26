@@ -22,6 +22,8 @@ const Contact = () => {
     email: "",
     phone: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -43,7 +45,7 @@ const Contact = () => {
     });
   };
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
 
     const emailError = validateEmail(contactForm.email)
@@ -56,8 +58,46 @@ const Contact = () => {
     setErrors({ email: emailError, phone: phoneError });
 
     if (!emailError && !phoneError) {
-      console.log("Contact form submitted:", contactForm);
-      // Add form submission logic here
+      setIsSubmitting(true);
+      setSubmitStatus({ type: "", message: "" });
+
+      try {
+        const response = await fetch('http://localhost:5001/api/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(contactForm),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          setSubmitStatus({
+            type: "success",
+            message: "Message sent successfully!"
+          });
+          setContactForm({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        } else {
+          setSubmitStatus({
+            type: "error",
+            message: data.message || "Error sending message. Please try again."
+          });
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        setSubmitStatus({
+          type: "error",
+          message: "Network error. Please check your connection and try again."
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -84,6 +124,11 @@ const Contact = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
+            {submitStatus.message && (
+              <div className={`mb-4 p-4 rounded ${submitStatus.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                {submitStatus.message}
+              </div>
+            )}
             <form onSubmit={handleContactSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -151,8 +196,9 @@ const Contact = () => {
               <Button
                 type="submit"
                 className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </CardContent>

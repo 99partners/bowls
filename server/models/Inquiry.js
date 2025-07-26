@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
 const inquirySchema = new mongoose.Schema({
+  inquiryType: {
+    type: String,
+    default: 'corporate',
+  },
   name: {
     type: String,
     required: [true, 'Name is required'],
@@ -10,11 +14,21 @@ const inquirySchema = new mongoose.Schema({
     required: [true, 'Email is required'],
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email'],
   },
-  message: {
-    type: String,
-    required: [true, 'Message is required'],
-  },
   phone: {
+    type: String,
+    required: [true, 'Phone number is required'],
+  },
+  location: {
+    type: String,
+    required: [true, 'Location is required'],
+  },
+  investment: {
+    type: String,
+  },
+  experience: {
+    type: String,
+  },
+  message: {
     type: String,
   },
 }, {
@@ -23,4 +37,4 @@ const inquirySchema = new mongoose.Schema({
 
 const Inquiry = mongoose.model('Inquiry', inquirySchema);
 
-export default Inquiry; 
+export default Inquiry;
