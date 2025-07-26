@@ -1294,66 +1294,70 @@ const Index = () => {
 
               {/* Video Reels Section */}
               <div className="mb-12 overflow-hidden">
-                <h3 className="text-xl font-bold text-orange-500 mb-4">
-                  Video Reels
-                </h3>
-                <div className="relative">
-                  <div className="animate-scroll-horizontal hover:pause-scroll flex space-x-4">
-                    {[
-                      "https://www.youtube.com/embed/7ghhRHRP6t4", // Working Short 1
-                      "https://youtube.com/shorts/oAVJ9mQUZd8?si=fCj1o8rOV1yjKYvj", // Working Short 2
-                      "https://youtube.com/shorts/I1_vgJjvlu4?si=Gzs9md7wKbqWNHqo", // Working Short 3
-                      "https://youtube.com/shorts/XwdqEC2jOnk?si=ClC_wfHdxO_GajV8", // Working Short 4
-                      "https://youtube.com/shorts/6p8kSjNg464?si=Rx3qDNi4L9WgwAxt", // Working Short 5
-                      "https://www.youtube.com/embed/1aBcD3eF5gH", // Working Short 6
-                      "https://www.youtube.com/embed/8hIjK9lL2mN", // Working Short 7
-                      "https://www.youtube.com/embed/4pQrS7tUvWw", // Working Short 8
-                    ].map((videoUrl, index) => (
-                      <div
-                        key={index}
-                        className="flex-shrink-0 w-48 h-80 rounded-lg overflow-hidden shadow relative group"
-                      >
-                        <iframe
-                          src={`${videoUrl.replace(
-                            "shorts/",
-                            "embed/"
-                          )}?autoplay=1&mute=1&loop=1&controls=0`}
-                          className="w-full h-full object-cover"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
-                          <button
-                            className="bg-white text-black px-3 py-1 rounded-full font-semibold"
-                            onClick={() => window.open(videoUrl, "_blank")}
-                          >
-                            Watch
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+  <h3 className="text-xl font-bold text-orange-500 mb-4">
+    Video Reels
+  </h3>
+  <div className="relative">
+    <div className="animate-scroll-horizontal hover:pause-scroll flex">
+      {[
+        "https://www.youtube.com/embed/7ghhRHRP6t4",
+        "https://www.youtube.com/embed/oAVJ9mQUZd8",
+        "https://www.youtube.com/embed/I1_vgJjvlu4",
+        "https://www.youtube.com/embed/XwdqEC2jOnk",
+        "https://www.youtube.com/embed/6p8kSjNg464",
+        "https://www.youtube.com/embed/1aBcD3eF5gH",
+        "https://www.youtube.com/embed/8hIjK9lL2mN",
+        "https://www.youtube.com/embed/4pQrS7tUvWw",
+       
+      ].map((embedUrl, index) => (
+        <div
+          key={`${index}-${embedUrl}`}
+          className="flex-shrink-0 w-48 h-80 rounded-lg overflow-hidden shadow relative group mx-2"
+        >
+          <iframe
+            src={`${embedUrl}?autoplay=1&mute=1&loop=1&controls=0&playsinline=1&playlist=${embedUrl.split("/embed/")[1]}`}
+            className="w-full h-full object-cover"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
+            <button
+              className="bg-white text-black px-3 py-1 rounded-full font-semibold"
+              onClick={() =>
+                window.open(
+                  `https://youtube.com/shorts/${embedUrl.split("/embed/")[1]}`,
+                  "_blank"
+                )
+              }
+            >
+              Watch
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
-              <style jsx>{`
-                @keyframes scroll {
-                  0% {
-                    transform: translateX(0);
-                  }
-                  100% {
-                    transform: translateX(calc(-100% + 100vw));
-                  }
-                }
-                .animate-scroll-horizontal {
-                  animation: scroll 15s linear infinite;
-                  width: max-content;
-                }
-                .animate-scroll-horizontal:hover {
-                  animation-play-state: paused;
-                }
-              `}</style>
+<style jsx>{`
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% + 100vw));
+    }
+  }
+  .animate-scroll-horizontal {
+    animation: scroll 15s linear infinite;
+    width: max-content;
+  }
+  .animate-scroll-horizontal:hover {
+    animation-play-state: paused;
+  }
+`}</style>
             </div>
           </div>
         </section>
