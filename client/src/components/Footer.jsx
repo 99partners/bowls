@@ -1,29 +1,34 @@
-import {
-  Heart,
-  Youtube,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Heart, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { FaPinterest, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/Bowls.png"; // Adjust the path as necessary
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Youtube, href: "https://www.youtube.com/@99Bowls", label: "YouTube" },
-    { icon: FaPinterest, href: "http://www.pinterest.com/99bowlin", label: "Pinterest" },
-    { icon: Instagram, href: "https://www.instagram.com/99bowl.in", label: "Instagram" },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/@99Bowls",
+      label: "YouTube",
+    },
+    {
+      icon: FaPinterest,
+      href: "http://www.pinterest.com/99bowlin",
+      label: "Pinterest",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/99bowl.in",
+      label: "Instagram",
+    },
     { icon: FaWhatsapp, href: "https://wa.me/number", label: "WhatsApp" },
   ];
 
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
-    { name: "Franchise", href: "/franchise" },
+    { name: "Corporate Inquiry", href: "/corporate" },
+    { name: "Subscribe", href: "/subscribe" },
+    { name: "Locations", href: "/locations" },
   ];
 
   return (
@@ -103,8 +108,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Our Mission</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Creating a world where good food brings people together and no
-              one goes hungry.
+              Creating a world where good food brings people together and no one
+              goes hungry.
             </p>
             <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 p-4 rounded-lg border border-orange-500/30">
               <p className="text-orange-400 text-sm font-medium">
