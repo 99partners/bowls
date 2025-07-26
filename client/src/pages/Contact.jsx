@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_CONFIG from '../config/api';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -62,38 +63,32 @@ const Contact = () => {
       setSubmitStatus({ type: "", message: "" });
 
       try {
-        const response = await fetch('http://localhost:5001/api/contacts', {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/contacts`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: API_CONFIG.headers,
           body: JSON.stringify(contactForm),
         });
 
         const data = await response.json();
 
-        if (data.success) {
+        if (response.ok) {
           setSubmitStatus({
-            type: "success",
-            message: "Message sent successfully!"
+            type: 'success',
+            message: 'Message sent successfully!',
           });
           setContactForm({
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
+            name: '',
+            email: '',
+            phone: '',
+            message: '',
           });
         } else {
-          setSubmitStatus({
-            type: "error",
-            message: data.message || "Error sending message. Please try again."
-          });
+          throw new Error(data.message || 'Failed to send message');
         }
       } catch (error) {
-        console.error('Error:', error);
         setSubmitStatus({
-          type: "error",
-          message: "Network error. Please check your connection and try again."
+          type: 'error',
+          message: error.message || 'An error occurred. Please try again.',
         });
       } finally {
         setIsSubmitting(false);

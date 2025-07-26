@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_CONFIG from '../config/api.js';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -65,11 +66,9 @@ const Corporate = () => {
       setSubmitStatus({ type: '', message: '' });
 
       try {
-        const response = await fetch('http://localhost:5001/api/inquiries', {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/inquiries`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: API_CONFIG.headers,
           body: JSON.stringify({
             inquiryType: 'corporate',
             name: corporateForm.name,
