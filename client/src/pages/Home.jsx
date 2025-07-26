@@ -1252,7 +1252,7 @@ const Index = () => {
 
               {/* Expert Reviews Section */}
               <div className="mb-12">
-                <h3 className="text-xl font-bold text-orange-600 mb-4">
+                <h3 className="text-xl font-bold text-orange-500 mb-4">
                   Expert Reviews
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1293,30 +1293,67 @@ const Index = () => {
               </div>
 
               {/* Video Reels Section */}
-              <div className="mb-12">
-                <h3 className="text-xl font-bold text-red-600 mb-4">
-                  Video Reels (6-8)
+              <div className="mb-12 overflow-hidden">
+                <h3 className="text-xl font-bold text-orange-500 mb-4">
+                  Video Reels
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                  {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                    <div
-                      key={num}
-                      className="bg-black rounded-lg overflow-hidden shadow relative group"
-                    >
-                      <div className="aspect-w-16 aspect-h-9 w-full h-32 bg-gray-200 flex items-center justify-center">
-                        <span className="text-white text-2xl font-bold">
-                          Reel {num}
-                        </span>
+                <div className="relative">
+                  <div className="animate-scroll-horizontal hover:pause-scroll flex space-x-4">
+                    {[
+                      "https://www.youtube.com/embed/7ghhRHRP6t4", // Working Short 1
+                      "https://youtube.com/shorts/oAVJ9mQUZd8?si=fCj1o8rOV1yjKYvj", // Working Short 2
+                      "https://youtube.com/shorts/I1_vgJjvlu4?si=Gzs9md7wKbqWNHqo", // Working Short 3
+                      "https://youtube.com/shorts/XwdqEC2jOnk?si=ClC_wfHdxO_GajV8", // Working Short 4
+                      "https://youtube.com/shorts/6p8kSjNg464?si=Rx3qDNi4L9WgwAxt", // Working Short 5
+                      "https://www.youtube.com/embed/1aBcD3eF5gH", // Working Short 6
+                      "https://www.youtube.com/embed/8hIjK9lL2mN", // Working Short 7
+                      "https://www.youtube.com/embed/4pQrS7tUvWw", // Working Short 8
+                    ].map((videoUrl, index) => (
+                      <div
+                        key={index}
+                        className="flex-shrink-0 w-48 h-80 rounded-lg overflow-hidden shadow relative group"
+                      >
+                        <iframe
+                          src={`${videoUrl.replace(
+                            "shorts/",
+                            "embed/"
+                          )}?autoplay=1&mute=1&loop=1&controls=0`}
+                          className="w-full h-full object-cover"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
+                          <button
+                            className="bg-white text-black px-3 py-1 rounded-full font-semibold"
+                            onClick={() => window.open(videoUrl, "_blank")}
+                          >
+                            Watch
+                          </button>
+                        </div>
                       </div>
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/60">
-                        <button className="bg-white text-black px-3 py-1 rounded-full font-semibold">
-                          Play
-                        </button>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
+
+              <style jsx>{`
+                @keyframes scroll {
+                  0% {
+                    transform: translateX(0);
+                  }
+                  100% {
+                    transform: translateX(calc(-100% + 100vw));
+                  }
+                }
+                .animate-scroll-horizontal {
+                  animation: scroll 15s linear infinite;
+                  width: max-content;
+                }
+                .animate-scroll-horizontal:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
             </div>
           </div>
         </section>
@@ -1489,7 +1526,7 @@ const Index = () => {
               </p>
               <a
                 href="#"
-                className="text-blue-500 mt-2 text-sm font-semibold hover:underline"
+                className="text-orange-500 mt-2 text-sm font-semibold hover:underline"
               >
                 Read More
               </a>
@@ -1507,7 +1544,7 @@ const Index = () => {
               </p>
               <a
                 href="#"
-                className="text-blue-500 mt-2 text-sm font-semibold hover:underline"
+                className="text-orange-500 mt-2 text-sm font-semibold hover:underline"
               >
                 Read More
               </a>
@@ -1525,7 +1562,7 @@ const Index = () => {
               </p>
               <a
                 href="#"
-                className="text-blue-500 mt-2 text-sm font-semibold hover:underline"
+                className="text-orange-500 mt-2 text-sm font-semibold hover:underline"
               >
                 Read More
               </a>
