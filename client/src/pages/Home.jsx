@@ -1,13 +1,13 @@
 import { ArrowRight, Heart, Users, Star, Globe, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.png";
 import logo from "../assets/99 Bowls New.png";
 import { useScrollContext } from "../ScrollContext";
 import { useIsMobile } from "../hooks/use-mobile";
 import { useLocation } from "react-router-dom";
 
-const Index = () => {
+const Home = () => {
   const [selectedBowl, setSelectedBowl] = useState(null);
   const [selectedView, setSelectedView] = useState("image");
   const [touchStart, setTouchStart] = useState(null);
@@ -807,6 +807,24 @@ const Index = () => {
       ? bowls
       : bowls.filter((item) => item.category === selectedCategory);
 
+  // Keyboard navigation for modal (left/right arrows and escape)
+  React.useEffect(() => {
+    if (!selectedBowl) return;
+    function handleKeyDown(e) {
+      if (e.key === "ArrowRight" && selectedView === "image") {
+        setSelectedView("details");
+      } else if (e.key === "ArrowLeft" && selectedView === "details") {
+        setSelectedView("image");
+      } else if (e.key === "Escape") {
+        setSelectedBowl(null);
+        setSelectedView("image");
+        document.body.style.overflow = "";
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedBowl, selectedView]);
+
   const handleTouchMove = (e) => {
     setTouchEnd(e.touches[0].clientX);
   };
@@ -1034,14 +1052,14 @@ const Index = () => {
               {filteredItems.map((item) => (
                 <div
                   key={item.id}
-                  className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2 bg-white rounded-xl p-3 sm:p-4 shadow border border-gray-100"
+                  className="group relative flex flex-col items-center transition-all duration-500 transform hover:-translate-y-2"
                 >
                   <div
-                    className="relative overflow-hidden h-36 w-36 sm:h-48 sm:w-48 md:h-64 md:w-64 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
-                    onClick={() => {
-                      setSelectedBowl(item);
-                      setSelectedView("image");
-                    }}
+                  className="relative overflow-hidden h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 aspect-square mx-auto mb-2 sm:mb-3 rounded-full cursor-pointer"
+                  onClick={() => {
+                    setSelectedBowl(item);
+                    setSelectedView("image");
+                  }}
                   >
                     <img
                       src={item.image}
@@ -1468,6 +1486,11 @@ const Index = () => {
                 </p>
               </div>
             )}
+            {/* Dot navigation below both pages */}
+            <div className="flex gap-2 mt-4 justify-center">
+              <span className={`w-3 h-3 rounded-full ${selectedView === 'image' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
+              <span className={`w-3 h-3 rounded-full ${selectedView === 'details' ? 'bg-orange-500' : 'bg-gray-400'} inline-block transition-all`}></span>
+            </div>
           </div>
         </>
       )}
@@ -1591,4 +1614,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
