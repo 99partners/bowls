@@ -4,15 +4,13 @@ import "../styles/main.css";
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
-    totalUsers: 0,
-    totalSubscribers: 0,
-    totalBlogs: 0,
-    totalPartners: 0,
+    totalContacts: 0,
+    totalInquiries: 0
   });
 
   const fetchStats = async () => {
     try {
-      const res = await axiosInstance.get("/api/admin/stats");
+      const res = await axiosInstance.get("/admin/stats");
       setStats(res.data);
     } catch (error) {
       console.error("Error fetching stats:", error);
@@ -30,23 +28,13 @@ const Dashboard = () => {
 
       <div className="dashboard-stats">
         <div className="stat-card">
-          <h3>Total Users</h3>
-          <p>{stats.totalUsers}</p>
+          <h3>Total Contacts</h3>
+          <p>{stats.totalContacts}</p>
         </div>
 
         <div className="stat-card">
-          <h3>Total Subscribers</h3>
-          <p>{stats.totalSubscribers}</p>
-        </div>
-
-        <div className="stat-card">
-          <h3>Total Blogs</h3>
-          <p>{stats.totalBlogs}</p>
-        </div>
-
-        <div className="stat-card">
-          <h3>Total Partners</h3>
-          <p>{stats.totalPartners}</p>
+          <h3>Total Inquiries</h3>
+          <p>{stats.totalInquiries}</p>
         </div>
       </div>
     </div>

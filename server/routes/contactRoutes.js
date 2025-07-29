@@ -1,7 +1,7 @@
 // // 
 // import express from 'express';
 // import { body } from 'express-validator';
-// import { createContact, getContacts } from '../controllers/contactController.js';
+// import { createContact, getContacts, getContactCount } from '../controllers/contactController.js';
 
 // const router = express.Router();
 
@@ -18,7 +18,7 @@
 // export default router;
 import express from 'express';
 import { body } from 'express-validator';
-import { createContact, getContacts } from '../controllers/contactController.js';
+import { createContact, getContacts, getContactCount } from '../controllers/contactController.js';
 
 const router = express.Router();
 
@@ -31,5 +31,6 @@ const validateContact = [
 
 router.post('/', validateContact, createContact);
 router.get('/', getContacts);
+router.get('/count', getContactCount);
 
 export default router;

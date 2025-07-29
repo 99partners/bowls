@@ -1,25 +1,20 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const User = require("../models/User");
-const Newsletter = require("../models/Newsletter");
-const Blog = require("../models/Blog");
-const JoinEntry = require("../models/JoinEntry");
+import { getContactCount } from "../controllers/contactController.js";
+import { getInquiryCount } from "../controllers/inquiryController.js";
+
 
 // GET /api/admin/stats – dashboard summary
 router.get("/stats", async (req, res) => {
   try {
-    const [userCount, newsletterCount, blogCount, partnerCount] = await Promise.all([
-      User.countDocuments(),
-      Newsletter.countDocuments(),
-      Blog.countDocuments(),
-      JoinEntry.countDocuments(),
-    ]);
+    const [contactCount, inquiryCount] = await Promise.all([
+      getContactCount(),
+      getInquiryCount()
+    ]); 
 
     res.json({
-      totalUsers: userCount,
-      totalSubscribers: newsletterCount,
-      totalBlogs: blogCount,
-      totalPartners: partnerCount,
+      totalContacts: contactCount,
+      totalInquiries: inquiryCount
     });
   } catch (err) {
     console.error("Error fetching dashboard stats:", err);
@@ -27,4 +22,4 @@ router.get("/stats", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

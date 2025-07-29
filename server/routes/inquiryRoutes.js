@@ -1,6 +1,6 @@
 import express from 'express';
 import { body } from 'express-validator';
-import { createInquiry, getInquiries } from '../controllers/inquiryController.js';
+import { createInquiry, getInquiries, getInquiryCount } from '../controllers/inquiryController.js';
 
 const router = express.Router();
 
@@ -17,5 +17,6 @@ router.post('/', validateInquiry, createInquiry);
 
 // GET /api/inquiries - Get all inquiries (optional, for admin)
 router.get('/', getInquiries);
+router.get('/count', getInquiryCount);
 
-export default router; 
+export default router;

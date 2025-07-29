@@ -4,6 +4,8 @@
 // import mongoose from 'mongoose';
 // import inquiryRoutes from './routes/inquiryRoutes.js';
 // import contactRoutes from './routes/contactRoutes.js';
+// import adminRoutes from './routes/adminRoutes.js';
+
 
 // dotenv.config();
 
@@ -32,6 +34,7 @@
 // // Routes
 // app.use('/api/inquiries', inquiryRoutes);
 // app.use('/api/contacts', contactRoutes);
+// app.use('/api/admin', adminRoutes);
 
 // // Error handling middleware
 // app.use((err, req, res, next) => {
@@ -55,6 +58,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import inquiryRoutes from './routes/inquiryRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+
 
 dotenv.config();
 
@@ -88,6 +93,7 @@ const connectDB = async () => {
 // Routes
 app.use('/api/inquiries', inquiryRoutes);
 app.use('/api/contacts', contactRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {

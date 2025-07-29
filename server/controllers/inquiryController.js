@@ -37,4 +37,13 @@ export const getInquiries = async (req, res) => {
       error: error.message,
     });
   }
-}; 
+};
+
+export const getInquiryCount = async () => {
+  try {
+    return await Inquiry.countDocuments();
+  } catch (error) {
+    console.error('Error getting inquiry count:', error);
+    throw error;
+  }
+};
