@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axiosInstance from "../../../config/axios";
 import { toast } from "sonner";
 
 const InquiriesList = () => {
@@ -13,8 +13,8 @@ const InquiriesList = () => {
   const fetchInquiries = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://api.99bowls.in/api/inquiries");
-      setInquiries(response.data);
+      const response = await axiosInstance.get("/inquiries");
+      setInquiries(response.data.data || response.data);
     } catch (error) {
       toast.error("Failed to fetch inquiries");
       console.error("Error fetching inquiries:", error);

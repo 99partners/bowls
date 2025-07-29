@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../../../config/axios";
 import "../styles/main.css";
 
 const Dashboard = () => {
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get("https://api.99bowls.in/api/admin/stats");
+      const res = await axiosInstance.get("/api/admin/stats");
       setStats(res.data);
     } catch (error) {
       console.error("Error fetching stats:", error);

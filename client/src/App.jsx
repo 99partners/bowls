@@ -21,6 +21,7 @@ import InquiriesList from "./components/admin/components/InquiriesList";
 import AdminLayout from "./components/admin/components/AdminLayout";
 import AdminLogin from "./components/admin/components/AdminLogin";
 import Dashboard from "./components/admin/components/Dashboard";
+import ContactManagement from "./components/admin/components/ContactManagement";
 
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="inquiries" element={<InquiriesList />} />
+            <Route path="contacts" element={<ContactManagement />} />
           </Route>
 
           {/* Public Routes - With Header/Footer */}
