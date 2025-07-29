@@ -1,5 +1,5 @@
 const API_CONFIG = {
-  baseUrl: import.meta.env.VITE_API_URL || 'http://localhost:5001',
+  baseUrl: import.meta.env.VITE_API_URL || 'http://localhost:5000',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
