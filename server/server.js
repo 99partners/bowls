@@ -52,6 +52,8 @@
 //     console.log(`Server is running on port ${PORT}`);
 //   });
 // });
+
+
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -60,35 +62,50 @@ import inquiryRoutes from './routes/inquiryRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 
-
 dotenv.config();
 
 const app = express();
 
-// CORS Setup
+// 1. CORS Configuration Fix
 const corsOptions = {
-  origin: [
-    "https://99bowls.in",
-    "http://localhost:8080",
-    "http://localhost:8081"
-  ],
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "https://99bowls.in",
+      "http://localhost:8080",
+      "http://localhost:8081"
+    ];
+
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  credentials: true,
+  optionsSuccessStatus: 200 // For legacy browser support
 };
 
-// Use this before other middleware
+// Apply CORS middleware
 app.use(cors(corsOptions));
 
 // Handle preflight requests
 app.options('*', cors(corsOptions));
 
+// Body parser middleware
 app.use(express.json());
 
-// MongoDB Connection
+// 2. MongoDB Connection
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`❌ DB Connection Error: ${error.message}`);
@@ -96,10 +113,18 @@ const connectDB = async () => {
   }
 };
 
-// Routes
+// 3. Routes with proper base paths
 app.use('/api/inquiries', inquiryRoutes);
 app.use('/api/contacts', contactRoutes);
 app.use('/api/admin', adminRoutes);
+
+// 4. Add a test route to verify CORS is working
+app.get('/api/admin/stats', (req, res) => {
+  res.json({
+    message: "Admin stats endpoint working",
+    data: { users: 150, orders: 320 }
+  });
+});
 
 // Global Error Handler
 app.use((err, req, res, next) => {
