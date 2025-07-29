@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axiosInstance.get("/admin/stats");
+      const res = await axiosInstance.get("/api/admin/stats");
       setStats(res.data);
     } catch (error) {
       console.error("Error fetching stats:", error);
