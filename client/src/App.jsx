@@ -15,10 +15,14 @@ import Locations from "./pages/Locations";
 import CookiePolicy from "./pages/CookiePolicy";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import FruitSplash from "./pages/FruitSplash";
+
 import InquiriesList from "./components/admin/components/InquiriesList";
 import AdminLayout from "./components/admin/components/AdminLayout";
 import AdminLogin from "./components/admin/components/AdminLogin";
 import Dashboard from "./components/admin/components/Dashboard";
+import FruitSplash from "./pages/FruitSplash";
+
 
 const queryClient = new QueryClient();
 
@@ -38,9 +42,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter
-        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-      >
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Routes>
           {/* Admin Routes - No Header/Footer */}
           <Route element={<AuthLayout />}>
@@ -62,6 +64,7 @@ const App = () => (
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/fruit-splash" element={<FruitSplash />} />
           </Route>
         </Routes>
       </BrowserRouter>
