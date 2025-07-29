@@ -32,11 +32,11 @@ const Navigation = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-4 group">
-            <span className="relative w-20 h-20 min-w-[80px] flex-shrink-0">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-4 group">
+            <span className="relative w-14 h-14 min-w-[56px] sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0">
               {/* Old logo fades out as scrollProgress approaches 1 */}
               {/* <img
                 src={logo}
@@ -52,7 +52,7 @@ const Navigation = () => {
               <img
                 src={bowlsLogo}
                 alt="Bowls Logo New"
-                className="h-20 w-auto object-contain absolute left-0 top-0"
+                className="h-14 w-auto sm:h-16 md:h-20 object-contain absolute left-0 top-0"
                 style={{
                   opacity: scrollProgress,
                   transition: 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
@@ -60,18 +60,15 @@ const Navigation = () => {
                 }}
               />
             </span>
-            {/* <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent group-hover:from-green-600 group-hover:to-orange-500 relative z-10">
-              Bowls
-            </span> */}
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
+                className={`relative px-2 py-1 lg:px-3 lg:py-2 text-base lg:text-sm font-medium transition-colors duration-300 ${
                   location.pathname === item.path
                     ? 'text-orange-500'
                     : 'text-gray-700 hover:text-orange-500'
@@ -85,7 +82,7 @@ const Navigation = () => {
             ))}
             <Link
               to="/corporate"
-              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base"
             >
               Corporate Inquiry
             </Link>
@@ -94,9 +91,10 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-7 h-7 sm:w-8 sm:h-8" /> : <Menu className="w-7 h-7 sm:w-8 sm:h-8" />}
           </button>
         </div>
 
@@ -109,13 +107,13 @@ const Navigation = () => {
         } overflow-hidden`}
           style={{boxShadow: isOpen ? '0 8px 32px rgba(0,0,0,0.12)' : undefined}}
         >
-          <div className="bg-white shadow-lg rounded-b-2xl py-4 px-4 space-y-2 border-t border-orange-100">
+          <div className="bg-white shadow-lg rounded-b-2xl py-2 px-2 sm:py-4 sm:px-4 space-y-1 sm:space-y-2 border-t border-orange-100">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-3 text-base font-medium rounded-lg transition-colors duration-300 ${
+                className={`block px-3 py-2 sm:py-3 text-base sm:text-lg font-medium rounded-lg transition-colors duration-300 ${
                   location.pathname === item.path
                     ? 'text-orange-500 bg-orange-50'
                     : 'text-gray-700 hover:text-orange-500 hover:bg-gray-50'
@@ -127,7 +125,7 @@ const Navigation = () => {
             <Link
               to="/corporate"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full mt-4 text-base shadow-md"
+              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-3 rounded-full mt-2 sm:mt-4 text-base sm:text-lg shadow-md"
             >
               Corporate Inquiry
             </Link>
