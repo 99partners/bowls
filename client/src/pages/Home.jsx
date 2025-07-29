@@ -919,7 +919,7 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-red-50">
       <section
         id="hero"
-        className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24"
+        className="relative z-10 min-h-[60vh] flex flex-col lg:flex-row items-center justify-center px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24 pt-16 md:pt-20"
       >
         <div className="absolute inset-0 z-0 overflow-hidden">
           <svg
@@ -968,7 +968,7 @@ const Home = () => {
                 </span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-600 mb-4 sm:mb-8 max-w-full sm:max-w-2xl lg:max-w-3xl leading-relaxed text-center lg:text-left">
-                More than a meal — it’s a step toward better health for all.
+                More than a meal — it's a step toward better health for all.
               </p>
             </div>
           </div>
@@ -1149,7 +1149,7 @@ const Home = () => {
                   Mission
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                  At 99 Bowls, we’re dedicated to providing healthy, fresh, and
+                  At 99 Bowls, we're dedicated to providing healthy, fresh, and
                   delicious food delivered right to your doorstep. Our carefully
                   crafted menu—from Rice Bowls to Immunity Boosters—is designed
                   to fuel your body and mind with energy, supporting wellness
@@ -1176,9 +1176,9 @@ const Home = () => {
                         Freshness & Quality First
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        We’re committed to providing only the freshest,
+                        We're committed to providing only the freshest,
                         highest-quality ingredients in every bowl. No shortcuts,
-                        no compromises—just food that’s as nourishing as it is
+                        no compromises—just food that's as nourishing as it is
                         delicious.
                       </p>
                     </div>
@@ -1193,7 +1193,7 @@ const Home = () => {
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
                         We create bowls that cater to diverse wellness
-                        needs—whether it’s weight loss, immunity boosting, heart
+                        needs—whether it's weight loss, immunity boosting, heart
                         health, or muscle-building. Every recipe is thoughtfully
                         designed to support your journey toward a healthier
                         lifestyle.
@@ -1209,8 +1209,8 @@ const Home = () => {
                         Community-Driven Impact
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        At 99 Bowls, food is more than just fuel—it’s a way to
-                        bring people together. We’re proud to support local
+                        At 99 Bowls, food is more than just fuel—it's a way to
+                        bring people together. We're proud to support local
                         communities, offering free meals to thousands and
                         creating spaces where health and well-being are the
                         focal point.
@@ -1226,8 +1226,8 @@ const Home = () => {
                         Empowerment Through Choice
                       </h4>
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
-                        We believe in the power of choice, whether it’s through
-                        our customizable bowls or our commitment to women’s
+                        We believe in the power of choice, whether it's through
+                        our customizable bowls or our commitment to women's
                         empowerment. By partnering with female franchisee
                         owners, we create opportunities for women to lead and
                         thrive in business.
@@ -1245,7 +1245,7 @@ const Home = () => {
                       <p className="text-xs sm:text-sm md:text-base text-gray-600">
                         Our food choices are rooted in sustainability—ensuring
                         we make responsible sourcing decisions, and our
-                        packaging is eco-friendly. We’re dedicated to nurturing
+                        packaging is eco-friendly. We're dedicated to nurturing
                         both personal health and the health of our planet.
                       </p>
                     </div>
@@ -1280,9 +1280,9 @@ const Home = () => {
                     </div>
                     <div className="text-yellow-400 mb-2">★★★★★</div>
                     <p className="text-gray-600 text-sm">
-                      “99Bowls offers a perfect balance of taste and nutrition.
+                      "99Bowls offers a perfect balance of taste and nutrition.
                       Their focus on fresh ingredients and healthy recipes is
-                      commendable!”
+                      commendable!"
                     </p>
                   </div>
                   <div className="bg-white rounded-lg shadow p-4">
@@ -1291,9 +1291,9 @@ const Home = () => {
                     </div>
                     <div className="text-yellow-400 mb-2">★★★★☆</div>
                     <p className="text-gray-600 text-sm">
-                      “The variety and creativity in their bowls make healthy
+                      "The variety and creativity in their bowls make healthy
                       eating exciting. Highly recommended for anyone looking for
-                      nutritious options.”
+                      nutritious options."
                     </p>
                   </div>
                   <div className="bg-white rounded-lg shadow p-4">
@@ -1302,9 +1302,9 @@ const Home = () => {
                     </div>
                     <div className="text-yellow-400 mb-2">★★★★★</div>
                     <p className="text-gray-600 text-sm">
-                      “I appreciate their commitment to sustainability and
+                      "I appreciate their commitment to sustainability and
                       community health. 99Bowls is setting a new standard in the
-                      food industry.”
+                      food industry."
                     </p>
                   </div>
                 </div>
