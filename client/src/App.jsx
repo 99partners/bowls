@@ -21,7 +21,6 @@ import InquiriesList from "./components/admin/components/InquiriesList";
 import AdminLayout from "./components/admin/components/AdminLayout";
 import AdminLogin from "./components/admin/components/AdminLogin";
 import Dashboard from "./components/admin/components/Dashboard";
-import FruitSplash from "./pages/FruitSplash";
 
 
 const queryClient = new QueryClient();
