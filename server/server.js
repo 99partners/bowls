@@ -66,7 +66,7 @@ dotenv.config();
 const app = express();
 
 // CORS Setup
-app.use(cors({
+const corsOptions = {
   origin: [
     "https://99bowls.in",
     "http://localhost:8080",
@@ -75,7 +75,13 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
-}));
+};
+
+// Use this before other middleware
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
