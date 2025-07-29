@@ -8,7 +8,7 @@ const ContactManagement = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axiosInstance.get("/contacts");
+        const res = await axiosInstance.get("/api/contacts");
         setContacts(res.data.data); // ✅ access the `data` key
       } catch (err) {
         console.error("❌ Failed to fetch contacts:", err);

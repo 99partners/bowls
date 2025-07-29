@@ -13,7 +13,7 @@ const InquiriesList = () => {
   const fetchInquiries = async () => {
     try {
       setLoading(true);
-      const response = await axiosInstance.get("/inquiries");
+      const response = await axiosInstance.get("/api/inquiries");
       setInquiries(response.data.data || response.data);
     } catch (error) {
       toast.error("Failed to fetch inquiries");
