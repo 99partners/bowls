@@ -97,8 +97,9 @@ body {
 .stat-card {
     background-color: #fff;
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 20px;
+    flex: 1;
     box-shadow: 0 2px 5px rgb(0 0 0 / .05);
     transition: all 0.3s ease
 }
@@ -106,6 +107,15 @@ body {
 .stat-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgb(0 0 0 / .1)
+}
+
+.stat-card.clickable {
+  cursor: pointer;
+}
+
+.stat-card.clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card h3 {
@@ -644,11 +654,20 @@ body {
   padding: 0.75rem 1rem;
   color: inherit;
   text-decoration: none;
+  border-radius: 100px;
   transition: background-color 0.3s;
 }
 
 .sidebar-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+}
+
+.sidebar-link.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-left: 3px solid #3b82f6;
+  border-radius: 0 100px 100px 0;
 }
 
 .sidebar-link-icon {
@@ -683,3 +702,4 @@ body {
   margin-right: 10px;
   font-size: 1.1rem;
 }
+
