@@ -1,9 +1,11 @@
 import { Heart, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { FaPinterest, FaWhatsapp } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/Bowls.png"; // Adjust the path as necessary
 
 const Footer = () => {
+  const location = useLocation();
+
   const socialLinks = [
     {
       icon: Youtube,
@@ -26,10 +28,21 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Contact", href: "/contact" },
-    { name: "Corporate Inquiry", href: "/corporate" },
     { name: "Subscribe", href: "/subscribe" },
     { name: "Locations", href: "/locations" },
+    { name: "Franchise Inquiry", href: "/corporate" },
   ];
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault(); // Prevent navigation if already on home page
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    // If not on home page, allow Link to navigate to '/'
+  };
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -37,7 +50,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2">
               <img
                 src={logo || "https://via.placeholder.com/150"}
                 alt="Bowls Logo"
@@ -49,7 +62,7 @@ const Footer = () => {
               <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
                 Bowls
               </span>
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Nourishing communities, one bowl at a time. For every order you
               place, we donate a meal to people in need.
@@ -102,6 +115,13 @@ const Footer = () => {
                 <span className="text-gray-400">123 Food Street, City</span>
               </div>
             </div>
+            {/* Franchise Inquiry Button */}
+            <Link
+              to="/corporate"
+              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-2 rounded-full mt-2 sm:mt-4 text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              Franchise Inquiry
+            </Link>
           </div>
 
           {/* Mission Statement */}
@@ -124,24 +144,24 @@ const Footer = () => {
             © 2025 99 Bowls. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a
-              href="privacy-policy"
+            <Link
+              to="/privacy-policy"
               className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300"
             >
               Privacy Policy
-            </a>
-            <a
-              href="cookie-policy"
+            </Link>
+            <Link
+              to="/cookie-policy"
               className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300"
             >
               Cookie Policy
-            </a>
-            <a
-              href="terms-of-service"
+            </Link>
+            <Link
+              to="/terms-of-service"
               className="text-gray-400 hover:text-orange-400 text-sm transition-colors duration-300"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

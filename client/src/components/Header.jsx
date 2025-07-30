@@ -20,13 +20,24 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', path: '/#hero' },
+    { name: 'Home', path: '/' },
     { name: 'Our Menu', path: '/#menu' },
     { name: 'Subscribe', path: '/subscribe' },
     { name: 'Locations', path: '/locations' },
     { name: 'Blogs', path: '/#blogs' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault(); // Prevent navigation if already on home page
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    // If not on home page, allow Link to navigate to '/'
+  };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -35,27 +46,16 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-4 group">
+          <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2 sm:space-x-4 group">
             <span className="relative w-14 h-14 min-w-[56px] sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0">
-              {/* Old logo fades out as scrollProgress approaches 1 */}
-              {/* <img
-                src={logo}
-                alt="Bowls Logo Old"
-                className="h-20 w-auto object-contain absolute left-0 top-0"
-                style={{
-                  opacity: 1 - scrollProgress,
-                  transition: 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
-                  zIndex: 2,
-                }}
-              /> */}
-              {/* New logo fades in as scrollProgress approaches 1 */}
+              {/* New logo fades in on home page, shows immediately on other pages */}
               <img
                 src={bowlsLogo}
                 alt="Bowls Logo New"
                 className="h-14 w-auto sm:h-16 md:h-20 object-contain absolute left-0 top-0"
                 style={{
-                  opacity: scrollProgress,
-                  transition: 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)',
+                  opacity: location.pathname === '/' ? scrollProgress : 1,
+                  transition: location.pathname === '/' ? 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)' : 'none',
                   zIndex: 3,
                 }}
               />
@@ -80,12 +80,6 @@ const Navigation = () => {
                 }`} />
               </Link>
             ))}
-            <Link
-              to="/corporate"
-              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm lg:text-base"
-            >
-              Corporate Inquiry
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -122,13 +116,6 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Link
-              to="/corporate"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-3 rounded-full mt-2 sm:mt-4 text-base sm:text-lg shadow-md"
-            >
-              Corporate Inquiry
-            </Link>
           </div>
         </div>
       </div>
