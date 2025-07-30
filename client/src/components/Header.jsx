@@ -28,15 +28,15 @@ const Navigation = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  const handleLogoClick = (e) => {
-    if (location.pathname === '/') {
+  const handleNavClick = (e, path) => {
+    if (path === '/' && location.pathname === '/') {
       e.preventDefault(); // Prevent navigation if already on home page
       const heroSection = document.getElementById('hero');
       if (heroSection) {
         heroSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    // If not on home page, allow Link to navigate to '/'
+    // If not on home page or navigating to another page, allow Link to navigate
   };
 
   return (
@@ -46,7 +46,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2 sm:space-x-4 group">
+          <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center space-x-2 sm:space-x-4 group">
             <span className="relative w-14 h-14 min-w-[56px] sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0">
               {/* New logo fades in on home page, shows immediately on other pages */}
               <img
@@ -68,6 +68,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
+                onClick={(e) => handleNavClick(e, item.path)}
                 className={`relative px-2 py-1 lg:px-3 lg:py-2 text-base lg:text-sm font-medium transition-colors duration-300 ${
                   location.pathname === item.path
                     ? 'text-orange-500'
@@ -106,7 +107,10 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, item.path);
+                  setIsOpen(false);
+                }}
                 className={`block px-3 py-2 sm:py-3 text-base sm:text-lg font-medium rounded-lg transition-colors duration-300 ${
                   location.pathname === item.path
                     ? 'text-orange-500 bg-orange-50'
