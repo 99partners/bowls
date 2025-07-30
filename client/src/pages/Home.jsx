@@ -1,7 +1,7 @@
 import { ArrowRight, Heart, Users, Star, Globe, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import fruitbowl from "../assets/fruitbowl.png";
+import fruitbowl from "../assets/fruitbowl.webp";
 import logo from "../assets/99 Bowls New.png";
 import { useScrollContext } from "../ScrollContext";
 import { useIsMobile } from "../hooks/use-mobile";
