@@ -137,7 +137,7 @@ const Corporate = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Corporate <span className="text-orange-500">Opportunities</span>
+            Franchise <span className="text-orange-500">Opportunities</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Join our growing family of successful franchise partners with 99 Bowls.
@@ -184,7 +184,7 @@ const Corporate = () => {
             {/* Franchise Form */}
             <Card>
               <CardHeader>
-                <CardTitle>Corporate Inquiry</CardTitle>
+                <CardTitle>Franchise Inquiry</CardTitle>
                 <p className="text-sm text-gray-600">
                   Submit your details to explore corporate partnership opportunities with us.
                 </p>
@@ -280,7 +280,7 @@ const Corporate = () => {
                     className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit Corporate Inquiry'}
+                    {isSubmitting ? 'Submitting...' : 'Submit Franchise Inquiry'}
                   </Button>
                 </form>
               </CardContent>
