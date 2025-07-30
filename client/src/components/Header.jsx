@@ -29,14 +29,21 @@ const Navigation = () => {
   ];
 
   const handleNavClick = (e, path) => {
-    if (path === '/' && location.pathname === '/') {
-      e.preventDefault(); // Prevent navigation if already on home page
-      const heroSection = document.getElementById('hero');
-      if (heroSection) {
-        heroSection.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (location.pathname === '/' && (path === '/' || path.includes('#'))) {
+      e.preventDefault(); // Prevent navigation for Home, Our Menu, Blogs on home page
+      const hash = path.includes('#') ? path.split('#')[1] : null;
+      const sectionId = hash || 'hero'; // Use 'hero' for Home link
+      const scrollToSection = () => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          setTimeout(scrollToSection, 100); // Retry if section not found
+        }
+      };
+      scrollToSection();
     }
-    // If not on home page or navigating to another page, allow Link to navigate
+    // Allow navigation for other links (Contact, Subscribe, Locations)
   };
 
   return (
@@ -70,14 +77,14 @@ const Navigation = () => {
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={`relative px-2 py-1 lg:px-3 lg:py-2 text-base lg:text-sm font-medium transition-colors duration-300 ${
-                  location.pathname === item.path
+                  location.pathname + location.hash === item.path
                     ? 'text-orange-500'
                     : 'text-gray-700 hover:text-orange-500'
                 } group`}
               >
                 {item.name}
                 <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform transition-transform duration-300 ${
-                  location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  location.pathname + location.hash === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
               </Link>
             ))}
@@ -112,7 +119,7 @@ const Navigation = () => {
                   setIsOpen(false);
                 }}
                 className={`block px-3 py-2 sm:py-3 text-base sm:text-lg font-medium rounded-lg transition-colors duration-300 ${
-                  location.pathname === item.path
+                  location.pathname + location.hash === item.path
                     ? 'text-orange-500 bg-orange-50'
                     : 'text-gray-700 hover:text-orange-500 hover:bg-gray-50'
                 }`}
