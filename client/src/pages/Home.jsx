@@ -968,7 +968,7 @@ const Home = () => {
                 </span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-600 mb-4 sm:mb-8 max-w-full sm:max-w-2xl lg:max-w-3xl leading-relaxed text-center lg:text-left">
-                More than a meal — it's a step toward better health for all.
+                More than a meal — it's a step toward better health.
               </p>
             </div>
           </div>
