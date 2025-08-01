@@ -30,15 +30,15 @@ const Footer = () => {
     { name: "Contact", href: "/contact" },
     { name: "Subscribe", href: "/subscribe" },
     { name: "Locations", href: "/locations" },
-    { name: "Franchise Inquiry", href: "/corporate" },
+    { name: "Franchise", href: "/franchise" },
   ];
 
   const handleLogoClick = (e) => {
-    if (location.pathname === '/') {
+    if (location.pathname === "/") {
       e.preventDefault(); // Prevent navigation if already on home page
-      const heroSection = document.getElementById('hero');
+      const heroSection = document.getElementById("hero");
       if (heroSection) {
-        heroSection.scrollIntoView({ behavior: 'smooth' });
+        heroSection.scrollIntoView({ behavior: "smooth" });
       }
     }
     // If not on home page, allow Link to navigate to '/'
@@ -50,7 +50,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2">
+            <Link
+              to="/"
+              onClick={handleLogoClick}
+              className="flex items-center space-x-2"
+            >
               <img
                 src={logo || "https://via.placeholder.com/150"}
                 alt="Bowls Logo"
@@ -117,10 +121,10 @@ const Footer = () => {
             </div>
             {/* Franchise Inquiry Button */}
             <Link
-              to="/corporate"
-              className="block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-2 rounded-full mt-2 sm:mt-4 text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+              to="/franchise"
+              className="inline-block text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full mt-2 sm:mt-4 text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              Franchise Inquiry
+              Franchise
             </Link>
           </div>
 

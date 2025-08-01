@@ -7,7 +7,7 @@ import AuthLayout from "./components/admin/components/AuthLayout";
 import Navigation from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Corporate from "./pages/Corporate";
+import Franchise from "./pages/Franchise"; // Updated import
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import Subscribe from "./pages/Subscribe";
@@ -22,7 +22,6 @@ import AdminLayout from "./components/admin/components/AdminLayout";
 import AdminLogin from "./components/admin/components/AdminLogin";
 import Dashboard from "./components/admin/components/Dashboard";
 import ContactManagement from "./components/admin/components/ContactManagement";
-
 
 const queryClient = new QueryClient();
 
@@ -58,7 +57,7 @@ const App = () => (
           {/* Public Routes - With Header/Footer */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/corporate" element={<Corporate />} />
+            <Route path="/franchise" element={<Franchise />} /> {/* Updated route */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/subscribe" element={<Subscribe />} />
             <Route path="/locations" element={<Locations />} />

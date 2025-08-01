@@ -7,8 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, TrendingUp, Users, Award } from 'lucide-react';
 
-const Corporate = () => {
-  const [corporateForm, setCorporateForm] = useState({
+const Franchise = () => {
+  const [franchiseForm, setFranchiseForm] = useState({
     name: '',
     email: '',
     phone: '',
@@ -34,7 +34,7 @@ const Corporate = () => {
 
   const handlePhoneInput = (e) => {
     const value = e.target.value.replace(/\D/g, ''); // Remove non-digits
-    setCorporateForm({ ...corporateForm, phone: value });
+    setFranchiseForm({ ...franchiseForm, phone: value });
     setErrors({
       ...errors,
       phone: value.length === 10 ? '' : 'Phone number must be exactly 10 digits'
@@ -43,7 +43,7 @@ const Corporate = () => {
 
   const handleEmailInput = (e) => {
     const value = e.target.value;
-    setCorporateForm({ ...corporateForm, email: value });
+    setFranchiseForm({ ...franchiseForm, email: value });
     setErrors({
       ...errors,
       email: validateEmail(value) ? '' : 'Please enter a valid email address'
@@ -53,11 +53,11 @@ const Corporate = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
-  const handleCorporateSubmit = async (e) => {
+  const handleFranchiseSubmit = async (e) => {
     e.preventDefault();
     
-    const emailError = validateEmail(corporateForm.email) ? '' : 'Please enter a valid email address';
-    const phoneError = validatePhone(corporateForm.phone) ? '' : 'Phone number must be exactly 10 digits';
+    const emailError = validateEmail(franchiseForm.email) ? '' : 'Please enter a valid email address';
+    const phoneError = validatePhone(franchiseForm.phone) ? '' : 'Phone number must be exactly 10 digits';
     
     setErrors({ email: emailError, phone: phoneError });
 
@@ -70,14 +70,14 @@ const Corporate = () => {
           method: 'POST',
           headers: API_CONFIG.headers,
           body: JSON.stringify({
-            inquiryType: 'corporate',
-            name: corporateForm.name,
-            email: corporateForm.email,
-            phone: corporateForm.phone,
-            location: corporateForm.location,
-            investment: corporateForm.investment,
-            experience: corporateForm.experience,
-            message: corporateForm.message
+            inquiryType: 'franchise', // Updated inquiryType
+            name: franchiseForm.name,
+            email: franchiseForm.email,
+            phone: franchiseForm.phone,
+            location: franchiseForm.location,
+            investment: franchiseForm.investment,
+            experience: franchiseForm.experience,
+            message: franchiseForm.message
           }),
         });
 
@@ -88,7 +88,7 @@ const Corporate = () => {
             type: 'success',
             message: 'Thank you for your inquiry. We will contact you soon!',
           });
-          setCorporateForm({
+          setFranchiseForm({
             name: '',
             email: '',
             phone: '',
@@ -111,13 +111,13 @@ const Corporate = () => {
     }
   };
 
-  const corporateStats = [
+  const franchiseStats = [
     { icon: TrendingUp, label: "Growth Rate", value: "150%", description: "Year over year" },
     { icon: Users, label: "Happy Customers", value: "50K+", description: "Monthly orders" },
     { icon: Award, label: "Success Rate", value: "95%", description: "Franchise success" }
   ];
 
-  const corporateBenefits = [
+  const franchiseBenefits = [
     "Proven business model with strong ROI",
     "Comprehensive training and ongoing support",
     "Marketing and brand development assistance",
@@ -137,7 +137,7 @@ const Corporate = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Franchise <span className="text-orange-500">Opportunities</span>
+            Franchise
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Join our growing family of successful franchise partners with 99 Bowls.
@@ -148,7 +148,7 @@ const Corporate = () => {
         <div className="space-y-6">
           {/* Franchise Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            {corporateStats.map((stat, index) => (
+            {franchiseStats.map((stat, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-6">
                   <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-2" />
@@ -171,7 +171,7 @@ const Corporate = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  {corporateBenefits.map((benefit, index) => (
+                  {franchiseBenefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{benefit}</span>
@@ -184,42 +184,42 @@ const Corporate = () => {
             {/* Franchise Form */}
             <Card>
               <CardHeader>
-                <CardTitle>Franchise Inquiry</CardTitle>
+                <CardTitle>Franchise</CardTitle>
                 <p className="text-sm text-gray-600">
-                  Submit your details to explore corporate partnership opportunities with us.
+                  Submit your details to explore franchise partnership opportunities with us.
                 </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleCorporateSubmit} className="space-y-4">
+                <form onSubmit={handleFranchiseSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="corporate-name">Full Name *</Label>
+                    <Label htmlFor="franchise-name">Full Name *</Label>
                     <Input
-                      id="corporate-name"
+                      id="franchise-name"
                       placeholder="Your full name"
-                      value={corporateForm.name}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, name: e.target.value })}
+                      value={franchiseForm.name}
+                      onChange={(e) => setFranchiseForm({ ...franchiseForm, name: e.target.value })}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="corporate-email">Email *</Label>
+                    <Label htmlFor="franchise-email">Email *</Label>
                     <Input
-                      id="corporate-email"
+                      id="franchise-email"
                       type="email"
                       placeholder="your@email.com"
-                      value={corporateForm.email}
+                      value={franchiseForm.email}
                       onChange={handleEmailInput}
                       required
                     />
                     {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="corporate-phone">Phone *</Label>
+                    <Label htmlFor="franchise-phone">Phone *</Label>
                     <Input
-                      id="corporate-phone"
+                      id="franchise-phone"
                       type="tel"
                       placeholder="1234567890"
-                      value={corporateForm.phone}
+                      value={franchiseForm.phone}
                       onChange={handlePhoneInput}
                       onKeyPress={(e) => {
                         if (!/[0-9]/.test(e.key)) {
@@ -232,12 +232,12 @@ const Corporate = () => {
                     {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="corporate-location">Preferred Location *</Label>
+                    <Label htmlFor="franchise-location">Preferred Location *</Label>
                     <Input
-                      id="corporate-location"
+                      id="franchise-location"
                       placeholder="City, State"
-                      value={corporateForm.location}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, location: e.target.value })}
+                      value={franchiseForm.location}
+                      onChange={(e) => setFranchiseForm({ ...franchiseForm, location: e.target.value })}
                       required
                     />
                   </div>
@@ -246,8 +246,8 @@ const Corporate = () => {
                     <Input
                       id="investment"
                       placeholder="Investment amount"
-                      value={corporateForm.investment}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, investment: e.target.value })}
+                      value={franchiseForm.investment}
+                      onChange={(e) => setFranchiseForm({ ...franchiseForm, investment: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -256,8 +256,8 @@ const Corporate = () => {
                       id="experience"
                       placeholder="Tell us about your business experience..."
                       rows={3}
-                      value={corporateForm.experience}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, experience: e.target.value })}
+                      value={franchiseForm.experience}
+                      onChange={(e) => setFranchiseForm({ ...franchiseForm, experience: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -266,8 +266,8 @@ const Corporate = () => {
                       id="message"
                       placeholder="Any additional details..."
                       rows={3}
-                      value={corporateForm.message}
-                      onChange={(e) => setCorporateForm({ ...corporateForm, message: e.target.value })}
+                      value={franchiseForm.message}
+                      onChange={(e) => setFranchiseForm({ ...franchiseForm, message: e.target.value })}
                     />
                   </div>
                   {submitStatus.message && (
@@ -280,7 +280,7 @@ const Corporate = () => {
                     className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit Franchise Inquiry'}
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
                   </Button>
                 </form>
               </CardContent>
@@ -292,4 +292,4 @@ const Corporate = () => {
   );
 };
 
-export default Corporate;
+export default Franchise;
