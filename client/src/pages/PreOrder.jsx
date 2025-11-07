@@ -34,7 +34,7 @@ const PreOrder = () => {
   const [showMenuSection, setShowMenuSection] = useState(true);
   const location = useLocation();
 
-  // Smooth scroll to anchor on hash change
+  
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
