@@ -788,7 +788,7 @@ const Home = () => {
               </div>
 
               {/* Video Reels Section */}
-              <div className="mb-12 overflow-hidden">
+              {/* <div className="mb-12 overflow-hidden">
                 <h3 className="text-xl font-bold text-orange-500 mb-4">
                   Video Reels
                 </h3>
@@ -845,7 +845,7 @@ const Home = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <style>
                 {`
