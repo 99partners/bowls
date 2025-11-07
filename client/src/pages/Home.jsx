@@ -290,21 +290,7 @@ const Home = () => {
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const categories = [
-    { id: "all", name: "All Items" },
-    { id: "rice", name: "Rice Bowls" },
-    { id: "weight_loss", name: "Weight Loss Bowls" },
-    { id: "fruit", name: "Fruit Bowls" },
-    { id: "protein", name: "Protein Bowls" },
-    { id: "heart_care", name: "Heart Care Bowls" },
-    { id: "immunity", name: "Immunity Booster Bowls" },
-  ];
-
-  const filteredItems =
-    selectedCategory === "all"
-      ? bowls
-      : bowls.filter((item) => item.category === selectedCategory);
+  const filteredItems = bowls;
 
   // Keyboard navigation for modal (left/right arrows and escape)
   React.useEffect(() => {
@@ -529,22 +515,6 @@ const Home = () => {
               <p className="text-sm sm:text-base md:text-xl text-gray-600">
                 Browse our selection of fresh, healthy bowls and add-ons
               </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 mb-8 sm:mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
-                    selectedCategory === category.id
-                      ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  {category.name}
-                </button>
-              ))}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
