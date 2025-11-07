@@ -23,7 +23,7 @@ import { useScrollContext } from "../ScrollContext";
 import { useIsMobile } from "../hooks/use-mobile";
 import { useLocation } from "react-router-dom";
 
-const Home = () => {
+const PreOrder = () => {    
   const [selectedBowl, setSelectedBowl] = useState(null);
   const [selectedView, setSelectedView] = useState("image");
   const [touchStart, setTouchStart] = useState(null);
@@ -1118,4 +1118,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PreOrder;
