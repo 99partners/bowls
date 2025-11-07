@@ -3,6 +3,22 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.webp";
 import logo from "../assets/99 Bowls New.png";
+import DalMakhni from "../assets/Dal Makhni.png";
+import Maxican from "../assets/Maxican.png";
+import Rajma from "../assets/Rajma.png";
+import Sukhdi from "../assets/Sukhdi.png";
+import Coke from "../assets/Coke.png";
+import GulabJamun from "../assets/Gulab Jamun.png";
+import CurdCup from "../assets/CurdCup.png";
+import Chole from "../assets/Chole.png";
+import ButterMilk from "../assets/Buttermilk.png";
+import Dalfry from "../assets/Dalfry.png";
+import Yogurt from "../assets/Yogurt.png";
+import PaneerSprout from "../assets/Paneer Sprout.png"
+import SproutBhel from "../assets/Sprout Bhel.png";
+import PaneerBiryani from "../assets/Paneer Biryani.png";
+import SpiceCurd from "../assets/SpiceCurd.png";
+import PaneerTikka from "../assets/Paneer Tikka.png";
 import { useScrollContext } from "../ScrollContext";
 import { useIsMobile } from "../hooks/use-mobile";
 import { useLocation } from "react-router-dom";
@@ -66,8 +82,7 @@ const Home = () => {
       category: "rice",
       price: { small: 99, large: 199 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.6c87cc69-8f32-4ab0-a48e-b85d2473a32d.png",
+      image: Chole,
       description: "Tangy Punjabi chickpea with steamed rice.",
       rating: 4.7,
       popular: true,
@@ -79,8 +94,7 @@ const Home = () => {
       category: "rice",
       price: { small: 99, large: 199 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.ae38d081-e276-4d47-8b70-60fe5d9e76bd.png",
+      image: Rajma,
       description: "Kidney beans in thick gravy with steamed rice.",
       rating: 4.8,
       popular: false,
@@ -92,8 +106,7 @@ const Home = () => {
       category: "rice",
       price: { small: 99, large: 199 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.1be1138a-c62a-4912-9f03-f5d2bf0baa59.png",
+      image: DalMakhni,
       description: "Creamy black lentils served with rice.",
       rating: 4.7,
       popular: false,
@@ -105,8 +118,7 @@ const Home = () => {
       category: "rice",
       price: { small: 99, large: 199 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.e8131657-f48e-42ee-86ca-f5e4a5cd9a28.png",
+      image: Dalfry,
       description: "Classic dal fry with aromatic jeera rice.",
       rating: 4.6,
       popular: false,
@@ -118,8 +130,7 @@ const Home = () => {
       category: "rice",
       price: { small: 99, large: 199 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
+      image: SpiceCurd,
       description: "Cool and spiced curd rice for a refreshing meal.",
       rating: 4.6,
       popular: false,
@@ -131,8 +142,7 @@ const Home = () => {
       category: "rice",
       price: { small: 129, large: 249 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.c2d204ed-7866-448c-872b-db00f5029128.png",
+      image: PaneerTikka,
       description: "Tandoori paneer tikka served with flavorful rice.",
       rating: 4.9,
       popular: true,
@@ -144,8 +154,7 @@ const Home = () => {
       category: "rice",
       price: { small: 129, large: 249 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.d9277489-74d0-4da6-a8db-753595c796c2.png",
+      image: Maxican,
       description: "Zesty and colorful Mexican-style rice.",
       rating: 4.7,
       popular: true,
@@ -157,8 +166,7 @@ const Home = () => {
       category: "rice",
       price: { small: 199, large: 399 },
       sizes: ["Small 200ml", "Large 700ml"],
-      image:
-        "https://bing.com/th/id/BCO.2b333cfa-0869-41dd-94da-2a53fbd77a68.png",
+      image: PaneerBiryani,
       description: "Aromatic biryani with paneer and fresh vegetables.",
       rating: 4.8,
       popular: true,
@@ -171,7 +179,7 @@ const Home = () => {
       price: { small: 99, large: 199 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://bing.com/th/id/BCO.4f97b985-b333-48c0-bfbe-b6fd9748ae2a.png",
+       SproutBhel,
       description: "Healthy and tangy sprout bhel salad mix.",
       rating: 4.7,
       popular: false,
@@ -184,7 +192,7 @@ const Home = () => {
       price: { small: 129, large: 249 },
       sizes: ["Small 200ml", "Large 700ml"],
       image:
-        "https://bing.com/th/id/BCO.12aa897b-8699-4dcd-9d8f-d6fee49d7434.png",
+        PaneerSprout,
       description: "Paneer and sprouts combined for a protein-packed meal.",
       rating: 4.8,
       popular: false,
@@ -199,7 +207,7 @@ const Home = () => {
       price: { one_size: 40 },
       sizes: ["One Size"],
       image:
-        "https://bing.com/th/id/BCO.7584e3b5-e9b1-46fe-b63a-735e3687e937.png",
+        Yogurt,
       description: "Creamy yogurt dip with light spices.",
       rating: 4.6,
       popular: false,
@@ -212,7 +220,7 @@ const Home = () => {
       price: { one_size: 35 },
       sizes: ["One Size"],
       image:
-        "https://bing.com/th/id/BCO.69d3d395-9d77-4357-8338-65cd1b49c94d.png",
+        ButterMilk,
       description: "Cool and refreshing chaas with Indian spices.",
       rating: 4.7,
       popular: false,
@@ -225,7 +233,7 @@ const Home = () => {
       price: { one_size: 25 },
       sizes: ["One Size"],
       image:
-        "https://bing.com/th/id/BCO.3b5f1030-1daa-4ac7-a9f3-87c61b6e4f2f.png",
+        Sukhdi,
       description: "Traditional Gujarati sweet made with jaggery and ghee.",
       rating: 4.6,
       popular: false,
@@ -238,7 +246,7 @@ const Home = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://bing.com/th/id/BCO.bdc501c9-ec59-4b41-89eb-c68de9034ef1.png",
+        CurdCup,
       description: "Fresh curd cup, perfect to pair with your meal.",
       rating: 4.5,
       popular: false,
@@ -251,7 +259,7 @@ const Home = () => {
       price: { one_size: 40 },
       sizes: ["One Size"],
       image:
-        "https://bing.com/th/id/BCO.b417493b-0a72-4b18-8ed9-f08a70509f47.png",
+     Coke,
       description: "Refreshing cold beverage to complete your meal.",
       rating: 4.5,
       popular: true,
@@ -264,7 +272,7 @@ const Home = () => {
       price: { one_size: 30 },
       sizes: ["One Size"],
       image:
-        "https://bing.com/th/id/BCO.b33f842a-f7e2-4de2-8373-9dbd0ee7fe80.png",
+        GulabJamun,
       description: "Soft, sweet gulab jamun soaked in syrup.",
       rating: 4.8,
       popular: true,
