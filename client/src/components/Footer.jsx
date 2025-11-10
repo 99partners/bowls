@@ -106,18 +106,32 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact Info</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-sm">
-                <Phone className="w-4 h-4 text-orange-400" />
-                <span className="text-gray-400">+1 (555) 99-BOWLS</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm">
-                <Mail className="w-4 h-4 text-orange-400" />
-                <span className="text-gray-400">hello@99bowls.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm">
-                <MapPin className="w-4 h-4 text-orange-400" />
-                <span className="text-gray-400">123 Food Street, City</span>
-              </div>
+              <a
+                href="tel:+919313728283"
+                className="flex items-center space-x-3 text-sm hover:text-orange-400 transition-colors duration-300"
+              >
+                <Phone className="w-5 h-5 text-orange-400" />
+                <span className="text-gray-400 hover:text-orange-400">+91 93137 28283</span>
+              </a>
+              <a
+                href="mailto:hello@99bowls.com"
+                className="flex items-center space-x-3 text-sm hover:text-orange-400 transition-colors duration-300"
+              >
+                <Mail className="w-5 h-5 text-orange-400" />
+                <span className="text-gray-400 hover:text-orange-400">hello@99bowls.com</span>
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Shop+No.+14,+Titanium+City+Centre,+Anand+Nagar+Road,+Satellite,+Ahmedabad+-+380015"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-sm hover:text-orange-400 transition-colors duration-300"
+              >
+                <MapPin className="w-16 h-16 text-orange-400" />
+                <span className="text-gray-400 hover:text-orange-400">
+                  Shop No. 14, Titanium City Centre, Near Sachin Tower, Anand
+                  Nagar Road, Satellite, Ahmedabad - 380015
+                </span>
+              </a>
             </div>
             {/* Franchise Inquiry Button */}
             <Link
