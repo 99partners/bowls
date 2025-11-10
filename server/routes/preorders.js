@@ -44,8 +44,13 @@ router.post('/', async (req, res) => {
 
     console.log('[MongoDB] Preorder saved:', preorder._id);
 
-    await appendPreorderToSheet(preorder);
-    console.log('[Google Sheets] Preorder appended for:', preorder._id);
+    try {
+      await appendPreorderToSheet(preorder);
+      console.log('[Google Sheets] Preorder appended for:', preorder._id);
+    } catch (sheetErr) {
+      console.error('[Google Sheets] Append failed:', sheetErr.message || sheetErr);
+      // Do not fail the entire request if Sheets append fails
+    }
 
     res.status(201).json({ ok: true, preorderId: preorder._id });
   } catch (err) {

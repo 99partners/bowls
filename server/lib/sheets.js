@@ -1,9 +1,16 @@
 import { google } from 'googleapis';
 
 async function getSheetsClient() {
+  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL || process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
+  const privateKey = (process.env.GOOGLE_SA_PRIVATE_KEY || process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n');
+
+  if (!clientEmail || !privateKey) {
+    throw new Error('Missing Google Sheets credentials: client email or private key not set');
+  }
+
   const auth = new google.auth.JWT({
-    email: process.env.GOOGLE_SA_CLIENT_EMAIL,
-    key: (process.env.GOOGLE_SA_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+    email: clientEmail,
+    key: privateKey,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
   await auth.authorize();
