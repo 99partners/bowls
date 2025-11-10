@@ -1,6 +1,7 @@
 import express from 'express';
 import Preorder from '../models/Preorder.js';
 import { appendPreorderToSheet } from '../lib/sheets.js';
+import { appendPreorderToExcel } from '../lib/excel.js';
 
 const router = express.Router();
 
@@ -44,12 +45,20 @@ router.post('/', async (req, res) => {
 
     console.log('[MongoDB] Preorder saved:', preorder._id);
 
+    // Try Google Sheets (if configured), but do not fail on error
     try {
       await appendPreorderToSheet(preorder);
       console.log('[Google Sheets] Preorder appended for:', preorder._id);
     } catch (sheetErr) {
       console.error('[Google Sheets] Append failed:', sheetErr.message || sheetErr);
-      // Do not fail the entire request if Sheets append fails
+    }
+
+    // Always append to local Excel for guaranteed logging
+    try {
+      await appendPreorderToExcel(preorder);
+      console.log('[Excel] Preorder appended to local file for:', preorder._id);
+    } catch (excelErr) {
+      console.error('[Excel] Append failed:', excelErr.message || excelErr);
     }
 
     res.status(201).json({ ok: true, preorderId: preorder._id });
