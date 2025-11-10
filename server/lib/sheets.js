@@ -20,6 +20,7 @@ async function getSheetsClient() {
 async function appendPreorderToSheet(preorder) {
   const sheets = await getSheetsClient();
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
+  const sheetName = process.env.GOOGLE_SHEETS_SHEET_NAME || '';
 
   // Flatten items as a JSON string for readability, or join lines
   const orderDetails = preorder.items
@@ -39,7 +40,7 @@ async function appendPreorderToSheet(preorder) {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: 'Sheet1!A1', // adjust if using a different sheet name
+    range: sheetName ? `${sheetName}!A1` : 'A1',
     valueInputOption: 'USER_ENTERED',
     requestBody: { values },
   });
