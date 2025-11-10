@@ -1,0 +1,57 @@
+import express from 'express';
+import Preorder from '../models/Preorder.js';
+import { appendPreorderToSheet } from '../lib/sheets.js';
+
+const router = express.Router();
+
+const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+
+router.post('/', async (req, res) => {
+  try {
+    const { name, email, contact, address, items } = req.body;
+
+    if (!name || !email || !contact || !address) {
+      return res.status(400).json({ error: 'Missing required user fields' });
+    }
+    if (!isValidEmail(email)) {
+      return res.status(400).json({ error: 'Invalid email format' });
+    }
+    if (!Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ error: 'At least one order item required' });
+    }
+
+    const normalized = items.map(it => {
+      const quantity = Math.max(1, Number(it.quantity || 1));
+      const unitPrice = Number(it.unitPrice || 0);
+      return {
+        itemId: String(it.itemId || it._id || ''),
+        name: String(it.name),
+        unitPrice,
+        quantity,
+        lineTotal: unitPrice * quantity,
+      };
+    });
+
+    const totalQuantity = normalized.reduce((s, i) => s + i.quantity, 0);
+    const totalPrice   = normalized.reduce((s, i) => s + i.lineTotal, 0);
+
+    const preorder = await Preorder.create({
+      name, email, contact, address,
+      items: normalized,
+      totalQuantity,
+      totalPrice,
+    });
+
+    console.log('[MongoDB] Preorder saved:', preorder._id);
+
+    await appendPreorderToSheet(preorder);
+    console.log('[Google Sheets] Preorder appended for:', preorder._id);
+
+    res.status(201).json({ ok: true, preorderId: preorder._id });
+  } catch (err) {
+    console.error('Preorder error:', err);
+    res.status(500).json({ error: 'Server error', details: err.message });
+  }
+});
+
+export default router;

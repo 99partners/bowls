@@ -117,6 +117,8 @@ const connectDB = async () => {
 app.use('/api/inquiries', inquiryRoutes);
 app.use('/api/contacts', contactRoutes);
 app.use('/api/admin', adminRoutes);
+import preorderRoutes from './routes/preorders.js';
+app.use('/api/preorders', preorderRoutes);
 
 // 4. Add a test route to verify CORS is working
 app.get('/api/admin/stats', (req, res) => {

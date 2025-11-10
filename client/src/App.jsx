@@ -16,6 +16,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FruitSplash from "./pages/FruitSplash";
+import PreOrder from "./pages/PreOrder";
 
 import InquiriesList from "./components/admin/components/InquiriesList";
 import AdminLayout from "./components/admin/components/AdminLayout";
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/fruit-splash" element={<FruitSplash />} />
+            <Route path="/preorder" element={<PreOrder />} />
           </Route>
         </Routes>
       </BrowserRouter>

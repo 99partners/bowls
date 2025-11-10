@@ -1,5 +1,4 @@
-import { ArrowRight, Heart, Users, Star, Globe, Share2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, Heart, Users, Star, Globe, ShoppingCart, Plus, Minus, X } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import fruitbowl from "../assets/fruitbowl.webp";
 import logo from "../assets/99 Bowls New.png";
@@ -33,6 +32,17 @@ const PreOrder = () => {
   const isMobile = useIsMobile();
   const [showMenuSection, setShowMenuSection] = useState(true);
   const location = useLocation();
+  
+  // Cart and preorder states
+  const [cart, setCart] = useState([]);
+  const [showPreorderForm, setShowPreorderForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    contact: '',
+    address: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   //helo
   useEffect(() => {
@@ -335,77 +345,103 @@ const PreOrder = () => {
     setTouchEnd(null);
   };
 
-  const handleShare = async (item, event) => {
-    const shareData = {
-      title: item.name,
-      text: `${item.description.split(".")[0]}. Check it out at 99 Bowls!`,
-      url: `https://99bowls.com/menu/${item.id}`,
-    };
 
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-      } else {
-        // Fallback for browsers that don't support Web Share API
-        const shareText = encodeURIComponent(
-          `${shareData.title}: ${shareData.text} ${shareData.url}`
+
+  // Cart management functions
+  const addToCart = (item) => {
+    setCart(prevCart => {
+      const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
+      if (existingItem) {
+        return prevCart.map(cartItem =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
         );
-        const shareOptions = [
-          { name: "WhatsApp", url: `https://wa.me/?text=${shareText}` },
-          {
-            name: "Twitter",
-            url: `https://twitter.com/intent/tweet?text=${shareText}`,
-          },
-          {
-            name: "Facebook",
-            url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              shareData.url
-            )}`,
-          },
-          {
-            name: "Copy Link",
-            action: () => {
-              navigator.clipboard.writeText(
-                `${shareData.title}: ${shareData.text} ${shareData.url}`
-              );
-              alert("Link copied to clipboard!");
-            },
-          },
-        ];
+      } else {
+        const price = item.price.one_size || item.price.small || item.price.large;
+        return [...prevCart, { ...item, quantity: 1, unitPrice: price }];
+      }
+    });
+  };
 
-        const shareMenu = shareOptions.map((option) => (
-          <button
-            key={option.name}
-            onClick={() =>
-              option.action
-                ? option.action()
-                : window.open(option.url, "_blank")
-            }
-            className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
-          >
-            {option.name}
-          </button>
-        ));
+  const updateQuantity = (id, quantity) => {
+    if (quantity <= 0) {
+      removeFromCart(id);
+      return;
+    }
+    setCart(prevCart =>
+      prevCart.map(item =>
+        item.id === id ? { ...item, quantity } : item
+      )
+    );
+  };
 
-        const shareMenuContainer = document.createElement("div");
-        shareMenuContainer.className =
-          "absolute z-50 bg-white border border-gray-200 rounded-lg shadow-lg";
-        shareMenuContainer.style.top = "100%";
-        shareMenuContainer.style.left = "0";
-        ReactDOM.render(shareMenu, shareMenuContainer);
-        event.currentTarget.appendChild(shareMenuContainer);
+  const removeFromCart = (id) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== id));
+  };
 
-        const handleOutsideClick = (e) => {
-          if (!shareMenuContainer.contains(e.target)) {
-            shareMenuContainer.remove();
-            document.removeEventListener("click", handleOutsideClick);
-          }
-        };
-        document.addEventListener("click", handleOutsideClick);
+  const getTotalQuantity = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const getTotalPrice = () => {
+    return cart.reduce((total, item) => total + (item.unitPrice * item.quantity), 0);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    if (cart.length === 0) {
+      alert('Please add items to your cart before placing an order.');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const orderData = {
+        name: formData.name,
+        email: formData.email,
+        contact: formData.contact,
+        address: formData.address,
+        items: cart.map(item => ({
+          itemId: String(item.id),
+          name: item.name,
+          unitPrice: item.unitPrice,
+          quantity: item.quantity
+        }))
+      };
+
+      const response = await fetch('http://localhost:5000/api/preorders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData)
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        alert('Order placed successfully!');
+        setCart([]);
+        setShowPreorderForm(false);
+        setFormData({ name: '', email: '', contact: '', address: '' });
+      } else {
+        alert('Error placing order: ' + (result.error || 'Unknown error'));
       }
     } catch (error) {
-      console.error("Error sharing:", error);
+      console.error('Error submitting order:', error);
+      alert('Error placing order. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   return (
@@ -557,28 +593,13 @@ const PreOrder = () => {
                   <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 text-center">
                     {item.description.split(".")[0] + "."}
                   </p>
-                  <div className="flex gap-1 sm:gap-2">
-                    <Link
-                      to={`https://www.swiggy.com/search?query=${item.name}`}
-                      className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Swiggy
-                    </Link>
-                    <Link
-                      to={`https://www.zomato.com/search?query=${item.name}`}
-                      className="bg-red-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Zomato
-                    </Link>
+                  <div className="flex gap-1 sm:gap-2 flex-wrap justify-center">
                     <button
-                      onClick={(e) => handleShare(item, e)}
-                      className="bg-blue-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 relative"
+                      onClick={() => addToCart(item)}
+                      className="bg-green-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-1"
                     >
-                      <Share2 className="w-4 h-4 sm:w-5 sm:h-5 inline-block mr-1" />
+                      <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4" />
+                      Preorder
                     </button>
                   </div>
                 </div>
@@ -718,7 +739,145 @@ const PreOrder = () => {
         </>
       )}
 
-      \
+      {/* Cart Modal */}
+      {showPreorderForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-bold text-gray-800">Your Preorder</h2>
+              <button
+                onClick={() => setShowPreorderForm(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Cart Items */}
+            {cart.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-3">Order Items</h3>
+                <div className="space-y-3">
+                  {cart.map((item, index) => (
+                    <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
+                      <div className="flex-1">
+                        <h4 className="font-medium">{item.name}</h4>
+                        <p className="text-sm text-gray-600">₹{item.unitPrice}</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          className="p-1 rounded bg-gray-200 hover:bg-gray-300"
+                        >
+                          <Minus className="w-4 h-4" />
+                        </button>
+                        <span className="w-8 text-center">{item.quantity}</span>
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          className="p-1 rounded bg-gray-200 hover:bg-gray-300"
+                        >
+                          <Plus className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="p-1 rounded bg-red-100 hover:bg-red-200 text-red-600 ml-2"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">Total Quantity: {getTotalQuantity()}</span>
+                    <span className="font-semibold">Total Price: ₹{getTotalPrice()}</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* User Details Form */}
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Contact *</label>
+                <input
+                  type="tel"
+                  name="contact"
+                  value={formData.contact}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Address *</label>
+                <textarea
+                  name="address"
+                  value={formData.address}
+                  onChange={handleInputChange}
+                  required
+                  rows="3"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div className="flex gap-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowPreorderForm(false)}
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting || cart.length === 0}
+                  className="flex-1 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Place Preorder'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Cart Badge */}
+      {cart.length > 0 && (
+        <button
+          onClick={() => setShowPreorderForm(true)}
+          className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-40"
+        >
+          <ShoppingCart className="w-6 h-6" />
+          {getTotalQuantity() > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center">
+              {getTotalQuantity()}
+            </span>
+          )}
+        </button>
+      )}
     </div>
   );
 };
