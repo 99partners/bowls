@@ -559,7 +559,7 @@ const Home = () => {
                   </p>
                   <div className="flex gap-1 sm:gap-2">
                     <Link
-                      to={`https://www.swiggy.com/search?query=${item.name}`}
+                      to={`https://www.swiggy.com/city/ahmedabad/99bowls-prahlad-nagar-rest1100848/search?query=${item.name}`}
                       className="bg-orange-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -567,7 +567,7 @@ const Home = () => {
                       Swiggy
                     </Link>
                     <Link
-                      to={`https://www.zomato.com/search?query=${item.name}`}
+                      to={`http://zoma.to/r/21932967/search?query=${item.name}`}
                       className="bg-red-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
                       target="_blank"
                       rel="noopener noreferrer"
