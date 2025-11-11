@@ -22,7 +22,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Our Menu', path: '/#menu' },
-    { name: 'Preorder', path: '/preorder' },
+    // { name: 'Preorder', path: '/preorder' },
     { name: 'Subscribe', path: '/subscribe' },
     { name: 'Locations', path: '/locations' },
     { name: 'Blogs', path: '/#blogs' },
