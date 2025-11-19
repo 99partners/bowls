@@ -38,7 +38,7 @@ const BlogManagement = () => {
 
   const showNotification = (message, type = 'success') => {
     setNotification({ show: true, message, type });
-    setTimeout(() => setNotification({ show: false, message: '', type: 'success' }), 5000);
+    setTimeout(() => setNotification({ show: false, message: '', type: 'success' }), 5001);
   };
 
   const handleChange = (e) => {
